@@ -4,7 +4,7 @@ import { Button } from "../ui/Button";
 
 export function Hero() {
   return (
-    <section className="w-full pt-16 pb-section">
+    <section className="w-full py-section">
       {/* Top Row: Headline and Description */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
         {/* Left: Headline */}
