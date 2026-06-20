@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex px-[68px] flex-col font-sans bg-background text-on-background">
+      <body className="min-h-full flex  flex-col font-sans bg-background text-on-background">
         {/* Navbar will be added here */}
         <main className="flex-grow">{children}</main>
         {/* Footer will be added here */}

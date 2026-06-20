@@ -4,7 +4,7 @@ import { Button } from "../ui/Button";
 
 export function Navbar() {
   return (
-    <nav className="w-full bg-background sticky top-0 z-50 border-b border-outline-variant/30">
+    <nav className="w-full bg-background sticky top-0 z-50 border-b border-outline-variant/30 px-[68px] ">
       <div className=" h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
