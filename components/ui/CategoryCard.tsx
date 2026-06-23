@@ -13,10 +13,10 @@ export function CategoryCard({ title, description, imageSrc, href = "#" }: Categ
   return (
     <Link 
       href={href} 
-      className="group flex flex-col rounded-xl overflow-hidden border border-outline-variant/60 bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="group flex flex-col overflow-hidden bg-surface-container-lowest"
     >
       {/* Image Section */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden">
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl ">
         <Image
           src={imageSrc}
           alt={title}
@@ -27,7 +27,7 @@ export function CategoryCard({ title, description, imageSrc, href = "#" }: Categ
       </div>
       
       {/* Content Section */}
-      <div className="p-6 flex flex-col gap-3 flex-grow bg-surface-container-low/30">
+      <div className="py-3 flex flex-col gap-1 flex-grow bg-surface-container-low/30">
         <h3 className="text-2xl font-bold text-on-background">
           {title}
         </h3>
