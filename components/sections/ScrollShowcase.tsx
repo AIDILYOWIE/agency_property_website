@@ -147,7 +147,7 @@ export function ScrollShowcase() {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             PARTNERSHIP
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-on-background">
+          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
             Dua Model Kolaborasi
           </h2>
         </div>
