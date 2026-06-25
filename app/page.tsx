@@ -7,6 +7,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Portofolio } from "@/components/sections/Portofolio";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { StatsBar } from "@/components/sections/StatsBar";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -23,8 +24,9 @@ export default function Home() {
         <Portofolio />
         <HowWeWork />
         <StatsBar/>
+        <Testimonials />
       </div>
-      {/* Future sections will go here */}
+      {/* Future sections will go here */}  
     </>
   );
 }
