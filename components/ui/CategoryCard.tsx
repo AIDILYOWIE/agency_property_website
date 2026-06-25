@@ -31,7 +31,7 @@ export function CategoryCard({ title, description, imageSrc, href = "#" }: Categ
         <h3 className="text-2xl font-bold text-on-background">
           {title}
         </h3>
-        <p className="text-body-md text-on-surface-variant leading-relaxed">
+        <p className="text-body-md text-on-surface-variant">
           {description}
         </p>
       </div>
