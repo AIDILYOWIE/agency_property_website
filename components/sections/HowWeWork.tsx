@@ -69,11 +69,11 @@ export function HowWeWork() {
                 </div>
 
                 {/* Content */}
-                <div className={`flex flex-col gap-1 ${step.hasLine ? "pb-10" : ""}`}>
+                <div className={`flex flex-col gap-2 ${step.hasLine ? "pb-10" : ""}`}>
                   <h3 className="text-xl font-bold text-on-background">
                     {step.title}
                   </h3>
-                  <p className="text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="text-body-md text-on-variant leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -6,6 +6,7 @@ import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
 import { Pricing } from "@/components/sections/Pricing";
 import { Portofolio } from "@/components/sections/Portofolio";
 import { HowWeWork } from "@/components/sections/HowWeWork";
+import { StatsBar } from "@/components/sections/StatsBar";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Pricing />
         <Portofolio />
         <HowWeWork />
+        <StatsBar/>
       </div>
       {/* Future sections will go here */}
     </>
