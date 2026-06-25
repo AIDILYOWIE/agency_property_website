@@ -11,28 +11,28 @@ const timelineSteps = [
     title: "Kirim Detail Property",
     description:
       "Klien (Owner/Agent/Developer) menghubungi kami dan mengirimkan detail awal properti (lokasi, spesifikasi, dan ekspektasi harga) untuk kami pelajari.",
-    icon: <BiMailSend size={32} className="text-primary" />,
+    icon: <BiMailSend size={28} className="text-primary" />,
     hasLine: true,
   },
   {
     title: "Review & Kurasi Property",
     description:
       "Tim kami meninjau properti Anda untuk memastikan kesesuaian dengan standar Chris Property Signature. Kami hanya memproses properti berkualitas (biasanya >IDR 1 Miliar) agar reputasi listing tetap terjaga.",
-    icon: <LuNotebookPen size={32} className="text-primary" />,
+    icon: <LuNotebookPen size={28} className="text-primary" />,
     hasLine: true,
   },
   {
     title: "Content & Positioning Profesional",
     description:
       "Jika disetujui, tim kami (atau creator jika mengambil paket 3 Slot) akan mengambil visual berkualitas tinggi dan merancang narasi positioning agar properti Anda terlihat premium dan tepat sasaran.",
-    icon: <LuCamera size={32} className="text-primary" />,
+    icon: <LuCamera size={28} className="text-primary" />,
     hasLine: true,
   },
   {
     title: "Live di Platform Premium",
     description:
       "Listing Anda secara resmi ditayangkan di saluran premium kami (OLX Premium, Rumah123 Premium, Instagram, & Jaringan Internal). Kami memantau engagement dan menyaring leads yang berkualitas.",
-    icon: <FiGlobe size={32} className="text-primary" />,
+    icon: <FiGlobe size={28} className="text-primary" />,
     hasLine: false,
   },
 ];
@@ -69,8 +69,8 @@ export function HowWeWork() {
                 </div>
 
                 {/* Content */}
-                <div className={`flex flex-col gap-2 ${step.hasLine ? "pb-10" : ""}`}>
-                  <h3 className="text-3xl font-bold text-on-background">
+                <div className={`flex flex-col gap-1 ${step.hasLine ? "pb-10" : ""}`}>
+                  <h3 className="text-xl font-bold text-on-background">
                     {step.title}
                   </h3>
                   <p className="text-body-md text-on-surface-variant leading-relaxed">
