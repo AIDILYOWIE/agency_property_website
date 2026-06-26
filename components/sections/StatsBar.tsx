@@ -19,10 +19,10 @@ export function StatsBar() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" >
-                    <StatsCard contentStyle="!text-center" imageSrc="/categories/cat_apartment_1781867600595.png" title="50" description="Properti Dipromosikan" titleStyle="!text-6xl !font-medium"/>
-                    <StatsCard contentStyle="!text-center" imageSrc="/categories/cat_apartment_1781867600595.png" title="30" description="Klien Terlayani" titleStyle="!text-6xl !font-medium" />
-                    <StatsCard contentStyle="!text-center" imageSrc="/categories/cat_apartment_1781867600595.png" title="20" description="Transaksi Berhasil" titleStyle="!text-6xl !font-medium" />
-                    <StatsCard contentStyle="!text-center" imageSrc="/categories/cat_apartment_1781867600595.png" title="5" description="Channel Promosi" titleStyle="!text-6xl !font-medium" />
+                    <StatsCard contentStyle="!text-center" imageSrc="/categories/cat_house_1781867614978.png" title="50" description="Properti Dipromosikan" titleStyle="!text-6xl !font-medium"/>
+                    <StatsCard contentStyle="!text-center" imageSrc="/stats/client_terlayani.png" title="30" description="Klien Terlayani" titleStyle="!text-6xl !font-medium" />
+                    <StatsCard contentStyle="!text-center" imageSrc="/stats/transaksi.png" title="20" description="Transaksi Berhasil" titleStyle="!text-6xl !font-medium" />
+                    <StatsCard contentStyle="!text-center" imageSrc="/stats/promotion_channels.png" title="5" description="Channel Promosi" titleStyle="!text-6xl !font-medium" />
                 </div>
 
             </div>
