@@ -8,7 +8,7 @@ interface FeatureCardProps {
 
 export function TestimoniCard({ name, jobTitle }: FeatureCardProps) {
     return (
-        <div className="flex flex-col p-6 rounded-xl bg-white duration-300 w-[90vw] sm:w-[350px] md:w-[500px] shrink-0 snap-center">
+        <div className="flex flex-col p-6 rounded-xl bg-white/40 duration-300 w-[90vw] sm:w-[350px] md:w-[500px] shrink-0 snap-center">
             <div className="mb-6">
                 <h3 className="text-xl font-medium text-on-background text-wrap" >
                     " Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, tempora. "

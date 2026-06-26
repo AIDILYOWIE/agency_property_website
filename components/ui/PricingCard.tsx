@@ -25,13 +25,13 @@ export function PricingCard({
     <div
       className={`flex flex-col relative rounded-xl p-8 transition-all duration-300 ${
         highlight
-          ? "bg-white border-1 border-primary shadow-card md:scale-[1.02] z-10"
-          : "bg-white border-1 border-on-background"
+          ? "bg-white/40 border-1 border-on-background md:scale-[1.02] z-10"
+          : "bg-white/40"
       }`}
     >
       {/* Highlight Badge */}
       {highlight && badge && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-xs font-bold tracking-widest px-4 py-1 rounded-full shadow-sm">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-on-background text-on-primary text-xs font-bold tracking-widest px-4 py-1 rounded-full shadow-sm">
           {badge}
         </div>
       )}

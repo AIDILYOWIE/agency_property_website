@@ -37,7 +37,7 @@ export function Testimonials() {
 
         {/* Testimonial Cards - Horizontal Scroll */}
         <div 
-          className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex overflow-x-auto gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {testimonials.map((testi, index) => (
               <TestimoniCard key={index} name={testi.name} jobTitle={testi.jobTitle} />
