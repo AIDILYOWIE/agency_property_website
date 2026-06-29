@@ -35,31 +35,37 @@ export function Navbar() {
             href="/"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
-            Home
+            Beranda
           </Link>
           <Link
             href="/properties"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
-            Properties
+            Layanan
           </Link>
           <Link
             href="/agents"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
-            Agents
+            Portofolio
           </Link>
           <Link
             href="/blog"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
-            Blog
+            Harga
+          </Link>
+          <Link
+            href="/blog"
+            className="text-on-background font-medium hover:text-primary transition-colors"
+          >
+            Tentang
           </Link>
         </div>
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button variant="primary">Contact Us</Button>
+          <Button variant="primary">Kolaborasi Sekarang</Button>
         </div>
 
         {/* Mobile Menu Toggle (Placeholder for visual) */}
