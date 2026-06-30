@@ -2,19 +2,16 @@ import React from "react";
 import { BiMailSend } from "react-icons/bi";
 import { LuNotebookPen, LuCamera } from "react-icons/lu";
 import { FiGlobe } from "react-icons/fi";
-import { CategoryCard } from "../ui/CategoryCard";
+import { FeatureCard } from "../ui/FeatureCard";
 
-export type HowWeWorkCardType = "timeline" | "category";
+export type HowWeWorkCardType = "timeline" | "secondary";
 
 export interface HowWeWorkItem {
   title: string;
   description: string;
-  // Props specific for timeline type
   icon?: React.ReactNode;
+  // Props specific for timeline type
   hasLine?: boolean;
-  // Props specific for category type
-  imageSrc?: string;
-  href?: string;
 }
 
 const defaultTimelineSteps: HowWeWorkItem[] = [
@@ -80,20 +77,19 @@ export function HowWeWork({
           {/* Right Column - Content */}
           <div
             className={
-              cardType === "category"
-                ? "grid grid-cols-1 sm:grid-cols-2 gap-8"
+              cardType === "secondary"
+                ? "grid grid-cols-1 gap-8"
                 : "flex flex-col"
             }
           >
             {items.map((step, index) => {
-              if (cardType === "category") {
+              if (cardType === "secondary") {
                 return (
-                  <CategoryCard
+                  <FeatureCard
                     key={index}
+                    icon={step.icon || <div />}
                     title={step.title}
                     description={step.description}
-                    imageSrc={step.imageSrc || ""}
-                    href={step.href || "#"}
                   />
                 );
               }

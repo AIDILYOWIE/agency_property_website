@@ -2,11 +2,33 @@ import React from "react";
 import { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { HowWeWork } from "@/components/sections/HowWeWork";
+import { BsLightning, BsCamera, BsTag } from "react-icons/bs";
 
 export const metadata: Metadata = {
   title: "Layanan Kami | Agency Property",
   description: "Layanan pemasaran properti eksklusif dan premium untuk Anda.",
 };
+
+const problemItems = [
+  {
+    title: "Lelah dengan Random Leads?",
+    description: "Menghadapi ratusan pesan dari prospek yang tidak memiliki kualifikasi finansial.",
+    icon: <BsLightning />,
+  },
+  {
+    title: "Presentasi Kurang Menarik?",
+    description:
+      "Nilai properti miliaran rupiah jatuh karena foto ponsel seadanya.",
+    icon: <BsCamera />,
+  },
+  {
+    title: "Tenggelam di Marketplace? ",
+    description:
+      "Bersaing dengan ribuan listing properti murah tanpa diferensiasi.",
+    icon: <BsTag /> ,
+  },
+];
 
 export default function LayananPage() {
   return (
@@ -26,7 +48,13 @@ export default function LayananPage() {
         />
 
         {/* Problem & Agitation */}
-
+        <HowWeWork
+        cardType={"secondary"}
+          label="Problem"
+          title="Positioning matters more than noise"
+          items={problemItems}
+          
+        />
           
 
       </div>
