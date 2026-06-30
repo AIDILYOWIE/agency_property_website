@@ -1,12 +1,23 @@
 import React from "react";
-import Image from "next/image";
-import { Button } from "../ui/Button";
-import { FiChevronRight } from "react-icons/fi";
 import { BiMailSend } from "react-icons/bi";
 import { LuNotebookPen, LuCamera } from "react-icons/lu";
 import { FiGlobe } from "react-icons/fi";
+import { CategoryCard } from "../ui/CategoryCard";
 
-const timelineSteps = [
+export type HowWeWorkCardType = "timeline" | "category";
+
+export interface HowWeWorkItem {
+  title: string;
+  description: string;
+  // Props specific for timeline type
+  icon?: React.ReactNode;
+  hasLine?: boolean;
+  // Props specific for category type
+  imageSrc?: string;
+  href?: string;
+}
+
+const defaultTimelineSteps: HowWeWorkItem[] = [
   {
     title: "Kirim Detail Property",
     description:
@@ -37,48 +48,81 @@ const timelineSteps = [
   },
 ];
 
-export function HowWeWork() {
+interface HowWeWorkProps {
+  label?: string;
+  title?: React.ReactNode;
+  cardType?: HowWeWorkCardType;
+  items?: HowWeWorkItem[];
+}
+
+export function HowWeWork({
+  label = "Proses",
+  title = "Bagaimana Kami Bekerja",
+  cardType = "timeline",
+  items = defaultTimelineSteps,
+}: HowWeWorkProps) {
   return (
     <section className="w-full py-section bg-background">
       <div className="px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Left Column - Header & CTA */}
+          {/* Left Column - Header */}
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <span className="text-label-md text-on-background uppercase tracking-wider">
-                Proses
+                {label}
               </span>
               <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-                Bagaimana Kami Bekerja
+                {title}
               </h2>
             </div>
           </div>
 
-          {/* Right Column - Timeline */}
-          <div className="flex flex-col">
-            {timelineSteps.map((step, index) => (
-              <div key={index} className="flex gap-4">
-                {/* Icon + Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    {step.icon}
-                  </div>
-                  {step.hasLine && (
-                    <div className="w-0.5 flex-1 min-h-[80px] bg-on-background my-2 " />
-                  )}
-                </div>
+          {/* Right Column - Content */}
+          <div
+            className={
+              cardType === "category"
+                ? "grid grid-cols-1 sm:grid-cols-2 gap-8"
+                : "flex flex-col"
+            }
+          >
+            {items.map((step, index) => {
+              if (cardType === "category") {
+                return (
+                  <CategoryCard
+                    key={index}
+                    title={step.title}
+                    description={step.description}
+                    imageSrc={step.imageSrc || ""}
+                    href={step.href || "#"}
+                  />
+                );
+              }
 
-                {/* Content */}
-                <div className={`flex flex-col gap-2 ${step.hasLine ? "pb-10" : ""}`}>
-                  <h3 className="text-xl font-bold text-on-background">
-                    {step.title}
-                  </h3>
-                  <p className="text-body-md text-on-variant leading-relaxed">
-                    {step.description}
-                  </p>
+              // Timeline Type (Default)
+              return (
+                <div key={index} className="flex gap-4">
+                  {/* Icon + Line */}
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      {step.icon}
+                    </div>
+                    {step.hasLine && (
+                      <div className="w-0.5 flex-1 min-h-[80px] bg-on-background my-2 " />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className={`flex flex-col gap-2 ${step.hasLine ? "pb-10" : ""}`}>
+                    <h3 className="text-xl font-bold text-on-background">
+                      {step.title}
+                    </h3>
+                    <p className="text-body-md text-on-surface-variant leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
