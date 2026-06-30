@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { BsLightning, BsCamera, BsTag } from "react-icons/bs";
+import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
 
 export const metadata: Metadata = {
   title: "Layanan Kami | Agency Property",
@@ -53,11 +54,11 @@ export default function LayananPage() {
           label="Problem"
           title="Positioning matters more than noise"
           items={problemItems}
-          
         />
-          
-
       </div>
+
+      {/* Solution */}
+      <ScrollShowcase label="THE SOLUTIONS" />
 
     </div>
   );
