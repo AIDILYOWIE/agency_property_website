@@ -38,25 +38,25 @@ export function Navbar() {
             Beranda
           </Link>
           <Link
-            href="/properties"
+            href="/layanan"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Layanan
           </Link>
           <Link
-            href="/agents"
+            href="/#portfolio"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Portofolio
           </Link>
           <Link
-            href="/blog"
+            href="/#harga"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Harga
           </Link>
           <Link
-            href="/blog"
+            href="/#tentang"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Tentang
