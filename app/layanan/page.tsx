@@ -5,6 +5,9 @@ import { Hero } from "@/components/sections/Hero";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { BsLightning, BsCamera, BsTag } from "react-icons/bs";
 import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { CallToAction } from "@/components/sections/CallToAction";
 
 export const metadata: Metadata = {
   title: "Layanan Kami | Agency Property",
@@ -49,17 +52,19 @@ export default function LayananPage() {
         />
 
         {/* Problem & Agitation */}
-        <HowWeWork
-        cardType={"secondary"}
-          label="Problem"
-          title="Positioning matters more than noise"
-          items={problemItems}
-        />
+          <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
       </div>
 
       {/* Solution */}
       <ScrollShowcase label="THE SOLUTIONS" />
 
+      <div className="flex flex-col px-[68px]">
+          {/* Trust social proof */}
+          <Testimonials/>
+      </div>
+
+      {/* CTA */}
+          <CallToAction  />
     </div>
   );
 }
