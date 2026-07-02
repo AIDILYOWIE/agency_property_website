@@ -55,10 +55,10 @@ export function Pricing() {
       <div className="px-6">
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Pricing
+            Paket Promosi
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-            Property Categories
+            Harga Fleksible Sesuai Kebutuhan
           </h2>
         </div>
 

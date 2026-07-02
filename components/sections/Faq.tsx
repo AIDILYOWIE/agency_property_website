@@ -1,7 +1,8 @@
 import React from "react";
 import { TestimoniCard } from "../ui/TestimoniCard";
+import { FaqCard } from "../ui/FaqCard";
 
-export function Testimonials() {
+export function Faq() {
   // Mock data for testimonials
   const testimonials = [
     {
@@ -28,20 +29,21 @@ export function Testimonials() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Testimonial
+            FAQ 
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-            What Our Clients Says
+            Clear Answers To Common Questions
           </h2>
         </div>
 
-        {/* Testimonial Cards - Horizontal Scroll */}
+        {/* FAQ Cards */}
         <div 
-          className="flex overflow-x-auto gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex flex-col gap-4 justify-center items-center"
         >
-          {testimonials.map((testi, index) => (
-              <TestimoniCard key={index} name={testi.name} jobTitle={testi.jobTitle} />
-          ))}
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
+            <FaqCard />
         </div>
       </div>
     </section>

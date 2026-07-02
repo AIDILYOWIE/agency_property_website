@@ -46,7 +46,11 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
 
 /* ─── Component ────────────────────────────────────────────────── */
 
-export function ScrollShowcase() {
+interface ScrollShowcaseProps {
+  label?: string;
+}
+
+export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
@@ -145,7 +149,7 @@ export function ScrollShowcase() {
 
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            PARTNERSHIP
+            {label}
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
             Dua Model Kolaborasi

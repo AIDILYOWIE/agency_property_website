@@ -19,7 +19,7 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
     return (
         <Link
             href={href}
-            className="group flex flex-col overflow-hidden bg-surface-container-lowest"
+            className="group flex flex-col overflow-hidden"
         >
             {/* Image Section */}
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl ">
@@ -36,7 +36,7 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
             </div>
 
             {/* Content Section */}
-            <div className="py-3 flex flex-col gap-2 flex-grow bg-surface-container-low/30">
+            <div className="py-3 flex flex-col gap-2 flex-grow">
                 <h3 className="text-2xl font-bold text-on-background">
                     {title}
                 </h3>

@@ -8,6 +8,8 @@ import { Portofolio } from "@/components/sections/Portofolio";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Faq } from "@/components/sections/Faq";
+import { CallToAction } from "@/components/sections/CallToAction";
 
 export default function Home() {
   return (
@@ -25,8 +27,9 @@ export default function Home() {
         <HowWeWork />
         <StatsBar/>
         <Testimonials />
+        <Faq />
       </div>
-      {/* Future sections will go here */}  
+      <CallToAction />
     </>
   );
 }

@@ -16,7 +16,7 @@ export function PropertyCategories() {
     {
       title: "Strategic Land",
       description: "Fasilitas eksklusif di pusat kota dengan akses mudah ke berbagai pusat bisnis dan hiburan",
-      imageSrc: "/categories/cat_apartment_1781867600595.png",
+      imageSrc: "/categories/strattegic_land.png",
     },
     {
       title: "Commercial Asset",

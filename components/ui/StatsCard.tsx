@@ -19,7 +19,7 @@ export function StatsCard({ title, description, imageSrc, href = "#", className,
     return (
         <Link
             href={href}
-            className="group flex flex-col overflow-hidden bg-surface-container-lowest"
+            className="group flex flex-col overflow-hidden "
         >
             {/* Image Section */}
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl ">
@@ -33,7 +33,7 @@ export function StatsCard({ title, description, imageSrc, href = "#", className,
             </div>
 
             {/* Content Section */}
-            <div className={`py-3 flex flex-col text-center u gap-1 flex-grow bg-surface-container-low/30 ${contentStyle}`}>
+            <div className={`py-3 flex flex-col text-center u gap-1 flex-grow ${contentStyle}`}>
                 <div className="flex w-full gap-0 h-max items-center justify-center">
                     <h3 className={`text-6xl font-medium text-on-background `}>
                         {title}

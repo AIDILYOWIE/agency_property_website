@@ -75,7 +75,7 @@ export function Portofolio() {
             Portofolio
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-            Property Categories
+            Kurasi Properti Eksklusif & Premium
           </h2>
         </div>
 
