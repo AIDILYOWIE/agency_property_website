@@ -64,7 +64,12 @@ export default function LayananPage() {
       </div>
 
       {/* CTA */}
-          <CallToAction  />
+          <CallToAction title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
+          [
+            {label: 'Mulai Kolaboras', variant: "primary", href: "/contact"},
+            {label: 'Konsultasi Sekarang', variant: "outline", href: "/contact"},
+          ]
+          }  />
     </div>
   );
 }
