@@ -36,7 +36,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-surface-container-lowest text-on-surface pt-16 pb-8 mt-auto">
+    <footer className="w-full bg-background text-on-surface pt-16 pb-8 mt-auto">
       <div className="container mx-auto px-4 md:px-6 lg:px-[68px]">
         {/* Top Section: 4 Columns Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">

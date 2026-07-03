@@ -5,6 +5,7 @@ import { Button } from "../ui/Button";
 interface HeroProps {
   headline?: React.ReactNode;
   description?: string;
+  isCtaButton?: boolean;
   primaryButtonText?: string;
   secondaryButtonText?: string;
   imageSrc?: string;
@@ -22,6 +23,7 @@ export function Hero({
   description = "Premium property promotion untuk Vila, Rumah Mewah, Tanah Strategis & Aset Komersial di Bali. Dua model kolaborasi. Satu standar kualitas.",
   primaryButtonText = "Mulai Kolaborasi",
   secondaryButtonText = "lihat portofolio",
+  isCtaButton = true,
   imageSrc = "/hero.png",
   imageAlt = "Modern Architectural House",
   floatingButtonText = "See All Listings",
@@ -42,12 +44,13 @@ export function Hero({
           <p className="text-body-lg text-on-surface-variant max-w-xl">
             {description}
           </p>
-          {(primaryButtonText || secondaryButtonText) && (
+          {(isCtaButton ? (primaryButtonText || secondaryButtonText) && (
             <div className="flex flex-wrap items-center gap-4">
               {primaryButtonText && <Button variant="primary">{primaryButtonText}</Button>}
               {secondaryButtonText && <Button variant="outline">{secondaryButtonText}</Button>}
             </div>
-          )}
+          ) : <></> )}
+          {}
         </div>
       </div>
 

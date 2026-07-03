@@ -1,15 +1,15 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { Hero } from "@/components/sections/Hero";
-import { PropertyCategories } from "@/components/sections/PropertyCategories";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
-import { Pricing } from "@/components/sections/Pricing";
-import { Portofolio } from "@/components/sections/Portofolio";
-import { HowWeWork } from "@/components/sections/HowWeWork";
-import { StatsBar } from "@/components/sections/StatsBar";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Faq } from "@/components/sections/Faq";
-import { CallToAction } from "@/components/sections/CallToAction";
+import { Navbar } from "@/app/_components/layout/Navbar";
+import { Hero } from "@/app/_components/sections/Hero";
+import { PropertyCategories } from "@/app/_components/sections/PropertyCategories";
+import { WhyChooseUs } from "@/app/_components/sections/WhyChooseUs";
+import { ScrollShowcase } from "@/app/_components/sections/ScrollShowcase";
+import { Pricing } from "@/app/_components/sections/Pricing";
+import { Portofolio } from "@/app/_components/sections/Portofolio";
+import { HowWeWork } from "@/app/_components/sections/HowWeWork";
+import { StatsBar } from "@/app/_components/sections/StatsBar";
+import { Testimonials } from "@/app/_components/sections/Testimonials";
+import { Faq } from "@/app/_components/sections/Faq";
+import { CallToAction } from "@/app/_components/sections/CallToAction";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         <Pricing />
         <Portofolio />
         <HowWeWork />
-        <StatsBar/>
+        <StatsBar />
         <Testimonials />
         <Faq />
       </div>
