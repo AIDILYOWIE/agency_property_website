@@ -112,7 +112,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
           <div className="flex flex-col">
             <span className=" font-medium text-sm mb-1">Bedrooms</span>
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-light">{beds}</span>
+              <span className="text-2xl font-medium">{beds}</span>
             </div>
           </div>
           
@@ -122,7 +122,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
           <div className="flex flex-col">
             <span className=" font-medium text-sm mb-1">Bathrooms</span>
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-light">{beds}</span>
+              <span className="text-2xl font-medium">{beds}</span>
             </div>
           </div>
           
@@ -131,7 +131,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
           <div className="flex flex-col">
             <span className="font-medium text-sm mb-1">Sq.Ft.</span>
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-light">{area}</span>
+              <span className="text-2xl font-medium">{area}</span>
             </div>
           </div>
         </div>
