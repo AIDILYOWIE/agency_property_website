@@ -4,7 +4,7 @@ import { SearchField } from "@/app/_components/ui/SearchField";
 import { Select } from "@/app/_components/ui/Select";
 import { PropertyList } from "@/app/portfolio/_components/PropertyList";
 
-const properties = [
+const propertiesData = [
     {
         title: "Luxury Private Villa",
         location: "Uluwatu, Bali",
@@ -66,7 +66,7 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
-        title: "Minimalist Townhouse",
+        title: "Minimalist Townhouse 2",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
         beds: "3 Kamar",
@@ -76,7 +76,7 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
-        title: "Minimalist Townhouse",
+        title: "Minimalist Townhouse 3",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
         beds: "3 Kamar",
@@ -86,7 +86,7 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
-        title: "Minimalist Townhouse",
+        title: "Minimalist Townhouse 4",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
         beds: "3 Kamar",
@@ -96,7 +96,7 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
-        title: "Minimalist Townhouse",
+        title: "Minimalist Townhouse 5",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
         beds: "3 Kamar",
@@ -106,7 +106,7 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
-        title: "Minimalist Townhouse",
+        title: "Minimalist Townhouse 6",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
         beds: "3 Kamar",
@@ -116,6 +116,12 @@ const properties = [
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
 ];
+
+// Dynamically generate hrefs using a slugified title
+const properties = propertiesData.map((prop) => ({
+    ...prop,
+    href: `/portfolio/${prop.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+}));
 
 export default function PortfolioPage() {
     return (
