@@ -44,7 +44,7 @@ export function Navbar() {
             Layanan
           </Link>
           <Link
-            href="/#portfolio"
+            href="/portfolio"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Portofolio

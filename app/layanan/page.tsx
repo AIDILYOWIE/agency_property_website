@@ -1,13 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
-import { Navbar } from "@/components/layout/Navbar";
-import { Hero } from "@/components/sections/Hero";
-import { HowWeWork } from "@/components/sections/HowWeWork";
+import { Navbar } from "@/app/_components/layout/Navbar";
+import { Hero } from "@/app/_components/sections/Hero";
+import { HowWeWork } from "@/app/_components/sections/HowWeWork";
 import { BsLightning, BsCamera, BsTag } from "react-icons/bs";
-import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { CallToAction } from "@/components/sections/CallToAction";
+import { ScrollShowcase } from "@/app/_components/sections/ScrollShowcase";
+import { WhyChooseUs } from "@/app/_components/sections/WhyChooseUs";
+import { Testimonials } from "@/app/_components/sections/Testimonials";
+import { CallToAction } from "@/app/_components/sections/CallToAction";
 
 export const metadata: Metadata = {
   title: "Layanan Kami | Agency Property",
@@ -30,7 +30,7 @@ const problemItems = [
     title: "Tenggelam di Marketplace? ",
     description:
       "Bersaing dengan ribuan listing properti murah tanpa diferensiasi.",
-    icon: <BsTag /> ,
+    icon: <BsTag />,
   },
 ];
 
@@ -52,19 +52,24 @@ export default function LayananPage() {
         />
 
         {/* Problem & Agitation */}
-          <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
+        <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
       </div>
 
       {/* Solution */}
       <ScrollShowcase label="THE SOLUTIONS" />
 
       <div className="flex flex-col px-[68px]">
-          {/* Trust social proof */}
-          <Testimonials/>
+        {/* Trust social proof */}
+        <Testimonials />
       </div>
 
       {/* CTA */}
-          <CallToAction  />
+      <CallToAction title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
+        [
+          { label: 'Mulai Kolaboras', variant: "primary", href: "/contact" },
+          { label: 'Konsultasi Sekarang', variant: "outline", href: "/contact" },
+        ]
+      } />
     </div>
   );
 }
