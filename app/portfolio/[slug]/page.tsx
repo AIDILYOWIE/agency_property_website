@@ -136,7 +136,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                 },
                 {
                   icon: (
-                    <BiWifi size={28} className="!text-on-surface-variant " />
+                    <BiWifi size={28} className="text-on-surface-variant! " />
                   ),
                   label: "WiFi",
                 },
