@@ -27,7 +27,30 @@ export default function Home() {
         <HowWeWork />
         <StatsBar />
         <Testimonials />
-        <Faq />
+        <Faq
+          faqs={[
+            {
+              question: "How To See Property?",
+              answer:
+                "You can easily schedule a property viewing by contacting our agent or clicking the 'Schedule Visit' button on the property details page. We will arrange a convenient time for you.",
+            },
+            {
+              question: "What are the payment options?",
+              answer:
+                "We accept various payment methods including bank transfers, credit cards, and specialized mortgage financing options.",
+            },
+            {
+              question: "Are there any hidden fees?",
+              answer:
+                "No, we believe in full transparency. All costs, including taxes and administrative fees, will be clearly outlined before you make any commitment.",
+            },
+            {
+              question: "How long does the buying process take?",
+              answer:
+                "Typically, the property buying process takes between 30 to 45 days from signing the initial agreement to final handover, depending on the payment method.",
+            },
+          ]}
+        />
       </div>
       <CallToAction />
     </>

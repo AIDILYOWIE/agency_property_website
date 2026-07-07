@@ -2,7 +2,14 @@ import React from "react";
 import { TestimoniCard } from "../ui/TestimoniCard";
 import { FaqCard } from "../ui/FaqCard";
 
-export function Faq() {
+interface FaqProps {
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+export function Faq({ faqs }: FaqProps) {
   // Mock data for testimonials
   const testimonials = [
     {
@@ -23,6 +30,7 @@ export function Faq() {
     },
   ];
 
+
   return (
     <section className="w-full py-section overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
@@ -40,10 +48,9 @@ export function Faq() {
         <div 
           className="flex flex-col gap-4 justify-center items-center"
         >
-            <FaqCard />
-            <FaqCard />
-            <FaqCard />
-            <FaqCard />
+          {faqs.map((faq, index) => (
+            <FaqCard key={index} question={faq.question} answer={faq.answer} />
+          ))}
         </div>
       </div>
     </section>
