@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "@/app/_components/layout/Navbar";
 import { DetailProperty } from "@/app/_components/layout/DetailProperty";
 import { ExpandableText } from "@/app/_components/ui/ExpandableText";
+import { BackButton } from "@/app/_components/ui/BackButton";
 import { BiFridge, BiWifi, BiTv } from "react-icons/bi";
 import { FiAirplay } from "react-icons/fi";
 import { FaSwimmingPool } from "react-icons/fa";
@@ -54,6 +55,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
       <Navbar />
 
       <main className="flex-grow py-section px-[68px]">
+        {/* Back Navigation */}
+        <BackButton className="mb-6" />
+
         {/* Detail Property Component (Gallery & Specs) */}
         <DetailProperty
           images={mockPropertyData.images}
@@ -132,7 +136,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                 },
                 {
                   icon: (
-                    <BiWifi size={28} className="!text-on-surface-variant " />
+                    <BiWifi size={28} className="text-on-surface-variant! " />
                   ),
                   label: "WiFi",
                 },

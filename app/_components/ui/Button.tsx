@@ -14,11 +14,11 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "cursor-pointer inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px] active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none";
+    "cursor-pointer inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 ease-in-out disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
     primary: "bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container",
-    secondary: "bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary",
+    secondary: " text-on-surface-variant bg-outline-variant/30 hover:bg-outline-variant/15",
     outline: "border-2 border-primary text-primary hover:bg-primary hover:text-on-primary",
   };
 

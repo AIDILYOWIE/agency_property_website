@@ -23,11 +23,10 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className={`flex flex-col relative rounded-xl p-8 transition-all duration-300 ${
-        highlight
+      className={`flex flex-col relative rounded-xl p-8 transition-all duration-300 ${highlight
           ? "bg-white/40 border-1 border-on-background md:scale-[1.02] z-10"
           : "bg-white/40"
-      }`}
+        }`}
     >
       {/* Highlight Badge */}
       {highlight && badge && (

@@ -4,14 +4,11 @@ import { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 
 interface FaqCardProps {
-    question?: string;
-    answer?: string;
+    question: string;
+    answer: string;
 }
 
-export function FaqCard({ 
-    question = "How To See Property?", 
-    answer = "You can easily schedule a property viewing by contacting our agent or clicking the 'Schedule Visit' button on the property details page. We will arrange a convenient time for you." 
-}: FaqCardProps) {
+export function FaqCard({ question, answer }: FaqCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (

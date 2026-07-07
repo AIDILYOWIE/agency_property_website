@@ -2,6 +2,7 @@ import { Navbar } from "@/app/_components/layout/Navbar";
 import { Hero } from "@/app/_components/sections/Hero";
 import { SearchField } from "@/app/_components/ui/SearchField";
 import { Select } from "@/app/_components/ui/Select";
+import { PropertyFilterPopover } from "@/app/_components/ui/PropertyFilterPopover";
 import { PropertyList } from "@/app/portfolio/_components/PropertyList";
 
 const propertiesData = [
@@ -139,12 +140,13 @@ export default function PortfolioPage() {
                 <section className="w-full py-section" >
                     {/* Search and filter property */}
                     <div className="w-[60%] flex gap-2">
+
+                            <PropertyFilterPopover />
                         <SearchField placeholder="Cari property..." />
 
                         {/* filter properti*/}
-                        <div className="w-[80%] flex gap-2" >
-                            <Select options={[{ value: "", label: "Kategori" }]} />
-                            <Select options={[{ value: "", label: "Harga" }]} />
+                        <div className="w-[40%] flex gap-2" >
+                            <Select placeholder="Kategori..." options={[{ value: "", label: "Kategori" }]} />
                         </div>
                     </div>
 

@@ -50,7 +50,7 @@ export function Navbar() {
             Portofolio
           </Link>
           <Link
-            href="/#harga"
+            href="/pricing"
             className="text-on-background font-medium hover:text-primary transition-colors"
           >
             Harga
