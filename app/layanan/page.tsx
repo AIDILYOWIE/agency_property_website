@@ -53,10 +53,10 @@ export default function LayananPage() {
 
         {/* Problem & Agitation */}
         <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
+
+        <WhyChooseUs label="Layanan" title="Layanan Kami" />            
       </div>
 
-      {/* Solution */}
-      <ScrollShowcase label="THE SOLUTIONS" />
 
       <div className="flex flex-col px-[68px]">
         {/* Trust social proof */}
@@ -64,7 +64,7 @@ export default function LayananPage() {
       </div>
 
       {/* CTA */}
-      <CallToAction title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
+      <CallToAction variant="center" title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
         [
           { label: 'Mulai Kolaboras', variant: "primary", href: "/contact" },
           { label: 'Konsultasi Sekarang', variant: "outline", href: "/contact" },
