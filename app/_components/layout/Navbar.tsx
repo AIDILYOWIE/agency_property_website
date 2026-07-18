@@ -116,7 +116,7 @@ export function Navbar() {
 
       {/* ── Slide-in Drawer ─────────────────────────────────────────── */}
       <aside
-        className={`fixed top-20 right-0 z-40 h-[calc(100vh-5rem)] w-[80%] max-w-sm bg-background border-l border-outline-variant/30 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-20 bottom-0 right-0 z-40 w-[80%] max-w-sm bg-background border-l border-outline-variant/30 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Mobile navigation menu"
@@ -144,10 +144,13 @@ export function Navbar() {
 
         {/* Drawer Footer CTA */}
         <div
-          className={`p-6 border-t border-outline-variant/30 transition-all duration-300 shrink-0 ${
+          className={`p-6 transition-all duration-300 shrink-0 ${
             isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: isOpen ? "350ms" : "0ms" }}
+          style={{ 
+            transitionDelay: isOpen ? "350ms" : "0ms",
+            paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))"
+          }}
         >
           <Button
             href="/pricing#partnership-model"
