@@ -15,6 +15,8 @@ export interface ShowcaseItemData {
   points: string[];
   /** CTA button text */
   cta: string;
+  /** Optional CTA link href */
+  ctaHref?: string;
   /** Optional suitability / category text (e.g., "Vila · Premium Houses") */
   suitable?: string;
   /** Image path for the sticky panel (desktop) and inline display (mobile) */
@@ -44,8 +46,8 @@ export function ScrollShowcaseItem({
 }: ScrollShowcaseItemProps) {
   const textColor = isDark ? "text-white" : "text-on-background";
   const subtitleColor = isDark ? "text-white/70" : "text-on-surface-variant";
-  const pointColor = isDark ? "text-white/90" : "text-on-surface-variant";
-  const bulletColor = isDark ? "bg-white/40" : "bg-primary/30";
+  const pointColor = "text-on-surface-variant";
+  const bulletColor = "bg-on-surface-variant";
   const borderColor = isDark
     ? "border-white/20"
     : "border-outline-variant/40";
@@ -91,9 +93,7 @@ export function ScrollShowcaseItem({
         {/* Points Label */}
         {data.pointsLabel && (
           <p
-            className={`text-sm font-semibold uppercase tracking-wider mb-3 ${
-              isDark ? "text-white/60" : "text-secondary"
-            }`}
+            className={`text-sm font-semibold uppercase tracking-wider mb-3 text-on-surface-variant`}
           >
             {data.pointsLabel}
           </p>
@@ -102,7 +102,7 @@ export function ScrollShowcaseItem({
         {/* Points List */}
         <ul className="space-y-3 mb-8">
           {data.points.map((point, i) => (
-            <li key={i} className={`flex items-start gap-3 ${pointColor}`}>
+            <li key={i} className={`flex items-start gap-3`}>
               <span
                 className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${bulletColor}`}
               />
@@ -121,6 +121,9 @@ export function ScrollShowcaseItem({
               ? "bg-white text-primary hover:bg-white/90 hover:text-primary-container"
               : ""
           }
+          {...(data.ctaHref
+            ? { href: data.ctaHref, target: "_blank", rel: "noopener noreferrer" }
+            : {})}
         >
           {data.cta}
         </Button>

@@ -35,30 +35,49 @@ const problemItems = [
 ];
 
 export default function LayananPage() {
+  const WHATSAPP_MSG_CONSULT = `Hello Chris Property Signature Team,
+
+I would like to schedule an Exclusive Consultation regarding your property services.
+
+Focus of discussion needed:
+
+Name: [Insert your name]
+
+Consultation Topic: [Property Marketing / Property Search / Investment]
+
+Brief Details: [Briefly describe your specific needs]
+
+When are you available for a discussion?`;
+
+  const createWaLink = (msg: string) =>
+    `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex flex-col px-[68px]">
+      <div className="flex flex-col px-page">
         <Hero
           headline={
             <>
-              Properti Premium Anda Tak Seharusnya <span className="text-primary">Tenggelam</span>
+              Properti Premium Anda Tak Seharusnya Tenggelam
             </>
           }
           description="Kami membantu pemilik properti dan developer di Bali memposisikan aset mereka dengan standar tertinggi. Bukan sekadar mass-posting, melainkan kurasi eksklusif."
           primaryButtonText="Konsultasi Sekarang"
+          primaryButtonHref={createWaLink(WHATSAPP_MSG_CONSULT)}
           secondaryButtonText="Layanan Kami"
+          secondaryButtonHref="#layanan-section"
         // We can reuse the same image or leave it blank to show without image, but we'll reuse the default for now
         />
 
         {/* Problem & Agitation */}
         <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
 
-        <WhyChooseUs label="Layanan" title="Layanan Kami" />            
+        <WhyChooseUs id="layanan-section" label="Layanan" title="Layanan Kami" />            
       </div>
 
 
-      <div className="flex flex-col px-[68px]">
+      <div className="flex flex-col px-page">
         {/* Trust social proof */}
         <Testimonials />
       </div>
@@ -66,8 +85,8 @@ export default function LayananPage() {
       {/* CTA */}
       <CallToAction variant="center" title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
         [
-          { label: 'Mulai Kolaboras', variant: "primary", href: "/contact" },
-          { label: 'Konsultasi Sekarang', variant: "outline", href: "/contact" },
+          { label: 'Mulai Kolaborasi', variant: "primary", href: "/pricing#partnership-model" },
+          { label: 'Konsultasi Sekarang', variant: "outlineWhite", href: createWaLink(WHATSAPP_MSG_CONSULT) },
         ]
       } />
     </div>

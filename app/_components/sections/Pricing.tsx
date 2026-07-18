@@ -3,6 +3,42 @@ import { Button } from "../ui/Button";
 import { FiInfo } from "react-icons/fi";
 import { PricingCard } from "../ui/PricingCard";
 
+const PKG_1_SLOT_MSG = `Halo Tim Chris Property Signature,
+
+Saya tertarik untuk membeli paket *Open Slot (1 Slot - IDR 499.000)* untuk mempromosikan properti saya.
+
+Berikut data singkat properti saya:
+- Nama: [Isi nama Anda]
+- Tipe Aset: [Villa / Tanah / Rumah]
+- Lokasi: [Area di Bali]
+
+Mohon panduan untuk proses pembayaran dan aktivasi slot ini.`;
+
+const PKG_2_SLOT_MSG = `Halo Tim Chris Property Signature,
+
+Saya tertarik untuk mengambil paket *Open Slot (2 Slot - IDR 799.000)* agar jangkauan promosi properti saya lebih luas.
+
+Berikut data singkat properti saya:
+- Nama: [Isi nama Anda]
+- Tipe Aset: [Villa / Tanah / Rumah]
+- Lokasi: [Area di Bali]
+
+Mohon panduan untuk proses pembayaran dan aktivasi slot ini.`;
+
+const PKG_3_SLOT_MSG = `Halo Tim Chris Property Signature,
+
+Saya ingin mengambil paket *Open Slot (3 Slot - IDR 999.000)* yang sudah termasuk *FREE Property Visit & Content Creation*.
+
+Berikut data singkat properti saya:
+- Nama: [Isi nama Anda]
+- Tipe Aset: [Villa / Tanah / Rumah]
+- Lokasi: [Area di Bali]
+
+Kapan tim bisa menjadwalkan kunjungan (visit) ke properti saya?`;
+
+const createWaLink = (msg: string) =>
+  `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
 export function Pricing() {
   const plans = [
     {
@@ -15,6 +51,7 @@ export function Pricing() {
         "Social",
       ],
       buttonText: "Pilih",
+      buttonHref: createWaLink(PKG_1_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
@@ -28,6 +65,7 @@ export function Pricing() {
         "Social",
       ],
       buttonText: "Pilih",
+      buttonHref: createWaLink(PKG_2_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
@@ -45,6 +83,7 @@ export function Pricing() {
         "Creator",
       ],
       buttonText: "PILIH",
+      buttonHref: createWaLink(PKG_3_SLOT_MSG),
       buttonVariant: "primary" as const,
       highlight: true,
     },
@@ -71,6 +110,7 @@ export function Pricing() {
               price={plan.price}
               features={plan.features}
               buttonText={plan.buttonText}
+              buttonHref={plan.buttonHref}
               buttonVariant={plan.buttonVariant}
               highlight={plan.highlight}
               badge={plan.badge}

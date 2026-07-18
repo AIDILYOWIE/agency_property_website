@@ -7,7 +7,8 @@ export interface PricingCardProps {
   price: string;
   features: string[];
   buttonText: string;
-  buttonVariant?: "primary" | "secondary" | "outline";
+  buttonHref?: string;
+  buttonVariant?: "primary" | "secondary" | "outline" | "outlineWhite";
   highlight?: boolean;
   badge?: string;
 }
@@ -17,6 +18,7 @@ export function PricingCard({
   price,
   features,
   buttonText,
+  buttonHref,
   buttonVariant = "outline",
   highlight = false,
   badge,
@@ -24,8 +26,8 @@ export function PricingCard({
   return (
     <div
       className={`flex flex-col relative rounded-xl p-8 transition-all duration-300 ${highlight
-          ? "bg-white/40 border-1 border-on-background md:scale-[1.02] z-10"
-          : "bg-white/40"
+          ? "bg-white border-1 border-on-background md:scale-[1.02] z-10"
+          : "bg-white"
         }`}
     >
       {/* Highlight Badge */}
@@ -66,6 +68,9 @@ export function PricingCard({
         <Button
           variant="primary"
           className="w-full justify-center font-bold tracking-wider py-3"
+          {...(buttonHref
+            ? { href: buttonHref, target: "_blank", rel: "noopener noreferrer" }
+            : {})}
         >
           {buttonText}
         </Button>

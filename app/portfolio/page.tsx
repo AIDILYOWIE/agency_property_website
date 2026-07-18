@@ -128,10 +128,10 @@ export default function PortfolioPage() {
     return (
         <div className="flex flex-col min-h-screen" >
             <Navbar />
-            <div className="flex flex-col px-[68px]">
+            <div className="flex flex-col px-page">
                 <Hero headline={
                     <>
-                        Not Every Property Makes <span className="text-primary">Our List</span>
+                        Not Every Property Makes Our List
                     </>
                 } description="Kami menyeleksi ratusan properti di Bali, namun hanya yang memenuhi standar premium yang kami hadirkan di sini. Jelajahi koleksi aset eksklusif yang dikurasi khusus untuk hunian dan investasi kelas atas Anda."
                     isCtaButton={false}

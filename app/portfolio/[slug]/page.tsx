@@ -3,9 +3,10 @@ import { Navbar } from "@/app/_components/layout/Navbar";
 import { DetailProperty } from "@/app/_components/layout/DetailProperty";
 import { ExpandableText } from "@/app/_components/ui/ExpandableText";
 import { BackButton } from "@/app/_components/ui/BackButton";
+import { Button } from "@/app/_components/ui/Button";
 import { BiFridge, BiWifi, BiTv } from "react-icons/bi";
 import { FiAirplay } from "react-icons/fi";
-import { FaSwimmingPool } from "react-icons/fa";
+import { FaSwimmingPool, FaWhatsapp } from "react-icons/fa";
 import { WiDayWindy } from "react-icons/wi";
 
 interface PageProps {
@@ -33,6 +34,20 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const WHATSAPP_MSG = `Hello Chris Property Signature Team,
+
+I am interested in a property listed on your website.
+
+Property Details:
+- Property Name/ID: ${title}
+- My Name: [Your name]
+- Request: [Schedule a Viewing / Request Full Dossier / Pricing Inquiry]
+
+Please provide me with more information regarding this property.`;
+
+  const createWaLink = (msg: string) =>
+    `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
   const mockPropertyData = {
     title: title,
     address: "Nusa Dua, Bandung",
@@ -54,7 +69,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow py-section px-[68px]">
+      <main className="flex-grow py-section px-page">
         {/* Back Navigation */}
         <BackButton className="mb-6" />
 
@@ -221,6 +236,20 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+
+      {/* Floating Action Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <Button
+          href={createWaLink(WHATSAPP_MSG)}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          className="shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+        >
+          <FaWhatsapp size={22} />
+          Inquire Property
+        </Button>
+      </div>
     </div>
   );
 }

@@ -49,18 +49,20 @@ const defaultFeatures: WhyChooseUsFeature[] = [
 ];
 
 interface WhyChooseUsProps {
+  id?: string;
   label?: string;
   title?: string;
   items?: WhyChooseUsFeature[];
 }
 
 export function WhyChooseUs({
+  id,
   label = "Keunggulan Kami",
   title = "Why Chris Property Signature",
   items = defaultFeatures,
 }: WhyChooseUsProps) {
   return (
-    <section className="w-full py-section">
+    <section id={id} className="w-full py-section">
       <div className="">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">

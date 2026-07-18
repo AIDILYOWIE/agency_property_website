@@ -52,7 +52,7 @@ When are you available for a discussion?`;
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex flex-col px-[68px]">
+      <div className="flex flex-col px-page">
         <Hero
           headline={<>Good properties don't need to shout.</>}
           description="Kami tidak mengikuti cara lama. Kami hadir untuk mendefinisikan ulang bagaimana properti premium di Bali diposisikan, dikurasi, dan ditransaksikan ke pasar yang tepat."

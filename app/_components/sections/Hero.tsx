@@ -8,6 +8,8 @@ interface HeroProps {
   isCtaButton?: boolean;
   primaryButtonText?: string;
   secondaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonHref?: string;
   imageSrc?: string;
   imageAlt?: string;
   floatingButtonText?: string;
@@ -17,12 +19,14 @@ export function Hero({
   headline = (
     <>
       Good Properties <br className="hidden lg:block" />
-      <span className="text-primary">Don't Need to Shout</span>
+      Don't Need to Shout
     </>
   ),
   description = "Premium property promotion untuk Vila, Rumah Mewah, Tanah Strategis & Aset Komersial di Bali. Dua model kolaborasi. Satu standar kualitas.",
   primaryButtonText = "Mulai Kolaborasi",
   secondaryButtonText = "lihat portofolio",
+  primaryButtonHref = "/",
+  secondaryButtonHref = "/portfolio",
   isCtaButton = true,
   imageSrc = "/hero.png",
   imageAlt = "Modern Architectural House",
@@ -46,8 +50,8 @@ export function Hero({
           </p>
           {(isCtaButton ? (primaryButtonText || secondaryButtonText) && (
             <div className="flex flex-wrap items-center gap-4">
-              {primaryButtonText && <Button variant="primary">{primaryButtonText}</Button>}
-              {secondaryButtonText && <Button variant="outline">{secondaryButtonText}</Button>}
+              {primaryButtonText && <Button href={primaryButtonHref} variant="primary">{primaryButtonText}</Button>}
+              {secondaryButtonText && <Button href={secondaryButtonHref} variant="outline">{secondaryButtonText}</Button>}
             </div>
           ) : <></> )}
           {}

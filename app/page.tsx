@@ -10,18 +10,30 @@ import { StatsBar } from "@/app/_components/sections/StatsBar";
 import { Testimonials } from "@/app/_components/sections/Testimonials";
 import { Faq } from "@/app/_components/sections/Faq";
 import { CallToAction } from "@/app/_components/sections/CallToAction";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function Home() {
+  const WHATSAPP_MSG = `Hello Chris Property Signature Team,
+
+I visited your website and would like to discuss further.
+
+I am a: [Property Owner / Investor / Buyer / Agent] My inquiry: [e.g., Looking to list my property / Searching for a villa in Canggu]
+
+Please let me know when your team is available to connect.`;
+
+  const createWaLink = (msg: string) =>
+    `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
   return (
     <>
       <Navbar />
-      <div className="flex flex-col px-[68px] ">
-        <Hero />
+      <div className="flex flex-col px-page">
+        <Hero primaryButtonHref="/layanan" secondaryButtonHref="/portfolio" />
         <PropertyCategories />
         <WhyChooseUs />
       </div>
       <ScrollShowcase />
-      <div className="flex flex-col px-[68px] ">
+      <div className="flex flex-col px-page">
         <Pricing />
         <Portofolio />
         <HowWeWork />
@@ -52,7 +64,23 @@ export default function Home() {
           ]}
         />
       </div>
-      <CallToAction />
+      <CallToAction 
+        buttons={[
+          {
+            label: "WhatsApp",
+            href: createWaLink(WHATSAPP_MSG),
+            icon: <FaWhatsapp size={20} />,
+            variant: "primary",
+          },
+          {
+            label: "Instagram",
+            href: "https://instagram.com/chrisproperty",
+            icon: <FaInstagram size={20} />,
+            variant: "outlineWhite",
+          },
+        ]}
+        variant="default" 
+      />
     </>
   );
 }

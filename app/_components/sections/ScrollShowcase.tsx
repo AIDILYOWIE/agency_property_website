@@ -9,6 +9,33 @@ import {
 
 /* ─── Content Data ─────────────────────────────────────────────── */
 
+const KOLABORASI_MSG = `Halo Tim Chris Property Signature,
+
+Saya tertarik mengajukan properti saya untuk Selective Promotion Program (Commission-based).
+
+Berikut informasi awal properti saya:
+
+Nama: [Isi nama Anda]
+Tipe Aset: [Villa / Tanah / Komersial]
+Lokasi: [Area di Bali]
+Estimasi Harga: [Misal: Rp 5 Miliar]
+Kapan waktu yang tepat untuk kita berdiskusi lebih lanjut?`;
+
+const SECURE_SLOT_MSG = `Halo Tim Chris Property Signature,
+
+Saya ingin mengamankan Open Slot Promotion (Tanpa Komisi) agar properti saya mendapatkan eksposur maksimal.
+
+Berikut detailnya:
+
+Nama: [Isi nama Anda]
+Saya adalah: [Pemilik Langsung / Agen]
+Paket Pilihan: [1 Slot / 2 Slot / 3 Slot + Content]
+Lokasi Properti: [Area di Bali]
+Mohon info ketersediaan slot dan langkah selanjutnya.`;
+
+const createWaLink = (msg: string) =>
+  `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
 const SHOWCASE_ITEMS: ShowcaseItemData[] = [
   {
     badge: "EXCLUSIVE",
@@ -22,6 +49,7 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
       '"Not every property makes the list"',
     ],
     cta: "Kolaborasi",
+    ctaHref: createWaLink(KOLABORASI_MSG),
     suitable: "Vila · Premium Houses · Strategic Land · Commercial",
     imageSrc: "/showcase/showcase-1.png",
     imageAlt: "Luxury Balinese villa with infinity pool — curated property listing",
@@ -38,9 +66,10 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
       "Social media & internal distribution",
     ],
     cta: "Secure Slot",
+    ctaHref: createWaLink(SECURE_SLOT_MSG),
     imageSrc: "/showcase/showcase-2.png",
     imageAlt: "Multi-platform property promotion across OLX, Rumah123, and social media",
-    bgColor: "#002a81",
+    bgColor: "transparent",
   },
 ];
 
@@ -95,7 +124,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
     return () => observer.disconnect();
   }, []);
 
-  const isDark = (index: number) => index % 2 !== 0;
+  const isDark = (index: number) => false;
 
   return (
     <section
@@ -117,7 +146,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
       ))}
 
       {/* ── Section Content ────────────────────────────────────── */}
-      <div className="relative z-10 w-full py-section px-[68px] ">
+      <div className="relative z-10 w-full py-section px-page">
         {/* Section Header */}
         {/* <div className="pt-section pb-8 lg:pb-12">
           <span

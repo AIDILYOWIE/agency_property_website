@@ -81,9 +81,12 @@ export function Portofolio() {
 
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {properties.map((property, index) => (
-            <PortoCard
-              key={index}
+          {properties.map((property, index) => {
+            const slug = property.title.toLowerCase().replace(/\s+/g, '-');
+            return (
+              <PortoCard
+                href={`/portfolio/${slug}`}
+                key={index}
               title={property.title}
               location={property.location}
               category={property.category}
@@ -93,11 +96,12 @@ export function Portofolio() {
               price={property.price}
               imageSrc={property.imageSrc}
             />
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button variant="primary" className="flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-wide">
+          <Button href="/portfolio" variant="primary" className="flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-wide">
             Explore More <FiArrowRight className="w-5 h-5" />
           </Button>
         </div>
