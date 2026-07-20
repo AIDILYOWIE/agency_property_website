@@ -102,7 +102,7 @@ export function Pricing() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 ">
           {plans.map((plan, index) => (
             <PricingCard
               key={index}

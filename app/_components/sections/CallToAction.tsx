@@ -13,7 +13,7 @@ export interface CtaButtonProps {
 const DEFAULT_TITLE = "Let Your Property Speak at the Right Level";
 
 const DEFAULT_DESCRIPTION =
-  "Setiap bulan properti premium Anda dibiarkan kosong, Anda sedang menelan kerugian. Berhenti membuang waktu meladeni ratusan pesan dari calon pembeli yang tidak serius, atau strategi promosi usang yang mengharuskan Anda banting harga. Properti Anda tidak butuh diskon—ia hanya butuh dilihat oleh mata yang tepat. Serahkan kerumitannya pada kami, dan mari buat properti Anda bernilai sebagaimana mestinya.";
+  "Serahkan kerumitannya pada kami, dan mari buat properti Anda bernilai sebagaimana mestinya.";
 
 const defaultButtons: CtaButtonProps[] = [
   {
@@ -91,20 +91,37 @@ export function CallToAction({
 
       {/* Content */}
       {variant === "default" ? (
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 px-page py-section">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16 px-page py-section">
           {/* Left — Title */}
           <div className="flex items-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
               {title}
             </h2>
           </div>
 
           {/* Right — Description & Actions */}
-          <div className="flex flex-col justify-center gap-8">
-            <p className="text-base md:text-lg text-white/80 leading-relaxed">
+          <div className="flex flex-col justify-center gap-6 md:gap-6">
+            <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">
               {description}
             </p>
-            {renderButtons("justify-start")}
+            <div className="flex flex-row flex-wrap items-center gap-4">
+              {buttons?.map((btn, index) => {
+                const isExternal = btn.href.startsWith("http");
+                return (
+                  <Button
+                    key={index}
+                    href={btn.href}
+                    variant={btn.variant}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="inline-block"
+                  >
+                    {btn.icon && btn.icon}
+                    {btn.label}
+                  </Button>
+                );
+              })}
+            </div>
           </div>
         </div>
       ) : (

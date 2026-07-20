@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BiBath, BiBed, BiLocationPlus } from "react-icons/bi";
+import { BiBath, BiBed, BiLocationPlus, BiArea } from "react-icons/bi";
 
 interface PortoCardProps {
     title: string;
@@ -37,30 +37,30 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
 
             {/* Content Section */}
             <div className="py-3 flex flex-col gap-2 flex-grow">
-                <h3 className="text-2xl font-bold text-on-background">
+                <h3 className="text-xl md:text-2xl font-bold text-on-background line-clamp-2">
                     {title}
                 </h3>
                 <div className="flex flex-col w-full gap-2" >
-                    <div className="flex h-max gap-2 w-full items-center" >
-                        <BiLocationPlus size={18} className="!text-on-background" />
-                        <p className="text-on-background text-body-md font-medium" >{location}</p>
+                    <div className="flex h-max gap-1.5 w-full items-center" >
+                        <BiLocationPlus size={18} className="!text-on-background shrink-0" />
+                        <p className="text-on-background text-sm md:text-base font-medium truncate" >{location}</p>
                     </div>
-                    <div className="flex w-full gap-4" >
-                        <div className="flex h-max gap-2 items-center" >
-                            <BiBed size={18} className="!text-on-background" />
-                            <p className="text-on-background text-body-md font-medium" >{beds}</p>
+                    <div className="flex flex-wrap w-full gap-x-3 gap-y-2 mt-1" >
+                        <div className="flex h-max gap-1.5 items-center" >
+                            <BiBed size={18} className="!text-on-background shrink-0" />
+                            <p className="text-on-background text-sm font-medium whitespace-nowrap" >{beds}</p>
                         </div>
-                        <div className="flex h-max gap-2 items-center" >
-                            <BiBath size={18} className="!text-on-background" />
-                            <p className="text-on-background text-body-md font-medium" >{baths}</p>
+                        <div className="flex h-max gap-1.5 items-center" >
+                            <BiBath size={18} className="!text-on-background shrink-0" />
+                            <p className="text-on-background text-sm font-medium whitespace-nowrap" >{baths}</p>
                         </div>
-                        <div className="flex h-max gap-2 items-center" >
-                            <BiBath size={18} className="!text-on-background" />
-                            <p className="text-on-background text-body-md font-medium" >{area}</p>
+                        <div className="flex h-max gap-1.5 items-center" >
+                            <BiArea size={18} className="!text-on-background shrink-0" />
+                            <p className="text-on-background text-sm font-medium whitespace-nowrap" >{area}</p>
                         </div>
                     </div>
                 </div>
-                <h3 className="text-2xl font-bold text-on-background ">
+                <h3 className="text-xl md:text-2xl font-bold text-on-background mt-2">
                     {price}
                 </h3>
             </div>

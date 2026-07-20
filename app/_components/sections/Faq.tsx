@@ -46,7 +46,7 @@ export function Faq({ faqs }: FaqProps) {
 
         {/* FAQ Cards */}
         <div 
-          className="flex flex-col gap-4 justify-center items-center"
+          className="flex flex-col gap-4 w-full"
         >
           {faqs.map((faq, index) => (
             <FaqCard key={index} question={faq.question} answer={faq.answer} />

@@ -80,7 +80,7 @@ export function Portofolio() {
         </div>
 
         {/* Portfolio Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {properties.map((property, index) => {
             const slug = property.title.toLowerCase().replace(/\s+/g, '-');
             return (

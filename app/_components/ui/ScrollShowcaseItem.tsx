@@ -57,12 +57,28 @@ export function ScrollShowcaseItem({
       ref={itemRef}
       data-index={index}
       className={`
-        min-h-[80vh] flex items-center
+        lg:min-h-[80vh] flex items-center
         transition-opacity duration-500 ease-out  
-        ${isActive ? "opacity-100" : "opacity-40"}
+        ${isActive ? "opacity-100" : "opacity-100 lg:opacity-40"}
       `}
     >
       <div className="w-full py-12 lg:py-16">
+        {/* Mobile Image — visible only on small screens */}
+        <div
+          className={`
+            mb-8 lg:hidden relative w-full aspect-[4/3] sm:aspect-video md:aspect-[21/9] rounded-xl overflow-hidden
+            border ${borderColor}
+          `}
+        >
+          <Image
+            src={data.imageSrc}
+            alt={data.imageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw"
+          />
+        </div>
+
         {/* Badge */}
         {data.badge && (
           <span
@@ -139,21 +155,6 @@ export function ScrollShowcaseItem({
           </p>
         )}
 
-        {/* Mobile Image — visible only on small screens */}
-        <div
-          className={`
-            mt-8 lg:hidden relative w-full aspect-[4/3] rounded-xl overflow-hidden
-            border ${borderColor}
-          `}
-        >
-          <Image
-            src={data.imageSrc}
-            alt={data.imageAlt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw"
-          />
-        </div>
       </div>
     </div>
   );

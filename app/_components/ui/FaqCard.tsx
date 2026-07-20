@@ -12,14 +12,14 @@ export function FaqCard({ question, answer }: FaqCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-none bg-white/40 w-[50%] h-max flex flex-col p-4 rounded-lg">
+        <div className="border-none bg-white/40 w-full h-max flex flex-col p-4 sm:p-5 rounded-lg">
             {/* Header row (Clickable) */}
             <div 
                 className="w-full flex items-center justify-between cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <div className="w-full">
-                    <h2 className="text-lg font-medium text-on-background tracking-[.5]">
+                    <h2 className="text-base sm:text-lg font-medium text-on-background tracking-[.5] leading-snug pr-3">
                         {question}
                     </h2>
                 </div>
@@ -40,7 +40,7 @@ export function FaqCard({ question, answer }: FaqCardProps) {
             >
                 <div className="overflow-hidden">
                     <div className="pt-4">
-                        <p className="text-on-surface-variant text-base leading-relaxed">
+                        <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">
                             {answer}
                         </p>
                     </div>
