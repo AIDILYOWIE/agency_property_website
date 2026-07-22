@@ -139,14 +139,19 @@ export default function PortfolioPage() {
 
                 <section className="w-full py-section" >
                     {/* Search and filter property */}
-                    <div className="w-[60%] flex gap-2">
+                    <div className="flex gap-2 w-full md:w-[70%]">
+                        <PropertyFilterPopover />
+                        <SearchField placeholder="Cari property..." className="flex-1" />
 
-                            <PropertyFilterPopover />
-                        <SearchField placeholder="Cari property..." />
-
-                        {/* filter properti*/}
-                        <div className="w-[40%] flex gap-2" >
-                            <Select placeholder="Kategori..." options={[{ value: "", label: "Kategori" }]} />
+                        {/* filter kategori — hanya tampil di tablet ke atas */}
+                        <div className="hidden md:flex w-auto shrink-0">
+                            <Select placeholder="Kategori..." options={[
+                                { value: "", label: "Kategori" },
+                                { value: "villas", label: "Villas" },
+                                { value: "premium-houses", label: "Premium Houses" },
+                                { value: "strategic-land", label: "Strategic Land" },
+                                { value: "commercial-asset", label: "Commercial Asset" },
+                            ]} />
                         </div>
                     </div>
 

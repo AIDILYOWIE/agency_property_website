@@ -27,6 +27,9 @@ export const PropertyFilterPopover = () => {
     const [minPrice, setMinPrice] = useState<string>("");
     const [maxPrice, setMaxPrice] = useState<string>("");
     const [type, setType] = useState<"Semua" | "Sewa" | "Jual">("Semua");
+    const [category, setCategory] = useState<string>("Semua");
+
+    const CATEGORIES = ["Semua", "Villas", "Premium Houses", "Strategic Land", "Commercial Asset"];
 
     const inputStyles = " w-full bg-outline-variant/20 rounded-xl px-4 py-3 outline-none focus:ring-0 transition-all text-on-background placeholder:text-on-surface-variant/70";
      
@@ -56,6 +59,26 @@ export const PropertyFilterPopover = () => {
                     
                     <div className="p-6 flex flex-col gap-6 max-h-[55vh] overflow-y-auto custom-scrollbar">
                         
+                        {/* 0. Kategori Properti */}
+                        <div className="space-y-2.5 md:hidden">
+                            <label className="text-sm font-semibold text-on-background">Kategori Properti</label>
+                            <div className="flex flex-wrap gap-2">
+                                {CATEGORIES.map((cat) => (
+                                    <button
+                                        key={cat}
+                                        onClick={() => setCategory(cat)}
+                                        className={`cursor-pointer px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
+                                            category === cat
+                                                ? 'bg-primary text-on-primary border-primary'
+                                                : 'bg-transparent text-on-surface-variant border-outline-variant/40 hover:border-primary/50 hover:text-on-background'
+                                        }`}
+                                    >
+                                        {cat}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* 1. Jumlah Kamar */}
                         <div className="space-y-2.5">
                             <label className="text-sm font-semibold text-on-background ">Jumlah Kamar</label>
@@ -173,6 +196,7 @@ export const PropertyFilterPopover = () => {
                                     setMinPrice("");
                                     setMaxPrice("");
                                     setType("Semua");
+                                    setCategory("Semua");
                                 }}
                             >
                                 Reset

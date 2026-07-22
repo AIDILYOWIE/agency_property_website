@@ -15,7 +15,7 @@ export function PropertyCategories() {
     },
     {
       title: "Strategic Land",
-      description: "Fasilitas eksklusif di pusat kota dengan akses mudah ke berbagai pusat bisnis dan hiburan",
+      description: "Lahan premium di lokasi eksklusif, dikurasi khusus untuk peluang investasi dengan ROI tinggi",
       imageSrc: "/categories/strattegic_land.png",
     },
     {

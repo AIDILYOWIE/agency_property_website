@@ -31,45 +31,46 @@ const highlights: FounderHighlight[] = [
 
 export function MeetFounder() {
   return (
-    <div className="flex justify-center gap-[36px] items-center py-section">
-      {/* Left Column — Founder Photo */}
-
-        <div className="relative w-[400px] h-[500px] rounded-2xl overflow-hidden justify-self-end">
-          <Image
-            src="/profile/profile_chris.jpg"
-            alt="Albert Christofer (Chris) — Founder Chris Property Signature"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
+    <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-[36px] items-center py-section">
+      {/* Founder Photo — full width on mobile, fixed size on desktop */}
+      <div className="relative w-full md:w-[340px] lg:w-[400px] aspect-[3/4] md:h-[480px] lg:h-[520px] md:aspect-auto rounded-2xl overflow-hidden flex-shrink-0">
+        <Image
+          src="/profile/profile_chris_2.png"
+          alt="Albert Christofer (Chris) — Founder Chris Property Signature"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+        {/* Bottom gradient fade — menutupi potongan kaki gambar */}
+        <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#f8f8f8] via-[#f8f8f8]/60 to-transparent pointer-events-none" />
+      </div>
 
       {/* Right Column — Content */}
-        <div className="flex w-[40%]  flex-col gap-8">
-          {/* Section Label */}
-          <span className="text-label-md text-on-background uppercase tracking-wider">
-            Meet The Founder
-          </span>
+      <div className="flex w-full md:w-[50%] lg:w-[40%] flex-col gap-6 md:gap-8">
+        {/* Section Label */}
+        <span className="text-label-md text-on-background uppercase tracking-wider">
+          Meet The Founder
+        </span>
 
-          {/* Main Quote */}
-          <blockquote className="text-3xl md:text-4xl font-semibold text-on-background leading-tight tracking-tight">
-            &ldquo;Positioning matters more than noise.&rdquo;
-            <footer className="mt-3 text-base font-normal text-on-surface-variant not-italic">
-              — Chris, Founder Chris Property Signature
-            </footer>
-          </blockquote>
+        {/* Main Quote */}
+        <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold text-on-background leading-tight tracking-tight">
+          &ldquo;Positioning matters more than noise.&rdquo;
+          <footer className="mt-3 text-sm md:text-base font-normal text-on-surface-variant not-italic">
+            — Chris, Founder Chris Property Signature
+          </footer>
+        </blockquote>
 
-          {/* Description */}
-          <p className="text-base md:text-lg text-on-surface-variant leading-relaxed">
-            Albert Christofer, atau akrab disapa Chris, membangun Chris Property
-            Signature atas satu keyakinan: properti premium tidak butuh
-            kebisingan—ia butuh panggung yang tepat. Dengan komitmen pada
-            integritas pemasaran, standar seleksi aset yang tinggi, dan akses ke
-            jaringan <em>serious buyers</em> serta investor terpercaya di Bali,
-            Chris hadir sebagai mitra strategis bagi mereka yang serius menjual
-            aset kelas atas.
-          </p>
-        </div>
+        {/* Description */}
+        <p className="text-sm md:text-base lg:text-lg text-on-surface-variant leading-relaxed">
+          Albert Christofer, atau akrab disapa Chris, membangun Chris Property
+          Signature atas satu keyakinan: properti premium tidak butuh
+          kebisingan—ia butuh panggung yang tepat. Dengan komitmen pada
+          integritas pemasaran, standar seleksi aset yang tinggi, dan akses ke
+          jaringan <em>serious buyers</em> serta investor terpercaya di Bali,
+          Chris hadir sebagai mitra strategis bagi mereka yang serius menjual
+          aset kelas atas.
+        </p>
+      </div>
     </div>
   );
 }

@@ -27,8 +27,8 @@ export function CategoryCard({ title, description, imageSrc, href = "#" }: Categ
       </div>
       
       {/* Content Section */}
-      <div className="py-3 flex flex-col gap-1 flex-grow">
-        <h3 className="text-2xl font-bold text-on-background">
+      <div className="py-3 flex flex-col md:gap-1 gap-1.5 flex-grow">
+        <h3 className="text-2xl  font-bold text-on-background">
           {title}
         </h3>
         <p className="text-body-md text-on-surface-variant">

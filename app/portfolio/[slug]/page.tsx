@@ -223,7 +223,7 @@ Please provide me with more information regarding this property.`;
 
         {/* Content Section Map */}
         <div className="mt-16 w-full flex flex-col gap-6">
-          <div className="w-full h-[600px] rounded-lg overflow-hidden">
+          <div className="w-full h-[300px] md:h-[600px] rounded-lg overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4047620.6838544263!2d108.76835952270487!3d-7.815783170287758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd243bc777a7293%3A0xb131fd0c3a6af25!2sVilla%20Nusa%20Dua%20by%20Opus%20Hospitality!5e0!3m2!1sid!2sid!4v1783153812112!5m2!1sid!2sid"
               width="100%"
@@ -238,7 +238,7 @@ Please provide me with more information regarding this property.`;
       </main>
 
       {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className="fixed bottom-8 right-8 z-30">
         <Button
           href={createWaLink(WHATSAPP_MSG)}
           target="_blank"

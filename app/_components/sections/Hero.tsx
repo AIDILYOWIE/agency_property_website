@@ -33,7 +33,7 @@ export function Hero({
   floatingButtonText = "See All Listings",
 }: HeroProps) {
   return (
-    <section className="w-full py-section">
+    <section className="w-full pt-8 pb-10 md:py-section">
       {/* Top Row: Headline and Description */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
         {/* Left: Headline */}
@@ -49,7 +49,7 @@ export function Hero({
             {description}
           </p>
           {(isCtaButton ? (primaryButtonText || secondaryButtonText) && (
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-row flex-wrap items-center gap-3">
               {primaryButtonText && <Button href={primaryButtonHref} variant="primary">{primaryButtonText}</Button>}
               {secondaryButtonText && <Button href={secondaryButtonHref} variant="outline">{secondaryButtonText}</Button>}
             </div>
