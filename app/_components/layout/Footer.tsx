@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   FaFacebook, 
   FaInstagram, 
@@ -43,11 +44,13 @@ export function Footer() {
           
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block">
-              {/* Replace with actual image logo if available */}
-              <span className="font-bold text-2xl tracking-tight text-on-background">
-                Chris<span className="text-primary">Property</span>
-              </span>
+            <Link href="/" className="inline-block relative h-10 md:h-12 w-[100px] md:w-[200px]">
+              <Image
+                src="/logo.png"
+                alt="Chris Property Logo"
+                fill
+                className="object-cover object-left"
+              />
             </Link>
             <p className="text-on-surface-variant text-base leading-relaxed pr-4">
               Menghubungkan Anda dengan properti eksklusif yang layak mendapatkan perhatian yang tepat dan strategi yang presisi.
