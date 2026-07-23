@@ -59,7 +59,7 @@ When are you available for a discussion?`;
         <Hero
           headline={
             <>
-              Properti Premium Anda Tak Seharusnya Tenggelam
+              Properti Premium Seharusnya Tidak Tenggelam
             </>
           }
           description="Kami membantu pemilik properti dan developer di Bali memposisikan aset mereka dengan standar tertinggi. Bukan sekadar mass-posting, melainkan kurasi eksklusif."
@@ -83,7 +83,7 @@ When are you available for a discussion?`;
       </div>
 
       {/* CTA */}
-      <CallToAction variant="center" title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
+      <CallToAction variant="default" title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
         [
           { label: 'Mulai Kolaborasi', variant: "primary", href: "/pricing#partnership-model" },
           { label: 'Konsultasi Sekarang', variant: "outlineWhite", href: createWaLink(WHATSAPP_MSG_CONSULT) },

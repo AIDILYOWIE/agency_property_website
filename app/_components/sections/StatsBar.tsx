@@ -12,7 +12,7 @@ export function StatsBar() {
                         </span>
                     </div>
                     <div className="flex w-full justify-start lg:flex-[2]">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-on-background leading-relaxed lg:leading-[50px]">
+                        <h2 className="text-2xl md:text-3xl font-cinzel lg:text-4xl font-semibold text-on-background lg:leading-[40px]">
                             Rekam jejak kami dalam memposisikan properti premium. Angka-angka ini mencerminkan komitmen kami terhadap kualitas presentasi dan keberhasilan kolaborasi di pasar properti Bali.
                         </h2>
                     </div>

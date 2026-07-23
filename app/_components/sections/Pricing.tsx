@@ -96,7 +96,7 @@ export function Pricing() {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             Paket Promosi
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
             Harga Fleksible Sesuai Kebutuhan
           </h2>
         </div>

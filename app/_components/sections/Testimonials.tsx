@@ -30,7 +30,7 @@ export function Testimonials() {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             Testimonial
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl font-cinzel md:text-4xl font-semibold text-on-background">
             What Our Clients Says
           </h2>
         </div>

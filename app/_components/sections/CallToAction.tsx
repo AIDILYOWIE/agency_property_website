@@ -94,7 +94,7 @@ export function CallToAction({
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16 px-page py-section">
           {/* Left — Title */}
           <div className="flex items-center">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+            <h2 className="text-2xl font-cinzel md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
               {title}
             </h2>
           </div>
@@ -127,7 +127,7 @@ export function CallToAction({
       ) : (
         <div className="relative z-10 flex flex-col items-center justify-center text-center gap-8 px-page py-section max-w-4xl mx-auto">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-cinzel lg:text-5xl font-semibold text-white leading-tight tracking-tight">
             {title}
           </h2>
 

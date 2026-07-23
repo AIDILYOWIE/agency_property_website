@@ -39,7 +39,7 @@ export function Faq({ faqs }: FaqProps) {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             FAQ 
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl font-cinzel md:text-4xl font-semibold text-on-background">
             Clear Answers To Common Questions
           </h2>
         </div>

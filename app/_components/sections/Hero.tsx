@@ -38,7 +38,7 @@ export function Hero({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
         {/* Left: Headline */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-on-background leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cinzel font-extra-bold text-on-background leading-tight tracking-tight">
             {headline}
           </h1>
         </div>

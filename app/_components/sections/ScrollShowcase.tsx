@@ -180,7 +180,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             {label}
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
             Dua Model Kolaborasi
           </h2>
         </div>
