@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/app/_components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -9,6 +10,12 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
+});
+
+const cinzel = localFont({
+  src: "../public/fonts/cinzel_font/Cinzel-Bold.ttf",
+  variable: "--font-cinzel",
+  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", plusJakartaSans.variable, "font-sans", geist.variable)}>
+    <html lang="en" className={cn("h-full", "antialiased", plusJakartaSans.variable, "font-sans", geist.variable, cinzel.variable)}>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-background">
         {/* Navbar will be added here */}
         <main className="flex-grow">{children}</main>
