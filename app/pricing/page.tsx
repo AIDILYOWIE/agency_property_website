@@ -35,7 +35,7 @@ When are you available for a discussion?`;
               Positioning matters more than noice
             </>
           }
-          description="Dapatkan eksposur maksimal ke serious buyers dengan visual premium. Pilih jalur kemitraan yang paling sesuai dengan target dan nilai aset Anda di Bali."
+          description="Get maximum exposure to serious buyers with premium visuals. Choose the partnership model that best suits your target and asset value in Bali."
           isCtaButton={false}
         />
       </div>
@@ -46,19 +46,19 @@ When are you available for a discussion?`;
         <Faq
           faqs={[
             {
-              question: "Apakah ada jaminan properti pasti laku?",
+              question: "Is there a guarantee the property will sell?",
               answer:
                 "You can easily schedule a property viewing by contacting our agent or clicking the 'Schedule Visit' button on the property details page. We will arrange a convenient time for you.",
             },
             {
               question:
-                "Bagaimana proses Free Property Visit untuk paket 3 Slot? ",
+                "How does the Free Property Visit work for the 3-Slot package?",
               answer:
                 "You can easily schedule a property viewing by contacting our agent or clicking the 'Schedule Visit' button on the property details page. We will arrange a convenient time for you.",
             },
             {
               question:
-                "Apakah saya masih bisa menjual sendiri jika pakai Open Slot? ",
+                "Can I still sell independently if I use an Open Slot?",
               answer:
                 "You can easily schedule a property viewing by contacting our agent or clicking the 'Schedule Visit' button on the property details page. We will arrange a convenient time for you.",
             },
@@ -68,10 +68,10 @@ When are you available for a discussion?`;
       <CallToAction
         variant="center"
         title="Still unsure which path is right for your property?"
-        description="Diskusikan aset Anda dengan tim kami, dan kami akan merekomendasikan strategi penempatan terbaik."
+        description="Discuss your assets with our team, and we will recommend the best placement strategy."
         buttons={[
           {
-            label: "Konsultasi Sekarang",
+            label: "Consult Now",
             variant: "primary",
             href: createWaLink(WHATSAPP_MSG_CONSULT),
           },

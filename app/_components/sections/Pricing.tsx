@@ -3,38 +3,38 @@ import { Button } from "../ui/Button";
 import { FiInfo } from "react-icons/fi";
 import { PricingCard } from "../ui/PricingCard";
 
-const PKG_1_SLOT_MSG = `Halo Tim Chris Property Signature,
+const PKG_1_SLOT_MSG = `Hello Chris Property Signature Team,
 
-Saya tertarik untuk membeli paket *Open Slot (1 Slot - IDR 499.000)* untuk mempromosikan properti saya.
+I am interested in purchasing the *Open Slot (1 Slot - IDR 499,000)* package to promote my property.
 
-Berikut data singkat properti saya:
-- Nama: [Isi nama Anda]
-- Tipe Aset: [Villa / Tanah / Rumah]
-- Lokasi: [Area di Bali]
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
 
-Mohon panduan untuk proses pembayaran dan aktivasi slot ini.`;
+Please guide me through the payment and slot activation process.`;
 
-const PKG_2_SLOT_MSG = `Halo Tim Chris Property Signature,
+const PKG_2_SLOT_MSG = `Hello Chris Property Signature Team,
 
-Saya tertarik untuk mengambil paket *Open Slot (2 Slot - IDR 799.000)* agar jangkauan promosi properti saya lebih luas.
+I am interested in the *Open Slot (2 Slots - IDR 799,000)* package to extend the reach of my property promotion.
 
-Berikut data singkat properti saya:
-- Nama: [Isi nama Anda]
-- Tipe Aset: [Villa / Tanah / Rumah]
-- Lokasi: [Area di Bali]
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
 
-Mohon panduan untuk proses pembayaran dan aktivasi slot ini.`;
+Please guide me through the payment and slot activation process.`;
 
-const PKG_3_SLOT_MSG = `Halo Tim Chris Property Signature,
+const PKG_3_SLOT_MSG = `Hello Chris Property Signature Team,
 
-Saya ingin mengambil paket *Open Slot (3 Slot - IDR 999.000)* yang sudah termasuk *FREE Property Visit & Content Creation*.
+I would like to take the *Open Slot (3 Slots - IDR 999,000)* package which includes *FREE Property Visit & Content Creation*.
 
-Berikut data singkat properti saya:
-- Nama: [Isi nama Anda]
-- Tipe Aset: [Villa / Tanah / Rumah]
-- Lokasi: [Area di Bali]
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
 
-Kapan tim bisa menjadwalkan kunjungan (visit) ke properti saya?`;
+When can the team schedule a visit to my property?`;
 
 const createWaLink = (msg: string) =>
   `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
@@ -50,28 +50,28 @@ export function Pricing() {
         "Instagram",
         "Social",
       ],
-      buttonText: "Pilih",
+      buttonText: "Select",
       buttonHref: createWaLink(PKG_1_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
     {
       name: "2 Slots",
-      price: "IDR 799.000",
+      price: "IDR 799,000",
       features: [
         "OLX",
         "Rumah123",
         "Instagram",
         "Social",
       ],
-      buttonText: "Pilih",
+      buttonText: "Select",
       buttonHref: createWaLink(PKG_2_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
     {
       name: "3 Slots",
-      price: "IDR 999.000",
+      price: "IDR 999,000",
       badge: "BEST VALUE",
       features: [
         "OLX",
@@ -82,7 +82,7 @@ export function Pricing() {
         "FREE Cont.",
         "Creator",
       ],
-      buttonText: "PILIH",
+      buttonText: "SELECT",
       buttonHref: createWaLink(PKG_3_SLOT_MSG),
       buttonVariant: "primary" as const,
       highlight: true,
@@ -94,10 +94,10 @@ export function Pricing() {
       <div className="">
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Paket Promosi
+            Promotion Packages
           </span>
           <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
-            Harga Fleksible Sesuai Kebutuhan
+            Flexible Pricing to Suit Your Needs
           </h2>
         </div>
 

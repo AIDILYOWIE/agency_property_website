@@ -10,20 +10,20 @@ const propertiesData = [
         title: "Luxury Private Villa",
         location: "Uluwatu, Bali",
         category: "Villas",
-        beds: "5 Kamar",
-        baths: "4 Kamar Mandi",
+        beds: "5 Bedrooms",
+        baths: "4 Bathrooms",
         area: "1200 m2",
-        price: "Rp 15.000.000.000",
+        price: "Rp 15,000,000,000",
         imageSrc: "/categories/cat_villa_1781867581851.png",
     },
     {
         title: "Modern Family House",
-        location: "Jakarta Selatan",
+        location: "South Jakarta",
         category: "Premium Houses",
-        beds: "4 Kamar",
-        baths: "3 Kamar Mandi",
+        beds: "4 Bedrooms",
+        baths: "3 Bathrooms",
         area: "450 m2",
-        price: "Rp 8.500.000.000",
+        price: "Rp 8,500,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
@@ -33,7 +33,7 @@ const propertiesData = [
         beds: "-",
         baths: "-",
         area: "2500 m2",
-        price: "Rp 25.000.000.000",
+        price: "Rp 25,000,000,000",
         imageSrc: "/categories/cat_apartment_1781867600595.png",
     },
     {
@@ -41,79 +41,79 @@ const propertiesData = [
         location: "SCBD, Jakarta",
         category: "Commercial Asset",
         beds: "-",
-        baths: "2 Kamar Mandi",
+        baths: "2 Bathrooms",
         area: "800 m2",
-        price: "Rp 12.000.000.000",
+        price: "Rp 12,000,000,000",
         imageSrc: "/categories/cat_commercial_1781867628891.png",
     },
     {
         title: "Ocean View Villa",
         location: "Seminyak, Bali",
         category: "Villas",
-        beds: "3 Kamar",
-        baths: "3 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "3 Bathrooms",
         area: "850 m2",
-        price: "Rp 9.000.000.000",
+        price: "Rp 9,000,000,000",
         imageSrc: "/categories/cat_villa_1781867581851.png",
     },
     {
         title: "Minimalist Townhouse",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
         title: "Minimalist Townhouse 2",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
         title: "Minimalist Townhouse 3",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
         title: "Minimalist Townhouse 4",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
         title: "Minimalist Townhouse 5",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
         title: "Minimalist Townhouse 6",
         location: "BSD City, Tangerang",
         category: "Premium Houses",
-        beds: "3 Kamar",
-        baths: "2 Kamar Mandi",
+        beds: "3 Bedrooms",
+        baths: "2 Bathrooms",
         area: "200 m2",
-        price: "Rp 3.200.000.000",
+        price: "Rp 3,200,000,000",
         imageSrc: "/categories/cat_house_1781867614978.png",
     },
 ];
@@ -133,7 +133,7 @@ export default function PortfolioPage() {
                     <>
                         Not Every Property Makes Our List
                     </>
-                } description="Kami menyeleksi ratusan properti di Bali, namun hanya yang memenuhi standar premium yang kami hadirkan di sini. Jelajahi koleksi aset eksklusif yang dikurasi khusus untuk hunian dan investasi kelas atas Anda."
+                } description="We select hundreds of properties in Bali, but only those meeting premium standards are featured here. Explore our exclusive collection of curated assets for your luxury residential or investment needs."
                     isCtaButton={false}
                 />
 
@@ -141,12 +141,12 @@ export default function PortfolioPage() {
                     {/* Search and filter property */}
                     <div className="flex gap-2 w-full md:w-[70%]">
                         <PropertyFilterPopover />
-                        <SearchField placeholder="Cari property..." className="flex-1" />
+                        <SearchField placeholder="Search properties..." className="flex-1" />
 
-                        {/* filter kategori — hanya tampil di tablet ke atas */}
+                        {/* category filter — visible on tablet and above */}
                         <div className="hidden md:flex w-auto shrink-0">
-                            <Select placeholder="Kategori..." options={[
-                                { value: "", label: "Kategori" },
+                            <Select placeholder="Category..." options={[
+                                { value: "", label: "Category" },
                                 { value: "villas", label: "Villas" },
                                 { value: "premium-houses", label: "Premium Houses" },
                                 { value: "strategic-land", label: "Strategic Land" },

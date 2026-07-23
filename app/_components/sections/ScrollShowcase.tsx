@@ -9,29 +9,29 @@ import {
 
 /* ─── Content Data ─────────────────────────────────────────────── */
 
-const KOLABORASI_MSG = `Halo Tim Chris Property Signature,
+const KOLABORASI_MSG = `Hello Chris Property Signature Team,
 
-Saya tertarik mengajukan properti saya untuk Selective Promotion Program (Commission-based).
+I am interested in submitting my property for the Selective Promotion Program (Commission-based).
 
-Berikut informasi awal properti saya:
+Here is initial information about my property:
 
-Nama: [Isi nama Anda]
-Tipe Aset: [Villa / Tanah / Komersial]
-Lokasi: [Area di Bali]
-Estimasi Harga: [Misal: Rp 5 Miliar]
-Kapan waktu yang tepat untuk kita berdiskusi lebih lanjut?`;
+Name: [Your name]
+Asset Type: [Villa / Land / Commercial]
+Location: [Area in Bali]
+Estimated Price: [e.g.: IDR 5 Billion]
+When is a good time for us to discuss further?`;
 
-const SECURE_SLOT_MSG = `Halo Tim Chris Property Signature,
+const SECURE_SLOT_MSG = `Hello Chris Property Signature Team,
 
-Saya ingin mengamankan Open Slot Promotion (Tanpa Komisi) agar properti saya mendapatkan eksposur maksimal.
+I would like to secure an Open Slot Promotion (No Commission) to give my property maximum exposure.
 
-Berikut detailnya:
+Here are the details:
 
-Nama: [Isi nama Anda]
-Saya adalah: [Pemilik Langsung / Agen]
-Paket Pilihan: [1 Slot / 2 Slot / 3 Slot + Content]
-Lokasi Properti: [Area di Bali]
-Mohon info ketersediaan slot dan langkah selanjutnya.`;
+Name: [Your name]
+I am a: [Direct Owner / Agent]
+Chosen Package: [1 Slot / 2 Slots / 3 Slots + Content]
+Property Location: [Area in Bali]
+Please let me know slot availability and the next steps.`;
 
 const createWaLink = (msg: string) =>
   `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
@@ -40,24 +40,24 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
   {
     badge: "EXCLUSIVE",
     title: "Selective Promotion Program",
-    subtitle: "Untuk properti di atas IDR 1 Miliar",
+    subtitle: "For properties above IDR 1 Billion",
     points: [
       "Curated listings — no mass posting",
       "Professional property positioning",
-      "Akses ke serious buyers & agent network",
-      "Hands-on handling sampai transaksi",
+      "Access to serious buyers & agent network",
+      "Hands-on handling through to transaction",
       '"Not every property makes the list"',
     ],
-    cta: "Kolaborasi",
+    cta: "Collaborate",
     ctaHref: createWaLink(KOLABORASI_MSG),
-    suitable: "Vila · Premium Houses · Strategic Land · Commercial",
+    suitable: "Villas · Premium Houses · Strategic Land · Commercial",
     imageSrc: "/showcase/showcase-1.png",
     imageAlt: "Luxury Balinese villa with infinity pool — curated property listing",
     bgColor: "transparent",
   },
   {
     title: "Fixed Fee · No Commission · Maximum Exposure",
-    subtitle: "Promosi terstruktur di platform premium",
+    subtitle: "Structured promotion on premium platforms",
     pointsLabel: "Channels:",
     points: [
       "OLX Premium Account",
@@ -181,7 +181,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
             {label}
           </span>
           <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
-            Dua Model Kolaborasi
+            Two Collaboration Models
           </h2>
         </div>
 

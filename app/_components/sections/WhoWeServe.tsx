@@ -5,12 +5,12 @@ export function WhoWeServe() {
   const cards = [
     {
       title: "Property Owners & Agents",
-      description: "Kami menaikkan nilai jual aset Anda melalui visual berkelas dan mendistribusikannya secara eksklusif hanya kepada jaringan pembeli serius. Lupakan prospek acak, serahkan kerumitan promosi kepada kami.",
+      description: "We elevate the sale value of your assets through premium visuals and distribute them exclusively to our network of serious buyers. Forget random prospects — leave the complexity of promotion to us.",
       imageSrc: "/categories/cat_commercial_1781867628891.png",
     },
     {
       title: "Premium Buyers & Investors",
-      description: "Berhentilah membuang waktu memilah iklan yang menyesatkan. Sebagai kurator Anda, kami menghadirkan portofolio aset dan lahan strategis terbaik di Bali, dipresentasikan secara transparan tanpa trik pemasaran.",
+      description: "Stop wasting time sifting through misleading listings. As your curator, we present the finest portfolio of assets and strategic land in Bali, presented transparently without any marketing tricks.",
       imageSrc: "/categories/cat_villa_1781867581851.png",
     },
   ];
@@ -24,7 +24,7 @@ export function WhoWeServe() {
             Who We Serve
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-on-background max-w-2xl">
-            Partner Terpercaya untuk Pemilik Aset dan Investor Premium
+            A Trusted Partner for Asset Owners and Premium Investors
           </h2>
         </div>
 

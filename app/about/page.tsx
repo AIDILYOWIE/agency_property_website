@@ -15,19 +15,19 @@ const items = [
     icon: <BiCrown />,
     title: "Quality Over Quantity",
     description:
-      "Kami tidak menerima sembarang properti. Listing yang masuk melalui proses kurasi ketat.",
+      "We do not accept just any property. Every listing goes through a strict curation process.",
   },
   {
     icon: <IoDiamondOutline />,
     title: "Professional Presentation",
     description:
-      "Visual yang buruk menurunkan harga jual. Kami menangani presentasi estetis properti secara serius sebelum dipublikasikan.",
+      "Poor visuals reduce sale value. We take the aesthetic presentation of properties seriously before publication.",
   },
   {
     icon: <LuHandshake />,
     title: "No Clutter, No Random Leads",
     description:
-      "Jaringan promosi kami ditargetkan hanya untuk ekosistem pembeli serius (serious buyers) dan agen terpercaya.",
+      "Our promotional network is targeted exclusively to an ecosystem of serious buyers and trusted agents.",
   },
 ];
 
@@ -55,7 +55,7 @@ When are you available for a discussion?`;
       <div className="flex flex-col px-page">
         <Hero
           headline={<>Good properties don't need to shout.</>}
-          description="Kami tidak mengikuti cara lama. Kami hadir untuk mendefinisikan ulang bagaimana properti premium di Bali diposisikan, dikurasi, dan ditransaksikan ke pasar yang tepat."
+          description="We don't follow the old ways. We are here to redefine how premium properties in Bali are positioned, curated, and transacted to the right market."
           isCtaButton={false}
         />
         <MeetFounder />
@@ -69,16 +69,16 @@ When are you available for a discussion?`;
       </div>
         <CallToAction
         variant="default"
-          title="Posisikan Properti Anda di Tempat yang Seharusnya"
-          description="Tinggalkan strategi pemasaran acak yang menurunkan nilai aset. Mari diskusikan bagaimana kami mengkurasi properti Anda untuk jaringan pembeli eksklusif, atau temukan investasi premium terbaik untuk Anda di Bali"
+          title="Position Your Property Where It Belongs"
+          description="Leave behind random marketing strategies that devalue your assets. Let's discuss how we curate your property for an exclusive buyer network, or find the best premium investment for you in Bali"
           buttons={[
               {
-                label: "Konsultasi Sekarang",
+                label: "Consult Now",
                 href: createWaLink(WHATSAPP_MSG_CONSULT),
                 variant: "primary",
               },
               {
-                label: "Pilih Kemitraan",
+                label: "Choose Partnership",
                 href: "/pricing#partnership-model",
                 variant: "outlineWhite",
               },

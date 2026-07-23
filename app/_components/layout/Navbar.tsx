@@ -8,11 +8,11 @@ import Image from "next/image";
 import { Button } from "../ui/Button";
 
 const navLinks = [
-  { label: "Beranda", href: "/" },
-  { label: "Layanan", href: "/layanan" },
-  { label: "Portofolio", href: "/portfolio" },
-  { label: "Harga", href: "/pricing" },
-  { label: "Tentang", href: "/about" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/layanan" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
 ];
 
 export function Navbar() {
@@ -74,7 +74,7 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button href="/pricing#partnership-model" variant="primary">
-              Kolaborasi Sekarang
+              Collaborate Now
             </Button>
           </div>
 
@@ -82,7 +82,7 @@ export function Navbar() {
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-on-background hover:bg-surface-container transition-colors"
-            aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
             <div className="relative w-6 h-6">
@@ -141,7 +141,7 @@ export function Navbar() {
             className="w-full justify-center"
             onClick={() => setIsOpen(false)}
           >
-            Kolaborasi Sekarang
+            Collaborate Now
           </Button>
         </div>
       </aside>

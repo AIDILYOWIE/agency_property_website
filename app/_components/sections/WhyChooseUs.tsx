@@ -18,7 +18,7 @@ export interface WhyChooseUsFeature {
 const defaultFeatures: WhyChooseUsFeature[] = [
   {
     icon: <FiKey />,
-    title: "Akses ke premium marketplace",
+    title: "Access to premium marketplaces",
     description: "(OLX, Rumah123)",
   },
   {
@@ -28,13 +28,13 @@ const defaultFeatures: WhyChooseUsFeature[] = [
   },
   {
     icon: <FiTarget />,
-    title: "Exposure ke end-users",
+    title: "Exposure to end-users",
     description: "& trusted agent network",
   },
   {
     icon: <FiSlash />,
     title: "No commission",
-    description: "(untuk slot-based)",
+    description: "(for slot-based)",
   },
   {
     icon: <FiBarChart2 />,
@@ -57,7 +57,7 @@ interface WhyChooseUsProps {
 
 export function WhyChooseUs({
   id,
-  label = "Keunggulan Kami",
+  label = "Our Advantages",
   title = "Why Chris Property Signature",
   items = defaultFeatures,
 }: WhyChooseUsProps) {

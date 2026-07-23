@@ -22,9 +22,9 @@ export function Hero({
       Don't Need to Shout
     </>
   ),
-  description = "Premium property promotion untuk Vila, Rumah Mewah, Tanah Strategis & Aset Komersial di Bali. Dua model kolaborasi. Satu standar kualitas.",
-  primaryButtonText = "Mulai Kolaborasi",
-  secondaryButtonText = "lihat portofolio",
+  description = "Premium property promotion for Villas, Luxury Homes, Strategic Land & Commercial Assets in Bali. Two collaboration models. One quality standard.",
+  primaryButtonText = "Start Collaboration",
+  secondaryButtonText = "View Portfolio",
   primaryButtonHref = "/",
   secondaryButtonHref = "/portfolio",
   isCtaButton = true,
@@ -38,7 +38,7 @@ export function Hero({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
         {/* Left: Headline */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cinzel font-extra-bold text-on-background leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-cinzel font-extra-bold text-on-background leading-tight tracking-tight">
             {headline}
           </h1>
         </div>

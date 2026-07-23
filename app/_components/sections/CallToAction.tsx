@@ -13,7 +13,7 @@ export interface CtaButtonProps {
 const DEFAULT_TITLE = "Let Your Property Speak at the Right Level";
 
 const DEFAULT_DESCRIPTION =
-  "Serahkan kerumitannya pada kami, dan mari buat properti Anda bernilai sebagaimana mestinya.";
+  "Leave the complexity to us, and let's make your property worth exactly what it deserves.";
 
 const defaultButtons: CtaButtonProps[] = [
   {

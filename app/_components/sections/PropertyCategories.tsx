@@ -5,22 +5,22 @@ export function PropertyCategories() {
   const categories = [
     {
       title: "Villas",
-      description: "Properti dengan pemandangan menawan dan fasilitas kelas dunia untuk gaya hidup premium",
+      description: "Properties with stunning views and world-class amenities for a premium lifestyle",
       imageSrc: "/categories/cat_villa_1781867581851.png",
     },
     {
       title: "Premium Houses",
-      description: "Hunian nyaman dengan desain modern dan lokasi strategis untuk kebutuhan keluarga Anda",
+      description: "Comfortable residences with modern design and strategic locations for your family's needs",
       imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
       title: "Strategic Land",
-      description: "Lahan premium di lokasi eksklusif, dikurasi khusus untuk peluang investasi dengan ROI tinggi",
+      description: "Premium land in exclusive locations, specially curated for high-ROI investment opportunities",
       imageSrc: "/categories/strattegic_land.png",
     },
     {
       title: "Commercial Asset",
-      description: "Lokasi strategis dengan potensi apresiasi nilai tinggi untuk pengembangan masa depan",
+      description: "Strategic locations with high value appreciation potential for future development",
       imageSrc: "/categories/cat_commercial_1781867628891.png",
     },
   ];
@@ -31,7 +31,7 @@ export function PropertyCategories() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Kategori
+            Categories
           </span>
           <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
             Property Categories

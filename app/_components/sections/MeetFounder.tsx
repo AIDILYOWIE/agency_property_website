@@ -11,21 +11,21 @@ interface FounderHighlight {
 const highlights: FounderHighlight[] = [
   {
     icon: <FiShield size={20} className="text-primary" />,
-    title: "Integritas Pemasaran",
+    title: "Marketing Integrity",
     description:
-      "Chris menjaga standar pemasaran yang jujur dan transparan. Setiap properti dikurasi ketat—hanya aset berkualitas yang layak mendapatkan eksposur premium.",
+      "Chris upholds honest and transparent marketing standards. Every property is strictly curated — only quality assets deserve premium exposure.",
   },
   {
     icon: <FiStar size={20} className="text-primary" />,
-    title: "Standar Aset Tinggi",
+    title: "High Asset Standards",
     description:
-      "Hanya properti dengan nilai dan potensi yang benar-benar mumpuni yang kami proses. Ini bukan soal kuantitas—ini soal positioning yang tepat di mata buyer yang tepat.",
+      "Only properties with genuine value and potential are processed. This isn't about quantity — it's about precise positioning in the eyes of the right buyers.",
   },
   {
     icon: <FiUsers size={20} className="text-primary" />,
-    title: "Jaringan Serious Buyers",
+    title: "Serious Buyer Network",
     description:
-      "Dibangun selama bertahun-tahun, jaringan Chris mencakup serious buyers, investor properti, dan kalangan profesional di Bali yang benar-benar memiliki kapasitas finansial.",
+      "Built over many years, Chris's network includes serious buyers, property investors, and professionals in Bali with genuine financial capacity.",
   },
 ];
 
@@ -62,13 +62,13 @@ export function MeetFounder() {
 
         {/* Description */}
         <p className="text-sm md:text-base lg:text-lg text-on-surface-variant leading-relaxed">
-          Albert Christofer, atau akrab disapa Chris, membangun Chris Property
-          Signature atas satu keyakinan: properti premium tidak butuh
-          kebisingan—ia butuh panggung yang tepat. Dengan komitmen pada
-          integritas pemasaran, standar seleksi aset yang tinggi, dan akses ke
-          jaringan <em>serious buyers</em> serta investor terpercaya di Bali,
-          Chris hadir sebagai mitra strategis bagi mereka yang serius menjual
-          aset kelas atas.
+          Albert Christofer, commonly known as Chris, built Chris Property
+          Signature on a single conviction: premium properties don't need
+          noise — they need the right stage. With a commitment to
+          marketing integrity, high asset selection standards, and access to
+          a network of <em>serious buyers</em> and trusted investors in Bali,
+          Chris stands as a strategic partner for those who are serious about
+          selling top-tier assets.
         </p>
       </div>
     </div>

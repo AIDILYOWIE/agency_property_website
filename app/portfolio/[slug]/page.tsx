@@ -15,13 +15,13 @@ interface PageProps {
   }>;
 }
 
-const PROPERTY_DESCRIPTION = `Properti eksklusif ini menawarkan gaya hidup premium dengan desain arsitektur modern dan fasilitas lengkap. Terletak di kawasan strategis yang tenang namun tetap dekat dengan pusat aktivitas. Properti ini sangat cocok untuk Anda yang mencari hunian nyaman atau instrumen investasi bernilai tinggi di masa depan.
+const PROPERTY_DESCRIPTION = `This exclusive property offers a premium lifestyle with modern architectural design and complete facilities. Located in a strategic yet serene area, while remaining close to the center of activity. This property is ideal for those seeking a comfortable residence or a high-value investment instrument for the future.
 
-Villa ini dibangun di atas lahan seluas 1.200 m² dengan konsep tropical modern yang memadukan material kayu jati pilihan, batu alam Bali, dan kaca tempered untuk menciptakan keselarasan antara ruang dalam dan alam sekitar. Setiap ruangan dirancang dengan ventilasi silang alami dan pencahayaan matahari yang optimal, sehingga meminimalkan penggunaan energi listrik di siang hari.
+This villa is built on a 1,200 m² plot with a tropical modern concept that blends selected teak wood, Balinese natural stone, and tempered glass to create harmony between the interior and the surrounding nature. Each room is designed with natural cross-ventilation and optimal sunlight, minimizing electricity consumption during the day.
 
-Fasilitas utama mencakup 3 kamar tidur en-suite dengan walk-in closet, ruang tamu terbuka berhadapan langsung dengan infinity pool berukuran 12x5 meter, dapur modern dengan peralatan premium, serta gazebo rooftop yang menghadap panorama sawah dan laut. Area parkir mampu menampung hingga 4 kendaraan roda empat.
+Main facilities include 3 en-suite bedrooms with walk-in closets, an open living room facing a 12x5 meter infinity pool, a modern kitchen with premium appliances, and a rooftop gazebo overlooking panoramic rice fields and ocean views. The parking area can accommodate up to 4 four-wheeled vehicles.
 
-Lokasi properti ini hanya berjarak 15 menit dari Pantai Nusa Dua, 20 menit dari Bandara Internasional Ngurah Rai, dan dikelilingi oleh restoran, cafe, dan pusat perbelanjaan kelas atas. Kawasan ini juga dilengkapi dengan keamanan 24 jam dan akses jalan yang lebar serta terawat.`;
+The property is just 15 minutes from Nusa Dua Beach, 20 minutes from Ngurah Rai International Airport, and surrounded by high-end restaurants, cafes, and shopping centers. The area is also equipped with 24-hour security and wide, well-maintained road access.`;
 
 export default async function PropertyDetailPage({ params }: PageProps) {
   // In Next.js 15+, params is a Promise and needs to be awaited
@@ -85,7 +85,7 @@ Please provide me with more information regarding this property.`;
         {/* Content Section — Deskripsi with Read More */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold text-on-background">
-            Deskripsi
+            Description
           </h2>
           <ExpandableText text={PROPERTY_DESCRIPTION} maxLines={4} />
         </div>
@@ -93,18 +93,18 @@ Please provide me with more information regarding this property.`;
         {/* Content Section (Spesifikasi / Basic Information) */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-wide text-on-background">
-            Spesifikasi
+            Specifications
           </h2>
 
           <div className="flex flex-col">
             {[
-              { label: "Status Properti", value: "Di Sewa" },
-              { label: "Kapasitas", value: "6 orang" },
-              { label: "Luas Tanah", value: "1.200 m²" },
-              { label: "Luas Bangunan", value: "800 m²" },
-              { label: "Tipe Properti", value: "Residensial / Villa" },
-              { label: "Sertifikat", value: "SHM (Hak Milik)" },
-              { label: "Tahun Dibangun", value: "2023" },
+              { label: "Property Status", value: "For Rent" },
+              { label: "Capacity", value: "6 persons" },
+              { label: "Land Area", value: "1,200 m²" },
+              { label: "Building Area", value: "800 m²" },
+              { label: "Property Type", value: "Residential / Villa" },
+              { label: "Certificate", value: "SHM (Freehold)" },
+              { label: "Year Built", value: "2023" },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -124,12 +124,12 @@ Please provide me with more information regarding this property.`;
         {/* Content Section Fasilitas */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-wide text-on-background ">
-            Fasilitas
+            Facilities
           </h2>
 
           <div className="flex w-full flex-col gap-4 mt-4 pl-2">
             <h3 className="text-xl font-medium text-on-surface-variant">
-              Fasilitas Kamar
+              Room Facilities
             </h3>
 
             <div className="grid grid-cols-2 gap-4">
@@ -138,7 +138,7 @@ Please provide me with more information regarding this property.`;
                   icon: (
                     <BiFridge size={28} className="!text-on-surface-variant " />
                   ),
-                  label: "Kulkas",
+                  label: "Refrigerator",
                 },
                 {
                   icon: (
@@ -168,7 +168,7 @@ Please provide me with more information regarding this property.`;
 
           <div className="flex w-full flex-col gap-4 mt-4 pl-2">
             <h3 className="text-xl font-medium text-on-surface-variant">
-              Fasilitas Villa
+              Villa Facilities
             </h3>
 
             <div className="grid grid-cols-2 gap-4">
@@ -201,7 +201,7 @@ Please provide me with more information regarding this property.`;
                       className="!text-on-surface-variant "
                     />
                   ),
-                  label: "Kolam Renang",
+                  label: "Swimming Pool",
                 },
                 {
                   icon: (

@@ -16,30 +16,30 @@ export interface HowWeWorkItem {
 
 const defaultTimelineSteps: HowWeWorkItem[] = [
   {
-    title: "Kirim Detail Property",
+    title: "Submit Property Details",
     description:
-      "Klien (Owner/Agent/Developer) menghubungi kami dan mengirimkan detail awal properti (lokasi, spesifikasi, dan ekspektasi harga) untuk kami pelajari.",
+      "The client (Owner/Agent/Developer) contacts us and submits initial property details (location, specifications, and price expectations) for our review.",
     icon: <BiMailSend size={28} className="text-primary" />,
     hasLine: true,
   },
   {
-    title: "Review & Kurasi Property",
+    title: "Review & Property Curation",
     description:
-      "Tim kami meninjau properti Anda untuk memastikan kesesuaian dengan standar Chris Property Signature. Kami hanya memproses properti berkualitas (biasanya >IDR 1 Miliar) agar reputasi listing tetap terjaga.",
+      "Our team reviews your property to ensure it meets Chris Property Signature standards. We only process quality properties (typically >IDR 1 Billion) to maintain the integrity of our listings.",
     icon: <LuNotebookPen size={28} className="text-primary" />,
     hasLine: true,
   },
   {
-    title: "Content & Positioning Profesional",
+    title: "Professional Content & Positioning",
     description:
-      "Jika disetujui, tim kami (atau creator jika mengambil paket 3 Slot) akan mengambil visual berkualitas tinggi dan merancang narasi positioning agar properti Anda terlihat premium dan tepat sasaran.",
+      "If approved, our team (or a creator for the 3-Slot package) will capture high-quality visuals and craft a positioning narrative to ensure your property looks premium and reaches the right audience.",
     icon: <LuCamera size={28} className="text-primary" />,
     hasLine: true,
   },
   {
-    title: "Live di Platform Premium",
+    title: "Live on Premium Platforms",
     description:
-      "Listing Anda secara resmi ditayangkan di saluran premium kami (OLX Premium, Rumah123 Premium, Instagram, & Jaringan Internal). Kami memantau engagement dan menyaring leads yang berkualitas.",
+      "Your listing is officially published across our premium channels (OLX Premium, Rumah123 Premium, Instagram, & Internal Network). We monitor engagement and filter quality leads.",
     icon: <FiGlobe size={28} className="text-primary" />,
     hasLine: false,
   },
@@ -53,8 +53,8 @@ interface HowWeWorkProps {
 }
 
 export function HowWeWork({
-  label = "Proses",
-  title = "Bagaimana Kami Bekerja",
+  label = "Process",
+  title = "How We Work",
   cardType = "timeline",
   items = defaultTimelineSteps,
 }: HowWeWorkProps) {

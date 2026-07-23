@@ -9,20 +9,20 @@ export function Portofolio() {
       title: "Luxury Private Villa",
       location: "Uluwatu, Bali",
       category: "Villas",
-      beds: "5 Kamar",
-      baths: "4 Kamar Mandi",
+      beds: "5 Bedrooms",
+      baths: "4 Bathrooms",
       area: "1200 m2",
-      price: "Rp 15.000.000.000",
+      price: "Rp 15,000,000,000",
       imageSrc: "/categories/cat_villa_1781867581851.png",
     },
     {
       title: "Modern Family House",
-      location: "Jakarta Selatan",
+      location: "South Jakarta",
       category: "Premium Houses",
-      beds: "4 Kamar",
-      baths: "3 Kamar Mandi",
+      beds: "4 Bedrooms",
+      baths: "3 Bathrooms",
       area: "450 m2",
-      price: "Rp 8.500.000.000",
+      price: "Rp 8,500,000,000",
       imageSrc: "/categories/cat_house_1781867614978.png",
     },
     {
@@ -32,7 +32,7 @@ export function Portofolio() {
       beds: "-",
       baths: "-",
       area: "2500 m2",
-      price: "Rp 25.000.000.000",
+      price: "Rp 25,000,000,000",
       imageSrc: "/categories/cat_apartment_1781867600595.png",
     },
     {
@@ -40,29 +40,29 @@ export function Portofolio() {
       location: "SCBD, Jakarta",
       category: "Commercial Asset",
       beds: "-",
-      baths: "2 Kamar Mandi",
+      baths: "2 Bathrooms",
       area: "800 m2",
-      price: "Rp 12.000.000.000",
+      price: "Rp 12,000,000,000",
       imageSrc: "/categories/cat_commercial_1781867628891.png",
     },
     {
       title: "Ocean View Villa",
       location: "Seminyak, Bali",
       category: "Villas",
-      beds: "3 Kamar",
-      baths: "3 Kamar Mandi",
+      beds: "3 Bedrooms",
+      baths: "3 Bathrooms",
       area: "850 m2",
-      price: "Rp 9.000.000.000",
+      price: "Rp 9,000,000,000",
       imageSrc: "/categories/cat_villa_1781867581851.png",
     },
     {
       title: "Minimalist Townhouse",
       location: "BSD City, Tangerang",
       category: "Premium Houses",
-      beds: "3 Kamar",
-      baths: "2 Kamar Mandi",
+      beds: "3 Bedrooms",
+      baths: "2 Bathrooms",
       area: "200 m2",
-      price: "Rp 3.200.000.000",
+      price: "Rp 3,200,000,000",
       imageSrc: "/categories/cat_house_1781867614978.png",
     },
   ];
@@ -72,10 +72,10 @@ export function Portofolio() {
       <div className="">
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Portofolio
+            Portfolio
           </span>
           <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
-            Kurasi Properti Eksklusif & Premium
+            Curated Exclusive & Premium Properties
           </h2>
         </div>
 
