@@ -10,64 +10,83 @@ import { Testimonials } from "@/app/_components/sections/Testimonials";
 import { CallToAction } from "@/app/_components/sections/CallToAction";
 
 export const metadata: Metadata = {
-  title: "Layanan Kami | Agency Property",
-  description: "Layanan pemasaran properti eksklusif dan premium untuk Anda.",
+  title: "Our Services | Agency Property",
+  description: "Exclusive and premium property marketing services for you.",
 };
 
 const problemItems = [
   {
-    title: "Lelah dengan Random Leads?",
-    description: "Menghadapi ratusan pesan dari prospek yang tidak memiliki kualifikasi finansial.",
+    title: "Tired of Random Leads?",
+    description: "Dealing with hundreds of messages from prospects without the financial qualifications.",
     icon: <BsLightning />,
   },
   {
-    title: "Presentasi Kurang Menarik?",
+    title: "Underwhelming Presentation?",
     description:
-      "Nilai properti miliaran rupiah jatuh karena foto ponsel seadanya.",
+      "A multi-billion Rupiah property loses value because of substandard phone photos.",
     icon: <BsCamera />,
   },
   {
-    title: "Tenggelam di Marketplace? ",
+    title: "Lost in the Marketplace?",
     description:
-      "Bersaing dengan ribuan listing properti murah tanpa diferensiasi.",
+      "Competing with thousands of low-value property listings without any differentiation.",
     icon: <BsTag />,
   },
 ];
 
 export default function LayananPage() {
+  const WHATSAPP_MSG_CONSULT = `Hello Chris Property Signature Team,
+
+I would like to schedule an Exclusive Consultation regarding your property services.
+
+Focus of discussion needed:
+
+Name: [Insert your name]
+
+Consultation Topic: [Property Marketing / Property Search / Investment]
+
+Brief Details: [Briefly describe your specific needs]
+
+When are you available for a discussion?`;
+
+  const createWaLink = (msg: string) =>
+    `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex flex-col px-[68px]">
+      <div className="flex flex-col px-page">
         <Hero
           headline={
             <>
-              Properti Premium Anda Tak Seharusnya <span className="text-primary">Tenggelam</span>
+              Premium Properties Shouldn't Get Lost
             </>
           }
-          description="Kami membantu pemilik properti dan developer di Bali memposisikan aset mereka dengan standar tertinggi. Bukan sekadar mass-posting, melainkan kurasi eksklusif."
-          primaryButtonText="Konsultasi Sekarang"
-          secondaryButtonText="Layanan Kami"
+          description="We help property owners and developers in Bali position their assets to the highest standards. Not mere mass-posting, but exclusive curation."
+          primaryButtonText="Consult Now"
+          primaryButtonHref={createWaLink(WHATSAPP_MSG_CONSULT)}
+          secondaryButtonText="Our Services"
+          secondaryButtonHref="#layanan-section"
         // We can reuse the same image or leave it blank to show without image, but we'll reuse the default for now
         />
 
         {/* Problem & Agitation */}
         <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
 
-        <WhyChooseUs label="Layanan" title="Layanan Kami" />            
+        <WhyChooseUs id="layanan-section" label="Services" title="Our Services" />            
       </div>
 
 
-      <div className="flex flex-col px-[68px]">
+      <div className="flex flex-col px-page">
         {/* Trust social proof */}
         <Testimonials />
       </div>
 
       {/* CTA */}
-      <CallToAction variant="center" title="Properti yang Baik Tidak Perlu Berteriak" description="Mereka hanya butuh panggung yang tepat. Biarkan aset Anda berbicara di level yang seharusnya." buttons={
+      <CallToAction variant="default" title="Good Properties Don't Need to Shout" description="They just need the right stage. Let your asset speak at the level it deserves." buttons={
         [
-          { label: 'Mulai Kolaboras', variant: "primary", href: "/contact" },
-          { label: 'Konsultasi Sekarang', variant: "outline", href: "/contact" },
+          { label: 'Start Collaboration', variant: "primary", href: "/pricing#partnership-model" },
+          { label: 'Consult Now', variant: "outlineWhite", href: createWaLink(WHATSAPP_MSG_CONSULT) },
         ]
       } />
     </div>

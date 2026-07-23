@@ -24,13 +24,13 @@ export function Testimonials() {
 
   return (
     <section className="w-full py-section overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             Testimonial
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl font-cinzel md:text-4xl font-semibold text-on-background">
             What Our Clients Says
           </h2>
         </div>

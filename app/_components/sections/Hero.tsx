@@ -8,6 +8,8 @@ interface HeroProps {
   isCtaButton?: boolean;
   primaryButtonText?: string;
   secondaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonHref?: string;
   imageSrc?: string;
   imageAlt?: string;
   floatingButtonText?: string;
@@ -17,24 +19,26 @@ export function Hero({
   headline = (
     <>
       Good Properties <br className="hidden lg:block" />
-      <span className="text-primary">Don't Need to Shout</span>
+      Don't Need to Shout
     </>
   ),
-  description = "Premium property promotion untuk Vila, Rumah Mewah, Tanah Strategis & Aset Komersial di Bali. Dua model kolaborasi. Satu standar kualitas.",
-  primaryButtonText = "Mulai Kolaborasi",
-  secondaryButtonText = "lihat portofolio",
+  description = "Premium property promotion for Villas, Luxury Homes, Strategic Land & Commercial Assets in Bali. Two collaboration models. One quality standard.",
+  primaryButtonText = "Start Collaboration",
+  secondaryButtonText = "View Portfolio",
+  primaryButtonHref = "/",
+  secondaryButtonHref = "/portfolio",
   isCtaButton = true,
   imageSrc = "/hero.png",
   imageAlt = "Modern Architectural House",
   floatingButtonText = "See All Listings",
 }: HeroProps) {
   return (
-    <section className="w-full py-section">
+    <section className="w-full pt-8 pb-10 md:py-section">
       {/* Top Row: Headline and Description */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
         {/* Left: Headline */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-on-background leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-cinzel font-extra-bold text-on-background leading-tight tracking-tight">
             {headline}
           </h1>
         </div>
@@ -45,9 +49,9 @@ export function Hero({
             {description}
           </p>
           {(isCtaButton ? (primaryButtonText || secondaryButtonText) && (
-            <div className="flex flex-wrap items-center gap-4">
-              {primaryButtonText && <Button variant="primary">{primaryButtonText}</Button>}
-              {secondaryButtonText && <Button variant="outline">{secondaryButtonText}</Button>}
+            <div className="flex flex-row flex-wrap items-center gap-3">
+              {primaryButtonText && <Button href={primaryButtonHref} variant="primary">{primaryButtonText}</Button>}
+              {secondaryButtonText && <Button href={secondaryButtonHref} variant="outline">{secondaryButtonText}</Button>}
             </div>
           ) : <></> )}
           {}

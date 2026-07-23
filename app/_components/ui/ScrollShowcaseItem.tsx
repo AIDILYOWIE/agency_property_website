@@ -15,6 +15,8 @@ export interface ShowcaseItemData {
   points: string[];
   /** CTA button text */
   cta: string;
+  /** Optional CTA link href */
+  ctaHref?: string;
   /** Optional suitability / category text (e.g., "Vila · Premium Houses") */
   suitable?: string;
   /** Image path for the sticky panel (desktop) and inline display (mobile) */
@@ -44,8 +46,8 @@ export function ScrollShowcaseItem({
 }: ScrollShowcaseItemProps) {
   const textColor = isDark ? "text-white" : "text-on-background";
   const subtitleColor = isDark ? "text-white/70" : "text-on-surface-variant";
-  const pointColor = isDark ? "text-white/90" : "text-on-surface-variant";
-  const bulletColor = isDark ? "bg-white/40" : "bg-primary/30";
+  const pointColor = "text-on-surface-variant";
+  const bulletColor = "bg-on-surface-variant";
   const borderColor = isDark
     ? "border-white/20"
     : "border-outline-variant/40";
@@ -55,12 +57,28 @@ export function ScrollShowcaseItem({
       ref={itemRef}
       data-index={index}
       className={`
-        min-h-[80vh] flex items-center
+        lg:min-h-[80vh] flex items-center
         transition-opacity duration-500 ease-out  
-        ${isActive ? "opacity-100" : "opacity-40"}
+        ${isActive ? "opacity-100" : "opacity-100 lg:opacity-40"}
       `}
     >
       <div className="w-full py-12 lg:py-16">
+        {/* Mobile Image — visible only on small screens */}
+        <div
+          className={`
+            mb-8 lg:hidden relative w-full aspect-[4/3] sm:aspect-video md:aspect-[21/9] rounded-xl overflow-hidden
+            border ${borderColor}
+          `}
+        >
+          <Image
+            src={data.imageSrc}
+            alt={data.imageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw"
+          />
+        </div>
+
         {/* Badge */}
         {data.badge && (
           <span
@@ -91,9 +109,7 @@ export function ScrollShowcaseItem({
         {/* Points Label */}
         {data.pointsLabel && (
           <p
-            className={`text-sm font-semibold uppercase tracking-wider mb-3 ${
-              isDark ? "text-white/60" : "text-secondary"
-            }`}
+            className={`text-sm font-semibold uppercase tracking-wider mb-3 text-on-surface-variant`}
           >
             {data.pointsLabel}
           </p>
@@ -102,7 +118,7 @@ export function ScrollShowcaseItem({
         {/* Points List */}
         <ul className="space-y-3 mb-8">
           {data.points.map((point, i) => (
-            <li key={i} className={`flex items-start gap-3 ${pointColor}`}>
+            <li key={i} className={`flex items-start gap-3`}>
               <span
                 className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${bulletColor}`}
               />
@@ -121,6 +137,9 @@ export function ScrollShowcaseItem({
               ? "bg-white text-primary hover:bg-white/90 hover:text-primary-container"
               : ""
           }
+          {...(data.ctaHref
+            ? { href: data.ctaHref, target: "_blank", rel: "noopener noreferrer" }
+            : {})}
         >
           {data.cta}
         </Button>
@@ -136,21 +155,6 @@ export function ScrollShowcaseItem({
           </p>
         )}
 
-        {/* Mobile Image — visible only on small screens */}
-        <div
-          className={`
-            mt-8 lg:hidden relative w-full aspect-[4/3] rounded-xl overflow-hidden
-            border ${borderColor}
-          `}
-        >
-          <Image
-            src={data.imageSrc}
-            alt={data.imageAlt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw"
-          />
-        </div>
       </div>
     </div>
   );

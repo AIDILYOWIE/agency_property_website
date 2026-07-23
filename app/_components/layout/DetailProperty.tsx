@@ -62,7 +62,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
       <div className="w-full flex flex-col lg:flex-row gap-4 h-auto lg:h-[550px]">
         {/* Kiri: Main Image (mengambil 60% lebar di desktop) */}
         <div 
-          className="w-full lg:w-[60%] h-[350px] lg:h-full relative rounded-xl overflow-hidden group cursor-pointer"
+          className="w-full lg:w-[60%] h-[220px] md:h-[330px] lg:h-full relative rounded-lg overflow-hidden group cursor-pointer"
           onClick={() => setSelectedIndex(0)}
         >
           <Image
@@ -74,11 +74,11 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
         </div>
 
         {/* Kanan: 4 Gambar Kecil (mengambil 40% lebar, dibagi jadi grid 2x2) */}
-        <div className="w-full lg:w-[40%] h-[400px] lg:h-full grid grid-cols-2 grid-rows-2 gap-4">
+        <div className="w-full lg:w-[40%] h-[220px] md:h-[330px] lg:h-full grid grid-cols-2 grid-rows-2 gap-4">
           {smallImages.map((src, index) => (
             <div 
               key={index} 
-              className="relative w-full h-full rounded-xl overflow-hidden group cursor-pointer"
+              className="relative w-full h-full rounded-lg overflow-hidden group cursor-pointer"
               onClick={() => setSelectedIndex(index + 1)}
             >
               <Image
@@ -94,10 +94,10 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
       </div>
 
       {/* INFO BANNER DI BAWAH GAMBAR */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 gap-6">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center py-6 gap-6">
         {/* Kiri: Harga dan Alamat */}
         <div className="flex flex-col gap-2">
-          <h1 className="text-4xl md:text-5xl font-semibold text-on-background tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-semibold text-on-background tracking-tight whitespace-nowrap">
             {price}
           </h1>
           <p className="text-on-surface-variant text-base">
@@ -106,7 +106,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
         </div>
 
         {/* Kanan: Spesifikasi Utama (Beds, Area) */}
-        <div className="flex items-center gap-8 md:gap-12 text-on-background">
+        <div className="flex items-center justify-between w-full md:w-auto md:gap-12 text-on-background">
 
           {/* Badrooms */}
           <div className="flex flex-col">
@@ -116,7 +116,6 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
             </div>
           </div>
           
-          <div className="w-px h-12 bg-outline-variant/30 hidden md:block" />
 
             {/* Bathrooms  */}
           <div className="flex flex-col">
@@ -126,7 +125,6 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
             </div>
           </div>
           
-          <div className="w-px h-12 bg-outline-variant/30 hidden md:block" />
           
           <div className="flex flex-col">
             <span className="font-medium text-sm mb-1">Sq.Ft.</span>
@@ -151,7 +149,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
 
           {/* Prev Navigation */}
           <button 
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full backdrop-blur-md transition-all z-50"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all z-50"
             onClick={showPrev}
           >
             <FiChevronLeft size={32} />
@@ -170,7 +168,7 @@ export function DetailProperty({ images, price, address, beds, area }: DetailPro
 
           {/* Next Navigation */}
           <button 
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full backdrop-blur-md transition-all z-50"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all z-50"
             onClick={showNext}
           >
             <FiChevronRight size={32} />

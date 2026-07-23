@@ -3,6 +3,42 @@ import { Button } from "../ui/Button";
 import { FiInfo } from "react-icons/fi";
 import { PricingCard } from "../ui/PricingCard";
 
+const PKG_1_SLOT_MSG = `Hello Chris Property Signature Team,
+
+I am interested in purchasing the *Open Slot (1 Slot - IDR 499,000)* package to promote my property.
+
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
+
+Please guide me through the payment and slot activation process.`;
+
+const PKG_2_SLOT_MSG = `Hello Chris Property Signature Team,
+
+I am interested in the *Open Slot (2 Slots - IDR 799,000)* package to extend the reach of my property promotion.
+
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
+
+Please guide me through the payment and slot activation process.`;
+
+const PKG_3_SLOT_MSG = `Hello Chris Property Signature Team,
+
+I would like to take the *Open Slot (3 Slots - IDR 999,000)* package which includes *FREE Property Visit & Content Creation*.
+
+Here is a brief overview of my property:
+- Name: [Your name]
+- Asset Type: [Villa / Land / House]
+- Location: [Area in Bali]
+
+When can the team schedule a visit to my property?`;
+
+const createWaLink = (msg: string) =>
+  `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
 export function Pricing() {
   const plans = [
     {
@@ -14,26 +50,28 @@ export function Pricing() {
         "Instagram",
         "Social",
       ],
-      buttonText: "Pilih",
+      buttonText: "Select",
+      buttonHref: createWaLink(PKG_1_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
     {
       name: "2 Slots",
-      price: "IDR 799.000",
+      price: "IDR 799,000",
       features: [
         "OLX",
         "Rumah123",
         "Instagram",
         "Social",
       ],
-      buttonText: "Pilih",
+      buttonText: "Select",
+      buttonHref: createWaLink(PKG_2_SLOT_MSG),
       buttonVariant: "outline" as const,
       highlight: false,
     },
     {
       name: "3 Slots",
-      price: "IDR 999.000",
+      price: "IDR 999,000",
       badge: "BEST VALUE",
       features: [
         "OLX",
@@ -44,7 +82,8 @@ export function Pricing() {
         "FREE Cont.",
         "Creator",
       ],
-      buttonText: "PILIH",
+      buttonText: "SELECT",
+      buttonHref: createWaLink(PKG_3_SLOT_MSG),
       buttonVariant: "primary" as const,
       highlight: true,
     },
@@ -52,18 +91,18 @@ export function Pricing() {
 
   return (
     <section className="w-full py-section bg-background">
-      <div className="px-6">
+      <div className="">
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
-            Paket Promosi
+            Promotion Packages
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-            Harga Fleksible Sesuai Kebutuhan
+          <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
+            Flexible Pricing to Suit Your Needs
           </h2>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 ">
           {plans.map((plan, index) => (
             <PricingCard
               key={index}
@@ -71,6 +110,7 @@ export function Pricing() {
               price={plan.price}
               features={plan.features}
               buttonText={plan.buttonText}
+              buttonHref={plan.buttonHref}
               buttonVariant={plan.buttonVariant}
               highlight={plan.highlight}
               badge={plan.badge}

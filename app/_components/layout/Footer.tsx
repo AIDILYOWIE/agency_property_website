@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   FaFacebook, 
   FaInstagram, 
@@ -12,12 +13,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Beranda", href: "/" },
-    { name: "Layanan", href: "#layanan" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "#layanan" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Harga", href: "#harga" },
-    { name: "Tentang", href: "#tentang" },
-    { name: "Hubungi", href: "#hubungi" },
+    { name: "Pricing", href: "#harga" },
+    { name: "About", href: "#tentang" },
+    { name: "Contact", href: "#hubungi" },
   ];
 
   const socialLinks = [
@@ -28,36 +29,38 @@ export function Footer() {
   ];
 
   const legalLinks = [
-    { name: "Syarat ketentuan", href: "#" },
-    { name: "Kebijakan privasi", href: "#" },
-    { name: "Pengaturan cookie", href: "#" },
-    { name: "Lisensi", href: "#" },
-    { name: "Aksesibilitas", href: "#" },
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Cookie Settings", href: "#" },
+    { name: "License", href: "#" },
+    { name: "Accessibility", href: "#" },
   ];
 
   return (
     <footer className="w-full bg-background text-on-surface pt-16 pb-8 mt-auto">
-      <div className="container mx-auto px-4 md:px-6 lg:px-[68px]">
+      <div className="px-page mx-auto">
         {/* Top Section: 4 Columns Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block">
-              {/* Replace with actual image logo if available */}
-              <span className="font-bold text-2xl tracking-tight text-on-background">
-                Chris<span className="text-primary">Property</span>
-              </span>
+            <Link href="/" className="inline-block relative h-10 md:h-12 w-[100px] md:w-[200px]">
+              <Image
+                src="/logo.png"
+                alt="Chris Property Logo"
+                fill
+                className="object-cover object-left"
+              />
             </Link>
             <p className="text-on-surface-variant text-base leading-relaxed pr-4">
-              Menghubungkan Anda dengan properti eksklusif yang layak mendapatkan perhatian yang tepat dan strategi yang presisi.
+              Connecting you with exclusive properties that deserve the right attention and a precise strategy.
             </p>
           </div>
 
           {/* Column 2: Tautan Cepat */}
           <div className="flex flex-col gap-6">
             <h3 className="text-lg font-semibold text-on-background">
-              Tautan cepat
+              Quick Links
             </h3>
             <ul className="flex flex-col gap-4">
               {quickLinks.map((link) => (
@@ -76,7 +79,7 @@ export function Footer() {
           {/* Column 3: Media Sosial */}
           <div className="flex flex-col gap-6">
             <h3 className="text-lg font-semibold text-on-background">
-              Media sosial
+              Social Media
             </h3>
             <ul className="flex flex-col gap-4">
               {socialLinks.map((link) => (
@@ -97,7 +100,7 @@ export function Footer() {
           {/* Column 4: Hukum */}
           <div className="flex flex-col gap-6">
             <h3 className="text-lg font-semibold text-on-background">
-              Hukum
+              Legal
             </h3>
             <ul className="flex flex-col gap-4">
               {legalLinks.map((link) => (
@@ -120,11 +123,11 @@ export function Footer() {
           
           {/* Copyright and Legal Links */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-on-surface-variant text-center md:text-left">
-            <p>© {currentYear} Chris Property Signature. Semua hak dilindungi.</p>
+            <p>© {currentYear} Chris Property Signature. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Kebijakan privasi</Link>
-              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Syarat dan ketentuan</Link>
-              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Pengaturan cookie</Link>
+              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Privacy Policy</Link>
+              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Terms & Conditions</Link>
+              <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Cookie Settings</Link>
             </div>
           </div>
           

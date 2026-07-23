@@ -9,27 +9,55 @@ import {
 
 /* ─── Content Data ─────────────────────────────────────────────── */
 
+const KOLABORASI_MSG = `Hello Chris Property Signature Team,
+
+I am interested in submitting my property for the Selective Promotion Program (Commission-based).
+
+Here is initial information about my property:
+
+Name: [Your name]
+Asset Type: [Villa / Land / Commercial]
+Location: [Area in Bali]
+Estimated Price: [e.g.: IDR 5 Billion]
+When is a good time for us to discuss further?`;
+
+const SECURE_SLOT_MSG = `Hello Chris Property Signature Team,
+
+I would like to secure an Open Slot Promotion (No Commission) to give my property maximum exposure.
+
+Here are the details:
+
+Name: [Your name]
+I am a: [Direct Owner / Agent]
+Chosen Package: [1 Slot / 2 Slots / 3 Slots + Content]
+Property Location: [Area in Bali]
+Please let me know slot availability and the next steps.`;
+
+const createWaLink = (msg: string) =>
+  `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
+
 const SHOWCASE_ITEMS: ShowcaseItemData[] = [
   {
     badge: "EXCLUSIVE",
     title: "Selective Promotion Program",
-    subtitle: "Untuk properti di atas IDR 1 Miliar",
+    subtitle: "For properties above IDR 1 Billion",
     points: [
       "Curated listings — no mass posting",
       "Professional property positioning",
-      "Akses ke serious buyers & agent network",
-      "Hands-on handling sampai transaksi",
+      "Access to serious buyers & agent network",
+      "Hands-on handling through to transaction",
       '"Not every property makes the list"',
     ],
-    cta: "Kolaborasi",
-    suitable: "Vila · Premium Houses · Strategic Land · Commercial",
+    cta: "Collaborate",
+    ctaHref: createWaLink(KOLABORASI_MSG),
+    suitable: "Villas · Premium Houses · Strategic Land · Commercial",
     imageSrc: "/showcase/showcase-1.png",
     imageAlt: "Luxury Balinese villa with infinity pool — curated property listing",
     bgColor: "transparent",
   },
   {
     title: "Fixed Fee · No Commission · Maximum Exposure",
-    subtitle: "Promosi terstruktur di platform premium",
+    subtitle: "Structured promotion on premium platforms",
     pointsLabel: "Channels:",
     points: [
       "OLX Premium Account",
@@ -38,9 +66,10 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
       "Social media & internal distribution",
     ],
     cta: "Secure Slot",
+    ctaHref: createWaLink(SECURE_SLOT_MSG),
     imageSrc: "/showcase/showcase-2.png",
     imageAlt: "Multi-platform property promotion across OLX, Rumah123, and social media",
-    bgColor: "#002a81",
+    bgColor: "transparent",
   },
 ];
 
@@ -95,7 +124,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
     return () => observer.disconnect();
   }, []);
 
-  const isDark = (index: number) => index % 2 !== 0;
+  const isDark = (index: number) => false;
 
   return (
     <section
@@ -117,7 +146,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
       ))}
 
       {/* ── Section Content ────────────────────────────────────── */}
-      <div className="relative z-10 w-full py-section px-[68px] ">
+      <div className="relative z-10 w-full py-section px-page">
         {/* Section Header */}
         {/* <div className="pt-section pb-8 lg:pb-12">
           <span
@@ -151,8 +180,8 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             {label}
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
-            Dua Model Kolaborasi
+          <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
+            Two Collaboration Models
           </h2>
         </div>
 

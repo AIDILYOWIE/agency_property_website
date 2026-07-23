@@ -18,7 +18,7 @@ export interface WhyChooseUsFeature {
 const defaultFeatures: WhyChooseUsFeature[] = [
   {
     icon: <FiKey />,
-    title: "Akses ke premium marketplace",
+    title: "Access to premium marketplaces",
     description: "(OLX, Rumah123)",
   },
   {
@@ -28,13 +28,13 @@ const defaultFeatures: WhyChooseUsFeature[] = [
   },
   {
     icon: <FiTarget />,
-    title: "Exposure ke end-users",
+    title: "Exposure to end-users",
     description: "& trusted agent network",
   },
   {
     icon: <FiSlash />,
     title: "No commission",
-    description: "(untuk slot-based)",
+    description: "(for slot-based)",
   },
   {
     icon: <FiBarChart2 />,
@@ -49,25 +49,27 @@ const defaultFeatures: WhyChooseUsFeature[] = [
 ];
 
 interface WhyChooseUsProps {
+  id?: string;
   label?: string;
   title?: string;
   items?: WhyChooseUsFeature[];
 }
 
 export function WhyChooseUs({
-  label = "Keunggulan Kami",
+  id,
+  label = "Our Advantages",
   title = "Why Chris Property Signature",
   items = defaultFeatures,
 }: WhyChooseUsProps) {
   return (
-    <section className="w-full py-section">
+    <section id={id} className="w-full py-section">
       <div className="">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             {label}
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background">
+          <h2 className="text-3xl md:text-4xl font-cinzel font-semibold text-on-background">
             {title}
           </h2>
         </div>

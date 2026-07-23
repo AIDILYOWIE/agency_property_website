@@ -3,9 +3,10 @@ import { Navbar } from "@/app/_components/layout/Navbar";
 import { DetailProperty } from "@/app/_components/layout/DetailProperty";
 import { ExpandableText } from "@/app/_components/ui/ExpandableText";
 import { BackButton } from "@/app/_components/ui/BackButton";
+import { Button } from "@/app/_components/ui/Button";
 import { BiFridge, BiWifi, BiTv } from "react-icons/bi";
 import { FiAirplay } from "react-icons/fi";
-import { FaSwimmingPool } from "react-icons/fa";
+import { FaSwimmingPool, FaWhatsapp } from "react-icons/fa";
 import { WiDayWindy } from "react-icons/wi";
 
 interface PageProps {
@@ -14,13 +15,13 @@ interface PageProps {
   }>;
 }
 
-const PROPERTY_DESCRIPTION = `Properti eksklusif ini menawarkan gaya hidup premium dengan desain arsitektur modern dan fasilitas lengkap. Terletak di kawasan strategis yang tenang namun tetap dekat dengan pusat aktivitas. Properti ini sangat cocok untuk Anda yang mencari hunian nyaman atau instrumen investasi bernilai tinggi di masa depan.
+const PROPERTY_DESCRIPTION = `This exclusive property offers a premium lifestyle with modern architectural design and complete facilities. Located in a strategic yet serene area, while remaining close to the center of activity. This property is ideal for those seeking a comfortable residence or a high-value investment instrument for the future.
 
-Villa ini dibangun di atas lahan seluas 1.200 m² dengan konsep tropical modern yang memadukan material kayu jati pilihan, batu alam Bali, dan kaca tempered untuk menciptakan keselarasan antara ruang dalam dan alam sekitar. Setiap ruangan dirancang dengan ventilasi silang alami dan pencahayaan matahari yang optimal, sehingga meminimalkan penggunaan energi listrik di siang hari.
+This villa is built on a 1,200 m² plot with a tropical modern concept that blends selected teak wood, Balinese natural stone, and tempered glass to create harmony between the interior and the surrounding nature. Each room is designed with natural cross-ventilation and optimal sunlight, minimizing electricity consumption during the day.
 
-Fasilitas utama mencakup 3 kamar tidur en-suite dengan walk-in closet, ruang tamu terbuka berhadapan langsung dengan infinity pool berukuran 12x5 meter, dapur modern dengan peralatan premium, serta gazebo rooftop yang menghadap panorama sawah dan laut. Area parkir mampu menampung hingga 4 kendaraan roda empat.
+Main facilities include 3 en-suite bedrooms with walk-in closets, an open living room facing a 12x5 meter infinity pool, a modern kitchen with premium appliances, and a rooftop gazebo overlooking panoramic rice fields and ocean views. The parking area can accommodate up to 4 four-wheeled vehicles.
 
-Lokasi properti ini hanya berjarak 15 menit dari Pantai Nusa Dua, 20 menit dari Bandara Internasional Ngurah Rai, dan dikelilingi oleh restoran, cafe, dan pusat perbelanjaan kelas atas. Kawasan ini juga dilengkapi dengan keamanan 24 jam dan akses jalan yang lebar serta terawat.`;
+The property is just 15 minutes from Nusa Dua Beach, 20 minutes from Ngurah Rai International Airport, and surrounded by high-end restaurants, cafes, and shopping centers. The area is also equipped with 24-hour security and wide, well-maintained road access.`;
 
 export default async function PropertyDetailPage({ params }: PageProps) {
   // In Next.js 15+, params is a Promise and needs to be awaited
@@ -32,6 +33,20 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+
+  const WHATSAPP_MSG = `Hello Chris Property Signature Team,
+
+I am interested in a property listed on your website.
+
+Property Details:
+- Property Name/ID: ${title}
+- My Name: [Your name]
+- Request: [Schedule a Viewing / Request Full Dossier / Pricing Inquiry]
+
+Please provide me with more information regarding this property.`;
+
+  const createWaLink = (msg: string) =>
+    `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
 
   const mockPropertyData = {
     title: title,
@@ -54,7 +69,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow py-section px-[68px]">
+      <main className="flex-grow py-section px-page">
         {/* Back Navigation */}
         <BackButton className="mb-6" />
 
@@ -70,7 +85,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         {/* Content Section — Deskripsi with Read More */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold text-on-background">
-            Deskripsi
+            Description
           </h2>
           <ExpandableText text={PROPERTY_DESCRIPTION} maxLines={4} />
         </div>
@@ -78,18 +93,18 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         {/* Content Section (Spesifikasi / Basic Information) */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-wide text-on-background">
-            Spesifikasi
+            Specifications
           </h2>
 
           <div className="flex flex-col">
             {[
-              { label: "Status Properti", value: "Di Sewa" },
-              { label: "Kapasitas", value: "6 orang" },
-              { label: "Luas Tanah", value: "1.200 m²" },
-              { label: "Luas Bangunan", value: "800 m²" },
-              { label: "Tipe Properti", value: "Residensial / Villa" },
-              { label: "Sertifikat", value: "SHM (Hak Milik)" },
-              { label: "Tahun Dibangun", value: "2023" },
+              { label: "Property Status", value: "For Rent" },
+              { label: "Capacity", value: "6 persons" },
+              { label: "Land Area", value: "1,200 m²" },
+              { label: "Building Area", value: "800 m²" },
+              { label: "Property Type", value: "Residential / Villa" },
+              { label: "Certificate", value: "SHM (Freehold)" },
+              { label: "Year Built", value: "2023" },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -109,12 +124,12 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         {/* Content Section Fasilitas */}
         <div className="mt-16 w-full max-w-4xl flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-wide text-on-background ">
-            Fasilitas
+            Facilities
           </h2>
 
           <div className="flex w-full flex-col gap-4 mt-4 pl-2">
             <h3 className="text-xl font-medium text-on-surface-variant">
-              Fasilitas Kamar
+              Room Facilities
             </h3>
 
             <div className="grid grid-cols-2 gap-4">
@@ -123,7 +138,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                   icon: (
                     <BiFridge size={28} className="!text-on-surface-variant " />
                   ),
-                  label: "Kulkas",
+                  label: "Refrigerator",
                 },
                 {
                   icon: (
@@ -153,7 +168,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
           <div className="flex w-full flex-col gap-4 mt-4 pl-2">
             <h3 className="text-xl font-medium text-on-surface-variant">
-              Fasilitas Villa
+              Villa Facilities
             </h3>
 
             <div className="grid grid-cols-2 gap-4">
@@ -186,7 +201,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                       className="!text-on-surface-variant "
                     />
                   ),
-                  label: "Kolam Renang",
+                  label: "Swimming Pool",
                 },
                 {
                   icon: (
@@ -208,7 +223,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
         {/* Content Section Map */}
         <div className="mt-16 w-full flex flex-col gap-6">
-          <div className="w-full h-[600px] rounded-lg overflow-hidden">
+          <div className="w-full h-[300px] md:h-[600px] rounded-lg overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4047620.6838544263!2d108.76835952270487!3d-7.815783170287758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd243bc777a7293%3A0xb131fd0c3a6af25!2sVilla%20Nusa%20Dua%20by%20Opus%20Hospitality!5e0!3m2!1sid!2sid!4v1783153812112!5m2!1sid!2sid"
               width="100%"
@@ -221,6 +236,20 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+
+      {/* Floating Action Button */}
+      <div className="fixed bottom-8 right-8 z-30">
+        <Button
+          href={createWaLink(WHATSAPP_MSG)}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          className="shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+        >
+          <FaWhatsapp size={22} />
+          Inquire Property
+        </Button>
+      </div>
     </div>
   );
 }

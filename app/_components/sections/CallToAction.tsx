@@ -1,18 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { Button } from "../ui/Button";
 
 export interface CtaButtonProps {
   label: string;
   href: string;
   icon?: React.ReactNode;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "secondary" | "outlineWhite" | "outline";
 }
 
 const DEFAULT_TITLE = "Let Your Property Speak at the Right Level";
 
 const DEFAULT_DESCRIPTION =
-  "Setiap bulan properti premium Anda dibiarkan kosong, Anda sedang menelan kerugian. Berhenti membuang waktu meladeni ratusan pesan dari calon pembeli yang tidak serius, atau strategi promosi usang yang mengharuskan Anda banting harga. Properti Anda tidak butuh diskon—ia hanya butuh dilihat oleh mata yang tepat. Serahkan kerumitannya pada kami, dan mari buat properti Anda bernilai sebagaimana mestinya.";
+  "Leave the complexity to us, and let's make your property worth exactly what it deserves.";
 
 const defaultButtons: CtaButtonProps[] = [
   {
@@ -25,7 +26,7 @@ const defaultButtons: CtaButtonProps[] = [
     label: "Instagram",
     href: "https://instagram.com/chrisproperty",
     icon: <FaInstagram size={20} />,
-    variant: "outline",
+    variant: "outlineWhite",
   },
 ];
 
@@ -35,7 +36,7 @@ export interface CallToActionProps {
   buttons?: CtaButtonProps[];
   imageSrc?: string;
   imageAlt?: string;
-  variant?: "default" | "center";
+  variant?: "default" | "center"
 }
 
 export function CallToAction({
@@ -44,33 +45,30 @@ export function CallToAction({
   buttons = defaultButtons,
   imageSrc = "/cta-bg.png",
   imageAlt = "Premium property background",
-  variant = "default"
+  variant ,
 }: CallToActionProps) {
   const renderButtons = (justifyClass = "justify-start") => {
     if (!buttons || buttons.length === 0) return null;
     return (
       <div className={`flex flex-wrap items-center gap-4 ${justifyClass}`}>
         {buttons.map((btn, index) => {
-          const isPrimary = btn.variant === "primary";
           
-          const primaryClasses = "bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container";
-          const outlineClasses = "border-2 border-white text-white hover:bg-white hover:text-on-background";
-          
-          const className = `inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-base transition-all duration-200 ease-in-out hover:-translate-y-[2px] active:translate-y-0 ${
-            isPrimary ? primaryClasses : outlineClasses
-          }`;
+          // Use !important to override the default Button styles and preserve the exact original design
+
+          const isExternal = btn.href.startsWith("http");
 
           return (
-            <a
+            <Button
               key={index}
               href={btn.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={className}
+              variant={btn.variant}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className="inline-block"
             >
               {btn.icon && btn.icon}
               {btn.label}
-            </a>
+            </Button>
           );
         })}
       </div>
@@ -93,26 +91,43 @@ export function CallToAction({
 
       {/* Content */}
       {variant === "default" ? (
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 px-[68px] py-section">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16 px-page py-section">
           {/* Left — Title */}
           <div className="flex items-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+            <h2 className="text-2xl font-cinzel md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
               {title}
             </h2>
           </div>
 
           {/* Right — Description & Actions */}
-          <div className="flex flex-col justify-center gap-8">
-            <p className="text-base md:text-lg text-white/80 leading-relaxed">
+          <div className="flex flex-col justify-center gap-6 md:gap-6">
+            <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">
               {description}
             </p>
-            {renderButtons("justify-start")}
+            <div className="flex flex-row flex-wrap items-center gap-4">
+              {buttons?.map((btn, index) => {
+                const isExternal = btn.href.startsWith("http");
+                return (
+                  <Button
+                    key={index}
+                    href={btn.href}
+                    variant={btn.variant}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="inline-block"
+                  >
+                    {btn.icon && btn.icon}
+                    {btn.label}
+                  </Button>
+                );
+              })}
+            </div>
           </div>
         </div>
       ) : (
-        <div className="relative z-10 flex flex-col items-center justify-center text-center gap-8 px-[68px] py-section max-w-4xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center gap-8 px-page py-section max-w-4xl mx-auto">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-cinzel lg:text-5xl font-semibold text-white leading-tight tracking-tight">
             {title}
           </h2>
 

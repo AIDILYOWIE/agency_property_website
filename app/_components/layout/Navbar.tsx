@@ -1,93 +1,150 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { Button } from "../ui/Button";
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/layanan" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+];
+
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close drawer on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const Logo = () => (
+    <Link href="/" className=" relative h-12 md:h-16 w-[100px] md:w-[180px]">
+      <Image
+        src="/logo.png"
+        alt="Chris Property Logo"
+        fill
+        className="object-cover"
+        priority
+      />
+    </Link>
+      );
+
   return (
-    <nav className="w-full bg-background sticky top-0 z-50 border-b border-outline-variant/30 px-[68px] ">
-      <div className=" h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-              />
-            </svg>
+    <>
+      <nav className="w-full bg-background sticky top-0 z-50 border-b border-outline-variant/30 px-page">
+        <div className="h-20 flex items-center justify-between">
+          {/* Logo */}
+          <Logo />
+
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium transition-colors ${pathname === link.href
+                  ? "text-primary"
+                  : "text-on-background hover:text-primary"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-          <span className="font-bold text-xl tracking-tight text-on-background">
-            Listings
-          </span>
-        </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/"
-            className="text-on-background font-medium hover:text-primary transition-colors"
-          >
-            Beranda
-          </Link>
-          <Link
-            href="/layanan"
-            className="text-on-background font-medium hover:text-primary transition-colors"
-          >
-            Layanan
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-on-background font-medium hover:text-primary transition-colors"
-          >
-            Portofolio
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-on-background font-medium hover:text-primary transition-colors"
-          >
-            Harga
-          </Link>
-          <Link
-            href="/#tentang"
-            className="text-on-background font-medium hover:text-primary transition-colors"
-          >
-            Tentang
-          </Link>
-        </div>
+          {/* Desktop CTA */}
+          <div className="hidden lg:block">
+            <Button href="/pricing#partnership-model" variant="primary">
+              Collaborate Now
+            </Button>
+          </div>
 
-        {/* CTA */}
-        <div className="hidden md:block">
-          <Button variant="primary">Kolaborasi Sekarang</Button>
-        </div>
-
-        {/* Mobile Menu Toggle (Placeholder for visual) */}
-        <div className="md:hidden">
-          <button className="text-on-background p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
+          {/* Hamburger Button — visible on tablet & mobile (< lg) */}
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-on-background hover:bg-surface-container transition-colors"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            <div className="relative w-6 h-6">
+              <Menu className={`absolute inset-0 transition-all duration-300 ${isOpen ? "rotate-90 scale-50 opacity-0" : "rotate-0 scale-100 opacity-100"}`} />
+              <X className={`absolute inset-0 transition-all duration-300 ${isOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-50 opacity-0"}`} />
+            </div>
           </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* ── Backdrop ───────────────────────────────────────────────── */}
+      <div
+        onClick={() => setIsOpen(false)}
+        className={`fixed inset-x-0 bottom-0 top-20 z-40 bg-on-background/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        aria-hidden="true"
+      />
+
+      {/* ── Slide-in Drawer ─────────────────────────────────────────── */}
+      <aside
+        className={`fixed top-20 bottom-0 right-0 z-40 w-[80%] max-w-sm bg-background border-l border-outline-variant/30 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        aria-label="Mobile navigation menu"
+      >
+        {/* Drawer Nav Links */}
+        <nav className="flex flex-col gap-2 p-6 flex-grow overflow-y-auto justify-center">
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              style={{ transitionDelay: isOpen ? `${i * 50 + 100}ms` : "0ms" }}
+              className={`px-4 py-3 font-medium text-lg text-center transition-all duration-300 ${isOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                } ${pathname === link.href
+                  ? "text-primary"
+                  : "text-on-background hover:text-primary"
+                }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Drawer Footer CTA */}
+        <div
+          className={`p-6 transition-all duration-300 shrink-0 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          style={{
+            transitionDelay: isOpen ? "350ms" : "0ms",
+            paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))"
+          }}
+        >
+          <Button
+            href="/pricing#partnership-model"
+            variant="primary"
+            className="w-full justify-center"
+            onClick={() => setIsOpen(false)}
+          >
+            Collaborate Now
+          </Button>
+        </div>
+      </aside>
+    </>
   );
 }
