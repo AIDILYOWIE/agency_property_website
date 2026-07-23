@@ -69,7 +69,7 @@ export function Portofolio() {
 
   return (
     <section className="w-full py-section bg-background">
-      <div className=" px-6">
+      <div className="">
         <div className="flex flex-col items-center text-center mb-12">
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             Portofolio

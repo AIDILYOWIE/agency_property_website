@@ -60,7 +60,7 @@ export function HowWeWork({
 }: HowWeWorkProps) {
   return (
     <section className="w-full py-section bg-background">
-      <div className="px-6">
+      <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           {/* Left Column - Header */}
           <div className="flex flex-col gap-8">

@@ -4,7 +4,7 @@ import { StatsCard } from "../ui/StatsCard";
 export function StatsBar() {
     return (
         <section className="w-full py-section bg-background">
-            <div className="px-6">
+            <div className="">
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 mb-18 h-max">
                     <div className="flex w-full justify-start lg:flex-1">
                         <span className="text-label-md text-on-background uppercase tracking-wider mb-0 lg:mb-3">

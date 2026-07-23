@@ -8,7 +8,7 @@ interface FeatureCardProps {
 
 export function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="flex flex-col p-6 rounded-xl bg-white/40 duration-300">
+    <div className="flex flex-col p-6 rounded-xl bg-white duration-300">
       <div className="mb-4">
         <div className="flex items-center p-2 w-max h-max justify-start rounded-xl bg-primary/10 text-primary">
           <div className="w-5 h-5 [&>svg]:w-full [&>svg]:h-full">

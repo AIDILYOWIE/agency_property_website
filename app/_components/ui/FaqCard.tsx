@@ -12,7 +12,7 @@ export function FaqCard({ question, answer }: FaqCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-none bg-white/40 w-full h-max flex flex-col p-4 sm:p-5 rounded-lg">
+        <div className="border-none bg-white w-full h-max flex flex-col p-4 sm:p-5 rounded-lg">
             {/* Header row (Clickable) */}
             <div 
                 className="w-full flex items-center justify-between cursor-pointer"
