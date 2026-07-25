@@ -8,7 +8,7 @@ export function Portofolio() {
     {
       title: "Luxury Private Villa",
       location: "Uluwatu, Bali",
-      category: "Villas",
+      status: "For Sale",
       beds: "5 Bedrooms",
       baths: "4 Bathrooms",
       area: "1200 m2",
@@ -18,7 +18,7 @@ export function Portofolio() {
     {
       title: "Modern Family House",
       location: "South Jakarta",
-      category: "Premium Houses",
+      status: "For Sale",
       beds: "4 Bedrooms",
       baths: "3 Bathrooms",
       area: "450 m2",
@@ -28,7 +28,7 @@ export function Portofolio() {
     {
       title: "Premium Commercial Land",
       location: "PIK 2, Tangerang",
-      category: "Strategic Land",
+      status: "Rent",
       beds: "-",
       baths: "-",
       area: "2500 m2",
@@ -38,7 +38,7 @@ export function Portofolio() {
     {
       title: "Office Space Tower",
       location: "SCBD, Jakarta",
-      category: "Commercial Asset",
+      status: "Rent",
       beds: "-",
       baths: "2 Bathrooms",
       area: "800 m2",
@@ -48,7 +48,7 @@ export function Portofolio() {
     {
       title: "Ocean View Villa",
       location: "Seminyak, Bali",
-      category: "Villas",
+      status: "For Sale",
       beds: "3 Bedrooms",
       baths: "3 Bathrooms",
       area: "850 m2",
@@ -58,7 +58,7 @@ export function Portofolio() {
     {
       title: "Minimalist Townhouse",
       location: "BSD City, Tangerang",
-      category: "Premium Houses",
+      status: "For Sale",
       beds: "3 Bedrooms",
       baths: "2 Bathrooms",
       area: "200 m2",
@@ -89,7 +89,7 @@ export function Portofolio() {
                 key={index}
               title={property.title}
               location={property.location}
-              category={property.category}
+              status={property.status}
               beds={property.beds}
               baths={property.baths}
               area={property.area}

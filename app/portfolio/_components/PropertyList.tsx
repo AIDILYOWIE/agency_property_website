@@ -7,7 +7,7 @@ import { Pagination } from "@/app/_components/ui/Pagination";
 export interface PropertyItem {
     title: string;
     location: string;
-    category: string;
+    status: string;
     beds: string;
     baths: string;
     area: string;
@@ -46,7 +46,7 @@ export function PropertyList({ properties, itemsPerPage = 6 }: PropertyListProps
                         key={`${property.title}-${index}`}
                         title={property.title}
                         location={property.location}
-                        category={property.category}
+                        status={property.status}
                         beds={property.beds}
                         baths={property.baths}
                         area={property.area}
