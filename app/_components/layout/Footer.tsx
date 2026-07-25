@@ -6,7 +6,9 @@ import {
   FaInstagram, 
   FaTwitter, 
   FaLinkedin, 
-  FaYoutube 
+  FaYoutube, 
+  FaWhatsapp,
+  FaTiktok
 } from "react-icons/fa";
 
 export function Footer() {
@@ -133,20 +135,14 @@ export function Footer() {
           
           {/* Social Icons */}
           <div className="flex items-center gap-5 text-on-surface-variant">
-            <a href="#" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
-              <FaFacebook size={22} />
+            <a href="https://www.instagram.com/chrisproperty.signature/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
+              <FaTiktok size={22} />
             </a>
-            <a href="#" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
+            <a href="https://www.instagram.com/chrisproperty.signature/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
               <FaInstagram size={22} />
             </a>
-            <a href="#" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Twitter">
-              <FaTwitter size={22} />
-            </a>
-            <a href="#" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="LinkedIn">
-              <FaLinkedin size={22} />
-            </a>
             <a href="#" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="YouTube">
-              <FaYoutube size={22} />
+              <FaWhatsapp size={22} />
             </a>
           </div>
 
