@@ -73,7 +73,9 @@ When are you available for a discussion?`;
           {
             label: "Consult Now",
             variant: "primary",
-            href: createWaLink(WHATSAPP_MSG_CONSULT),
+            href: "",
+            actionType: "inquiry",
+            inquiryDefaultMessage: WHATSAPP_MSG_CONSULT,
           },
         ]}
       />

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Button } from "./Button";
@@ -17,6 +19,8 @@ export interface ShowcaseItemData {
   cta: string;
   /** Optional CTA link href */
   ctaHref?: string;
+  /** Optional Inquiry message for form */
+  inquiryDefaultMessage?: string;
   /** Optional suitability / category text (e.g., "Vila · Premium Houses") */
   suitable?: string;
   /** Image path for the sticky panel (desktop) and inline display (mobile) */
@@ -35,6 +39,8 @@ interface ScrollShowcaseItemProps {
   isDark: boolean;
   /** Ref callback for IntersectionObserver registration */
   itemRef: (el: HTMLDivElement | null) => void;
+  /** Click handler for CTA */
+  onCtaClick?: () => void;
 }
 
 export function ScrollShowcaseItem({
@@ -43,6 +49,7 @@ export function ScrollShowcaseItem({
   isActive,
   isDark,
   itemRef,
+  onCtaClick,
 }: ScrollShowcaseItemProps) {
   const textColor = isDark ? "text-white" : "text-on-background";
   const subtitleColor = isDark ? "text-white/70" : "text-on-surface-variant";
@@ -130,26 +137,30 @@ export function ScrollShowcaseItem({
         </ul>
 
         {/* CTA */}
-        <Button
-          variant={isDark ? "secondary" : "primary"}
-          className={
-            isDark
+        <button
+          type="button"
+          className={`
+            cursor-pointer inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 ease-in-out disabled:opacity-50 disabled:pointer-events-none gap-2
+            px-6 py-3 text-base
+            ${isDark
               ? "bg-white text-primary hover:bg-white/90 hover:text-primary-container"
-              : ""
-          }
-          {...(data.ctaHref
-            ? { href: data.ctaHref, target: "_blank", rel: "noopener noreferrer" }
-            : {})}
+              : "bg-primary text-on-primary border-2 border-primary hover:border-transparent hover:bg-transparent hover:text-primary"}
+          `}
+          onClick={(e) => {
+            if (e && e.preventDefault) e.preventDefault();
+            if (e && e.stopPropagation) e.stopPropagation();
+            if (onCtaClick) onCtaClick();
+            else if (data.ctaHref) window.open(data.ctaHref, "_blank", "noopener,noreferrer");
+          }}
         >
           {data.cta}
-        </Button>
+        </button>
 
         {/* Suitable */}
         {data.suitable && (
           <p
-            className={`mt-5 text-xs font-medium tracking-wide ${
-              isDark ? "text-white/50" : "text-outline"
-            }`}
+            className={`mt-5 text-xs font-medium tracking-wide ${isDark ? "text-white/50" : "text-outline"
+              }`}
           >
             {data.suitable}
           </p>

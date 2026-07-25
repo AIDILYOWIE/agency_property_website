@@ -73,7 +73,7 @@ When are you available for a discussion?`;
         {/* Problem & Agitation */}
         <WhyChooseUs label="Problem & Agitation" title="Positioning matters more than noise" items={problemItems} />
 
-        <WhyChooseUs id="layanan-section" label="Services" title="Our Services" />            
+        <WhyChooseUs id="layanan-section" label="Services" title="Our Services" />
       </div>
 
 
@@ -86,7 +86,7 @@ When are you available for a discussion?`;
       <CallToAction variant="default" title="Good Properties Don't Need to Shout" description="They just need the right stage. Let your asset speak at the level it deserves." buttons={
         [
           { label: 'Start Collaboration', variant: "primary", href: "/pricing#partnership-model" },
-          { label: 'Consult Now', variant: "outlineWhite", href: createWaLink(WHATSAPP_MSG_CONSULT) },
+          { label: 'Consult Now', variant: "outlineWhite", href: "", actionType: "inquiry", inquiryDefaultMessage: WHATSAPP_MSG_CONSULT },
         ]
       } />
     </div>

@@ -6,6 +6,7 @@ import {
   ScrollShowcaseItem,
   type ShowcaseItemData,
 } from "../ui/ScrollShowcaseItem";
+import { InquiryFormModal } from "../ui/InquiryFormModal";
 
 /* ─── Content Data ─────────────────────────────────────────────── */
 
@@ -49,7 +50,7 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
       '"Not every property makes the list"',
     ],
     cta: "Collaborate",
-    ctaHref: createWaLink(KOLABORASI_MSG),
+    inquiryDefaultMessage: KOLABORASI_MSG,
     suitable: "Villas · Premium Houses · Strategic Land · Commercial",
     imageSrc: "/showcase/showcase-1.png",
     imageAlt: "Luxury Balinese villa with infinity pool — curated property listing",
@@ -66,7 +67,7 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
       "Social media & internal distribution",
     ],
     cta: "Secure Slot",
-    ctaHref: createWaLink(SECURE_SLOT_MSG),
+    inquiryDefaultMessage: SECURE_SLOT_MSG,
     imageSrc: "/showcase/showcase-2.png",
     imageAlt: "Multi-platform property promotion across OLX, Rumah123, and social media",
     bgColor: "transparent",
@@ -81,6 +82,14 @@ interface ScrollShowcaseProps {
 
 export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inquiryMsg, setInquiryMsg] = useState("");
+
+  const handleInquiryClick = (msg: string = "") => {
+    setInquiryMsg(msg);
+    setIsModalOpen(true);
+  };
+
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -189,7 +198,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
         <div className="flex flex-col lg:flex-row lg:gap-16 justify-between">
 
           {/* Right Column — Sticky Image Panel (desktop only) */}
-          <div className="hidden lg:block lg:w-full ">
+          <div className="hidden lg:block lg:w-1/2">
             <div className="sticky top-[15vh] h-[81vh]">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                 {SHOWCASE_ITEMS.map((item, index) => (
@@ -222,7 +231,7 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
           </div>
 
           {/* Left Column — Scrollable Content Items */}
-          <div className="w-full lg:w-full">
+          <div className="w-full lg:w-1/2">
             {SHOWCASE_ITEMS.map((item, index) => (
               <ScrollShowcaseItem
                 key={index}
@@ -231,11 +240,19 @@ export function ScrollShowcase({ label = "partnership" }: ScrollShowcaseProps) {
                 isActive={activeIndex === index}
                 isDark={isDark(index)}
                 itemRef={setItemRef(index)}
+                onCtaClick={() => handleInquiryClick(item.inquiryDefaultMessage)}
               />
             ))}
           </div>
         </div>
       </div>
+
+      <InquiryFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Partnership Inquiry"
+        defaultMessage={inquiryMsg}
+      />
     </section>
   );
 }

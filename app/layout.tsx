@@ -3,9 +3,10 @@ import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/app/_components/layout/Footer";
+import { LoadingScreen } from "@/app/_components/ui/LoadingScreen";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("h-full", "antialiased", plusJakartaSans.variable, "font-sans", geist.variable, cinzel.variable)}>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-background">
+        <LoadingScreen />
         {/* Navbar will be added here */}
         <main className="flex-grow">{children}</main>
         <Footer />
