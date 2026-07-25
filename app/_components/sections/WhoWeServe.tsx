@@ -23,7 +23,7 @@ export function WhoWeServe() {
           <span className="text-label-md text-on-background uppercase tracking-wider mb-3">
             Who We Serve
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-on-background max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-semibold font-cinzel text-on-background max-w-2xl">
             A Trusted Partner for Asset Owners and Premium Investors
           </h2>
         </div>

@@ -9,7 +9,7 @@ const propertiesData = [
     {
         title: "Luxury Private Villa",
         location: "Uluwatu, Bali",
-        category: "Villas",
+        status: "For Sale",
         beds: "5 Bedrooms",
         baths: "4 Bathrooms",
         area: "1200 m2",
@@ -19,7 +19,7 @@ const propertiesData = [
     {
         title: "Modern Family House",
         location: "South Jakarta",
-        category: "Premium Houses",
+        status: "Rent",
         beds: "4 Bedrooms",
         baths: "3 Bathrooms",
         area: "450 m2",
@@ -29,7 +29,7 @@ const propertiesData = [
     {
         title: "Premium Commercial Land",
         location: "PIK 2, Tangerang",
-        category: "Strategic Land",
+        status: "Rent",
         beds: "-",
         baths: "-",
         area: "2500 m2",
@@ -39,7 +39,7 @@ const propertiesData = [
     {
         title: "Office Space Tower",
         location: "SCBD, Jakarta",
-        category: "Commercial Asset",
+        status: "For Sale",
         beds: "-",
         baths: "2 Bathrooms",
         area: "800 m2",
@@ -49,7 +49,7 @@ const propertiesData = [
     {
         title: "Ocean View Villa",
         location: "Seminyak, Bali",
-        category: "Villas",
+        status: "For Sale",
         beds: "3 Bedrooms",
         baths: "3 Bathrooms",
         area: "850 m2",
@@ -59,7 +59,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "For Sale",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
@@ -69,7 +69,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse 2",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "For Sale",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
@@ -79,7 +79,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse 3",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "Rent",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
@@ -89,7 +89,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse 4",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "For Sale",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
@@ -99,7 +99,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse 5",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "Rent",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
@@ -109,7 +109,7 @@ const propertiesData = [
     {
         title: "Minimalist Townhouse 6",
         location: "BSD City, Tangerang",
-        category: "Premium Houses",
+        status: "Rent",
         beds: "3 Bedrooms",
         baths: "2 Bathrooms",
         area: "200 m2",
