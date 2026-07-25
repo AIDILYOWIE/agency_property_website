@@ -11,11 +11,11 @@ interface PortoCardProps {
     area: string;
     price: string;
     imageSrc: string;
-    category: string;
+    status: string;
     href?: string;
 }
 
-export function PortoCard({ title, location, beds, baths, area, price, imageSrc, category, href = "#" }: PortoCardProps) {
+export function PortoCard({ title, location, beds, baths, area, price, imageSrc, status, href = "#" }: PortoCardProps) {
     return (
         <Link
             href={href}
@@ -24,7 +24,7 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
             {/* Image Section */}
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl ">
                 <div className="absolute top-4 left-4 z-10 bg-white px-3 py-1 rounded-full items-center flex justify-center">
-                    <span className="text-on-background text-sm font-semibold tracking-wide">{category}</span>
+                    <span className="text-on-background text-sm font-semibold tracking-wide">{status}</span>
                 </div>
                 <Image
                     src={imageSrc || ""}
