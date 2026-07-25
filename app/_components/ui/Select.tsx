@@ -8,11 +8,12 @@ export interface SelectOption {
   label: string;
 }
 
-export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'options' | 'value' | 'onChange'> {
+export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'options' | 'value' | 'onChange' | 'defaultValue'> {
   options: SelectOption[];
   variant?: "primary" | "outline";
   placeholder?: string;
   value?: string | number;
+  defaultValue?: string | number;
   onValueChange?: (value: string | number) => void;
 }
 
@@ -57,15 +58,15 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       primary: "bg-outline-variant/20 text-on-background",
       outline: "border-2 border-primary text-primary hover:bg-primary hover:text-on-primary bg-transparent",
     };
-1
+
     return (
       <div className={`relative inline-block w-full ${className}`} ref={containerRef}>
         {/* Hidden native select for form submissions and ref support */}
-        <select 
-          ref={ref} 
-          value={selectedValue || ""} 
-          className="hidden" 
-          onChange={(e) => handleSelect(e.target.value)} 
+        <select
+          ref={ref}
+          value={selectedValue || ""}
+          className="hidden"
+          onChange={(e) => handleSelect(e.target.value)}
           {...props}
         >
           <option value="" disabled>{placeholder}</option>
@@ -87,9 +88,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             )}
           </span>
           <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center">
-            <FiChevronDown 
-              className={`!text-on-background transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-              size={22} 
+            <FiChevronDown
+              className={`!text-on-background transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+              size={22}
             />
           </div>
         </div>
@@ -102,11 +103,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
                 <li
                   key={idx}
                   onClick={() => handleSelect(option.value)}
-                  className={`px-6 py-3 cursor-pointer text-on-background transition-colors ${
-                    selectedValue === option.value 
-                      ? 'bg-outline-variant/30 font-semibold' 
-                      : 'hover:bg-outline-variant/20 font-normal'
-                  }`}
+                  className={`px-6 py-3 cursor-pointer text-on-background transition-colors ${selectedValue === option.value
+                    ? 'bg-outline-variant/30 font-semibold'
+                    : 'hover:bg-outline-variant/20 font-normal'
+                    }`}
                 >
                   {option.label}
                 </li>
