@@ -4,6 +4,7 @@ import { DetailProperty } from "@/app/_components/layout/DetailProperty";
 import { ExpandableText } from "@/app/_components/ui/ExpandableText";
 import { BackButton } from "@/app/_components/ui/BackButton";
 import { Button } from "@/app/_components/ui/Button";
+import { FloatingInquiryButton } from "@/app/portfolio/_components/FloatingInquiryButton";
 import { BiFridge, BiWifi, BiTv } from "react-icons/bi";
 import { FiAirplay } from "react-icons/fi";
 import { FaSwimmingPool, FaWhatsapp } from "react-icons/fa";
@@ -238,18 +239,7 @@ Please provide me with more information regarding this property.`;
       </main>
 
       {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-30">
-        <Button
-          href={createWaLink(WHATSAPP_MSG)}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="primary"
-          className="shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-        >
-          <FaWhatsapp size={22} />
-          Inquire Property
-        </Button>
-      </div>
+      <FloatingInquiryButton title={title} />
     </div>
   );
 }

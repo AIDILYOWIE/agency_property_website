@@ -1,13 +1,18 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { Button } from "../ui/Button";
+import { InquiryFormModal } from "../ui/InquiryFormModal";
 
 export interface CtaButtonProps {
   label: string;
   href: string;
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "outlineWhite" | "outline";
+  actionType?: "link" | "inquiry";
+  inquiryDefaultMessage?: string;
 }
 
 const DEFAULT_TITLE = "Let Your Property Speak at the Right Level";
@@ -45,25 +50,35 @@ export function CallToAction({
   buttons = defaultButtons,
   imageSrc = "/cta-bg.png",
   imageAlt = "Premium property background",
-  variant ,
+  variant,
 }: CallToActionProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inquiryMsg, setInquiryMsg] = useState("");
+
+  const handleInquiryClick = (msg: string = "") => {
+    setInquiryMsg(msg);
+    setIsModalOpen(true);
+  };
+
   const renderButtons = (justifyClass = "justify-start") => {
     if (!buttons || buttons.length === 0) return null;
     return (
       <div className={`flex flex-wrap items-center gap-4 ${justifyClass}`}>
         {buttons.map((btn, index) => {
-          
+
           // Use !important to override the default Button styles and preserve the exact original design
 
           const isExternal = btn.href.startsWith("http");
+          const isLink = btn.actionType !== "inquiry";
 
           return (
             <Button
               key={index}
-              href={btn.href}
+              href={isLink ? btn.href : undefined}
+              onClick={isLink ? undefined : () => handleInquiryClick(btn.inquiryDefaultMessage)}
               variant={btn.variant}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noopener noreferrer" : undefined}
+              target={isLink && isExternal ? "_blank" : undefined}
+              rel={isLink && isExternal ? "noopener noreferrer" : undefined}
               className="inline-block"
             >
               {btn.icon && btn.icon}
@@ -107,13 +122,16 @@ export function CallToAction({
             <div className="flex flex-row flex-wrap items-center gap-4">
               {buttons?.map((btn, index) => {
                 const isExternal = btn.href.startsWith("http");
+                const isLink = btn.actionType !== "inquiry";
+
                 return (
                   <Button
                     key={index}
-                    href={btn.href}
+                    href={isLink ? btn.href : undefined}
+                    onClick={isLink ? undefined : () => handleInquiryClick(btn.inquiryDefaultMessage)}
                     variant={btn.variant}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    target={isLink && isExternal ? "_blank" : undefined}
+                    rel={isLink && isExternal ? "noopener noreferrer" : undefined}
                     className="inline-block"
                   >
                     {btn.icon && btn.icon}
@@ -142,6 +160,14 @@ export function CallToAction({
           </div>
         </div>
       )}
+
+      {/* Inquiry Form Modal */}
+      <InquiryFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Consultation Inquiry"
+        defaultMessage={inquiryMsg}
+      />
     </section>
   );
 }

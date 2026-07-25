@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Button } from "../ui/Button";
 import { FiInfo } from "react-icons/fi";
 import { PricingCard } from "../ui/PricingCard";
+import { InquiryFormModal } from "../ui/InquiryFormModal";
 
 const PKG_1_SLOT_MSG = `Hello Chris Property Signature Team,
 
@@ -40,6 +43,14 @@ const createWaLink = (msg: string) =>
   `https://wa.me/6285183117165?text=${encodeURIComponent(msg)}`;
 
 export function Pricing() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMsg, setSelectedMsg] = useState("");
+
+  const handlePlanClick = (msg: string) => {
+    setSelectedMsg(msg);
+    setIsModalOpen(true);
+  };
+
   const plans = [
     {
       name: "1 Slot",
@@ -110,13 +121,22 @@ export function Pricing() {
               price={plan.price}
               features={plan.features}
               buttonText={plan.buttonText}
-              buttonHref={plan.buttonHref}
               buttonVariant={plan.buttonVariant}
               highlight={plan.highlight}
               badge={plan.badge}
+              onClick={() => handlePlanClick(
+                index === 0 ? PKG_1_SLOT_MSG : index === 1 ? PKG_2_SLOT_MSG : PKG_3_SLOT_MSG
+              )}
             />
           ))}
         </div>
+
+        <InquiryFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          title="Select Promotion Slot"
+          defaultMessage={selectedMsg}
+        />
 
         {/* Add-on Banner
         <div className="mt-12 bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto hover:shadow-md transition-shadow duration-300">

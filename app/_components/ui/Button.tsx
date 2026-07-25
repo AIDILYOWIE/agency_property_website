@@ -52,7 +52,7 @@ export function Button({
   const { href, ...buttonProps } = props as any;
 
   return (
-    <button className={combinedClasses} {...buttonProps}>
+    <button type={buttonProps.type || "button"} className={combinedClasses} {...buttonProps}>
       {children}
     </button>
   );
