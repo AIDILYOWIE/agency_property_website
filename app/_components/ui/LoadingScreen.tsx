@@ -54,7 +54,7 @@ export function LoadingScreen() {
                     LOADING
                     <span className="inline-flex w-[24px] pl-1 overflow-hidden">
                         <span className="dot-animate inline-block" style={{ animationDelay: "0.2s" }}>.</span>
-                        <span className="dot-animate inline-block" style={{ animationDelay: "0.2s" }}>.</span>
+                        <span className="dot-animate inline-block" style={{ animationDelay: "0.4s" }}>.</span>
                         <span className="dot-animate inline-block" style={{ animationDelay: "0.6s" }}>.</span>
                     </span>
                 </h2>
