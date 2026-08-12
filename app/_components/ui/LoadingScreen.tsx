@@ -41,7 +41,7 @@ export function LoadingScreen() {
                 {/* Logo */}
                 <div className="relative w-[300px] h-[150px]">
                     <Image
-                        src="/logo.png"
+                        src="/logo_2.png"
                         alt="Property Agency Logo"
                         fill
                         className="object-cover"

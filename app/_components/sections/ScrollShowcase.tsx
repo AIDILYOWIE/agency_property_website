@@ -10,7 +10,7 @@ import { InquiryFormModal } from "../ui/InquiryFormModal";
 
 /* ─── Content Data ─────────────────────────────────────────────── */
 
-const KOLABORASI_MSG = `Hello Chris Property Signature Team,
+const KOLABORASI_MSG = `Hello Aidil Property Signature Team,
 
 I am interested in submitting my property for the Selective Promotion Program (Commission-based).
 
@@ -22,7 +22,7 @@ Location: [Area in Bali]
 Estimated Price: [e.g.: IDR 5 Billion]
 When is a good time for us to discuss further?`;
 
-const SECURE_SLOT_MSG = `Hello Chris Property Signature Team,
+const SECURE_SLOT_MSG = `Hello Aidil Property Signature Team,
 
 I would like to secure an Open Slot Promotion (No Commission) to give my property maximum exposure.
 
@@ -63,7 +63,7 @@ const SHOWCASE_ITEMS: ShowcaseItemData[] = [
     points: [
       "OLX Premium Account",
       "Rumah123 Premium Profile",
-      "Instagram @chrisproperty.signature",
+      "Instagram @aidilyowie",
       "Social media & internal distribution",
     ],
     cta: "Secure Slot",

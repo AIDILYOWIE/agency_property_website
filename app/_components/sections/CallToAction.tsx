@@ -29,7 +29,7 @@ const defaultButtons: CtaButtonProps[] = [
   },
   {
     label: "Instagram",
-    href: "https://instagram.com/chrisproperty",
+    href: "https://instagram.com/aidilyowie",
     icon: <FaInstagram size={20} />,
     variant: "outlineWhite",
   },

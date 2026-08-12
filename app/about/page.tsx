@@ -32,7 +32,7 @@ const items = [
 ];
 
 export default function AboutPage() {
-  const WHATSAPP_MSG_CONSULT = `Hello Chris Property Signature Team,
+  const WHATSAPP_MSG_CONSULT = `Hello Aidil Property Signature Team,
 
 I would like to schedule an Exclusive Consultation regarding your property services.
 

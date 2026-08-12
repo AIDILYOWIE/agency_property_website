@@ -25,7 +25,7 @@ const defaultTimelineSteps: HowWeWorkItem[] = [
   {
     title: "Review & Property Curation",
     description:
-      "Our team reviews your property to ensure it meets Chris Property Signature standards. We only process quality properties (typically >IDR 1 Billion) to maintain the integrity of our listings.",
+      "Our team reviews your property to ensure it meets Aidil Property Signature standards. We only process quality properties (typically >IDR 1 Billion) to maintain the integrity of our listings.",
     icon: <LuNotebookPen size={28} className="text-primary" />,
     hasLine: true,
   },

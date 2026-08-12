@@ -8,7 +8,7 @@ import { CallToAction } from "../_components/sections/CallToAction";
 import { ScrollShowcase } from "../_components/sections/ScrollShowcase";
 
 export default function PricingPage() {
-  const WHATSAPP_MSG_CONSULT = `Hello Chris Property Signature Team,
+  const WHATSAPP_MSG_CONSULT = `Hello Aidil Property Signature Team,
 
 I would like to schedule an Exclusive Consultation regarding your property services.
 
