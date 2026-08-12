@@ -39,8 +39,8 @@ export function Navbar() {
   const Logo = () => (
     <Link href="/" className=" relative h-12 md:h-16 w-[100px] md:w-[180px]">
       <Image
-        src="/logo.png"
-        alt="Chris Property Logo"
+        src="/logo_2.png"
+        alt="Aidil Property Logo"
         fill
         className="object-cover"
         priority
