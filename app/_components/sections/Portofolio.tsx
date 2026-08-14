@@ -2,70 +2,10 @@ import React from "react";
 import { Button } from "../ui/Button";
 import { FiArrowRight } from "react-icons/fi";
 import { PortoCard } from "../ui/PortoCard";
+import { getFeaturedProperties } from "@/lib/data/properties";
 
 export function Portofolio() {
-  const properties = [
-    {
-      title: "Luxury Private Villa",
-      location: "Uluwatu, Bali",
-      status: "For Sale",
-      beds: "5 Bedrooms",
-      baths: "4 Bathrooms",
-      area: "1200 m2",
-      price: "Rp 15,000,000,000",
-      imageSrc: "/categories/cat_villa_1781867581851.png",
-    },
-    {
-      title: "Modern Family House",
-      location: "South Jakarta",
-      status: "For Sale",
-      beds: "4 Bedrooms",
-      baths: "3 Bathrooms",
-      area: "450 m2",
-      price: "Rp 8,500,000,000",
-      imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-      title: "Premium Commercial Land",
-      location: "PIK 2, Tangerang",
-      status: "Rent",
-      beds: "-",
-      baths: "-",
-      area: "2500 m2",
-      price: "Rp 25,000,000,000",
-      imageSrc: "/categories/cat_apartment_1781867600595.png",
-    },
-    {
-      title: "Office Space Tower",
-      location: "SCBD, Jakarta",
-      status: "Rent",
-      beds: "-",
-      baths: "2 Bathrooms",
-      area: "800 m2",
-      price: "Rp 12,000,000,000",
-      imageSrc: "/categories/cat_commercial_1781867628891.png",
-    },
-    {
-      title: "Ocean View Villa",
-      location: "Seminyak, Bali",
-      status: "For Sale",
-      beds: "3 Bedrooms",
-      baths: "3 Bathrooms",
-      area: "850 m2",
-      price: "Rp 9,000,000,000",
-      imageSrc: "/categories/cat_villa_1781867581851.png",
-    },
-    {
-      title: "Minimalist Townhouse",
-      location: "BSD City, Tangerang",
-      status: "For Sale",
-      beds: "3 Bedrooms",
-      baths: "2 Bathrooms",
-      area: "200 m2",
-      price: "Rp 3,200,000,000",
-      imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-  ];
+  const properties = getFeaturedProperties();
 
   return (
     <section className="w-full py-section bg-background">
@@ -81,12 +21,10 @@ export function Portofolio() {
 
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {properties.map((property, index) => {
-            const slug = property.title.toLowerCase().replace(/\s+/g, '-');
-            return (
-              <PortoCard
-                href={`/portfolio/${slug}`}
-                key={index}
+          {properties.map((property, index) => (
+            <PortoCard
+              href={`/portfolio/${property.slug}`}
+              key={index}
               title={property.title}
               location={property.location}
               status={property.status}
@@ -96,8 +34,7 @@ export function Portofolio() {
               price={property.price}
               imageSrc={property.imageSrc}
             />
-            );
-          })}
+          ))}
         </div>
 
         <div className="mt-12 flex justify-center">
