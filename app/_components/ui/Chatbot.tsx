@@ -188,7 +188,7 @@ export default function Chatbot() {
 
       {/* === Chat Panel === */}
       <div
-        className={`fixed bottom-24 right-6 z-50 w-[30%] flex flex-col rounded-2xl bg-white shadow-2xl transition-all duration-300 ease-out origin-bottom-right ${isOpen
+        className={`fixed bottom-24 right-6 z-50 w-[90%] lg:w-[30%] flex flex-col rounded-2xl bg-white shadow-2xl transition-all duration-300 ease-out origin-bottom-right ${isOpen
           ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
           : "opacity-0 scale-95 translate-y-4 pointer-events-none"
           }`}
@@ -246,7 +246,7 @@ export default function Chatbot() {
         {/* Quick Suggestions (only on first load) */}
         {messages.length === 1 && !loading && (
           <div className="px-4 pb-2 flex flex-wrap gap-2 shrink-0">
-            {["Lihat properti", "Harga sewa", "Konsultasi gratis"].map((s) => (
+            {["Lihat Slot Promotion", "Konsultasi gratis", "Lihat Semua Properti"].map((s) => (
               <button
                 key={s}
                 type="button"
