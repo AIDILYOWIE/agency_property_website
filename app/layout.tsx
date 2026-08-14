@@ -6,6 +6,7 @@ import { Footer } from "@/app/_components/layout/Footer";
 import { LoadingScreen } from "@/app/_components/ui/LoadingScreen";
 import { cn } from "@/lib/utils";
 import { Suspense } from "react";
+import Chatbot from "./_components/ui/Chatbot";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -33,11 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("h-full", "antialiased", plusJakartaSans.variable, "font-sans", geist.variable, cinzel.variable)}>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-background">
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <LoadingScreen />
-        </Suspense>
+        </Suspense> */}
         {/* Navbar will be added here */}
         <main className="flex-grow">{children}</main>
+        <Chatbot />
         <Footer />
       </body>
     </html>

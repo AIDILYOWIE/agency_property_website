@@ -6,7 +6,7 @@ export interface PricingCardProps {
   name: string;
   price: string;
   features: string[];
-  buttonText: string;
+  buttonText?: string;
   buttonHref?: string;
   buttonVariant?: "primary" | "secondary" | "outline" | "outlineWhite";
   highlight?: boolean;
@@ -66,7 +66,7 @@ export function PricingCard({
       </div>
 
       {/* Card CTA */}
-      <div className="mt-auto">
+      {buttonText != null && (<div className="mt-auto">
         <Button
           variant="primary"
           className="w-full justify-center font-bold tracking-wider py-3"
@@ -77,7 +77,8 @@ export function PricingCard({
         >
           {buttonText}
         </Button>
-      </div>
+      </div>)}
+
     </div>
   );
 }
