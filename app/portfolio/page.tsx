@@ -4,124 +4,12 @@ import { SearchField } from "@/app/_components/ui/SearchField";
 import { Select } from "@/app/_components/ui/Select";
 import { PropertyFilterPopover } from "@/app/_components/ui/PropertyFilterPopover";
 import { PropertyList } from "@/app/portfolio/_components/PropertyList";
+import { getAllProperties } from "@/lib/data/properties";
 
-const propertiesData = [
-    {
-        title: "Luxury Private Villa",
-        location: "Uluwatu, Bali",
-        status: "For Sale",
-        beds: "5 Bedrooms",
-        baths: "4 Bathrooms",
-        area: "1200 m2",
-        price: "Rp 15,000,000,000",
-        imageSrc: "/categories/cat_villa_1781867581851.png",
-    },
-    {
-        title: "Modern Family House",
-        location: "South Jakarta",
-        status: "Rent",
-        beds: "4 Bedrooms",
-        baths: "3 Bathrooms",
-        area: "450 m2",
-        price: "Rp 8,500,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Premium Commercial Land",
-        location: "PIK 2, Tangerang",
-        status: "Rent",
-        beds: "-",
-        baths: "-",
-        area: "2500 m2",
-        price: "Rp 25,000,000,000",
-        imageSrc: "/categories/cat_apartment_1781867600595.png",
-    },
-    {
-        title: "Office Space Tower",
-        location: "SCBD, Jakarta",
-        status: "For Sale",
-        beds: "-",
-        baths: "2 Bathrooms",
-        area: "800 m2",
-        price: "Rp 12,000,000,000",
-        imageSrc: "/categories/cat_commercial_1781867628891.png",
-    },
-    {
-        title: "Ocean View Villa",
-        location: "Seminyak, Bali",
-        status: "For Sale",
-        beds: "3 Bedrooms",
-        baths: "3 Bathrooms",
-        area: "850 m2",
-        price: "Rp 9,000,000,000",
-        imageSrc: "/categories/cat_villa_1781867581851.png",
-    },
-    {
-        title: "Minimalist Townhouse",
-        location: "BSD City, Tangerang",
-        status: "For Sale",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Minimalist Townhouse 2",
-        location: "BSD City, Tangerang",
-        status: "For Sale",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Minimalist Townhouse 3",
-        location: "BSD City, Tangerang",
-        status: "Rent",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Minimalist Townhouse 4",
-        location: "BSD City, Tangerang",
-        status: "For Sale",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Minimalist Townhouse 5",
-        location: "BSD City, Tangerang",
-        status: "Rent",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-    {
-        title: "Minimalist Townhouse 6",
-        location: "BSD City, Tangerang",
-        status: "Rent",
-        beds: "3 Bedrooms",
-        baths: "2 Bathrooms",
-        area: "200 m2",
-        price: "Rp 3,200,000,000",
-        imageSrc: "/categories/cat_house_1781867614978.png",
-    },
-];
-
-// Dynamically generate hrefs using a slugified title
-const properties = propertiesData.map((prop) => ({
+// Source of truth: single import from the central data layer
+const properties = getAllProperties().map((prop) => ({
     ...prop,
-    href: `/portfolio/${prop.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+    href: `/portfolio/${prop.slug}`,
 }));
 
 export default function PortfolioPage() {

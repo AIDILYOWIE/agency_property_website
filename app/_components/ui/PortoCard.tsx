@@ -2,27 +2,31 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiBath, BiBed, BiLocationPlus, BiArea } from "react-icons/bi";
+import { cn } from "@/lib/utils";
 
 interface PortoCardProps {
     title: string;
     location: string;
-    beds: string;
-    baths: string;
-    area: string;
+    beds?: string;
+    baths?: string;
+    area?: string;
     price: string;
     imageSrc: string;
-    status: string;
+    status?: string;
     href?: string;
+    className?: string;
+    imageClassName?: string;
+    contentClassName?: string;
 }
 
-export function PortoCard({ title, location, beds, baths, area, price, imageSrc, status, href = "#" }: PortoCardProps) {
+export function PortoCard({ title, location, beds, baths, area, price, imageSrc, status, href = "#", className, imageClassName, contentClassName }: PortoCardProps) {
     return (
         <Link
             href={href}
-            className="group flex flex-col overflow-hidden"
+            className={cn("group flex flex-col overflow-hidden w-full", className)}
         >
             {/* Image Section */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl ">
+            <div className={cn("relative w-full aspect-[4/3] overflow-hidden rounded-xl", imageClassName)}>
                 <div className="absolute top-4 left-4 z-10 bg-white px-3 py-1 rounded-full items-center flex justify-center">
                     <span className="text-on-background text-sm font-semibold tracking-wide">{status}</span>
                 </div>
@@ -36,7 +40,7 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
             </div>
 
             {/* Content Section */}
-            <div className="py-3 flex flex-col gap-2 flex-grow">
+            <div className={cn("py-3 flex flex-col gap-2 flex-grow w-full", contentClassName)}>
                 <h3 className="text-xl md:text-2xl font-bold text-on-background line-clamp-2">
                     {title}
                 </h3>
@@ -45,22 +49,28 @@ export function PortoCard({ title, location, beds, baths, area, price, imageSrc,
                         <BiLocationPlus size={18} className="!text-on-background shrink-0" />
                         <p className="text-on-background text-sm md:text-base font-medium truncate" >{location}</p>
                     </div>
-                    <div className="flex flex-wrap w-full gap-x-3 gap-y-2 mt-1" >
-                        <div className="flex h-max gap-1.5 items-center" >
-                            <BiBed size={18} className="!text-on-background shrink-0" />
-                            <p className="text-on-background text-sm font-medium whitespace-nowrap" >{beds}</p>
-                        </div>
-                        <div className="flex h-max gap-1.5 items-center" >
-                            <BiBath size={18} className="!text-on-background shrink-0" />
-                            <p className="text-on-background text-sm font-medium whitespace-nowrap" >{baths}</p>
-                        </div>
-                        <div className="flex h-max gap-1.5 items-center" >
+                    <div className="flex flex-wrap w-full gap-x-3">
+                        {area != null && (<div className="flex h-max gap-1.5 items-center" >
                             <BiArea size={18} className="!text-on-background shrink-0" />
                             <p className="text-on-background text-sm font-medium whitespace-nowrap" >{area}</p>
-                        </div>
+                        </div>)}
+                        {baths != null && (
+
+                            <div className="flex h-max gap-1.5 items-center" >
+                                <BiBath size={18} className="!text-on-background shrink-0" />
+                                <p className="text-on-background text-sm font-medium whitespace-nowrap" >{baths}</p>
+                            </div>
+                        )}
+
+                        {beds != null && (
+                            <div className="flex h-max gap-1.5 items-center" >
+                                <BiBed size={18} className="!text-on-background shrink-0" />
+                                <p className="text-on-background text-sm font-medium whitespace-nowrap" >{beds}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-on-background mt-2">
+                <h3 className="text-xl md:text-2xl font-bold text-on-background ">
                     {price}
                 </h3>
             </div>
