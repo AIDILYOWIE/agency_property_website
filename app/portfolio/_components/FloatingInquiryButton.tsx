@@ -10,7 +10,7 @@ export function FloatingInquiryButton({ title }: { title: string }) {
 
     return (
         <>
-            <div className="fixed bottom-8 right-8 z-30">
+            <div className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-30">
                 <Button
                     onClick={() => setIsModalOpen(true)}
                     variant="primary"
