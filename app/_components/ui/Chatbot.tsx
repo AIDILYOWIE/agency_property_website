@@ -17,6 +17,13 @@ import { PortoCard } from "./PortoCard";
 import { TypingIndicator } from "./TypingIndicator";
 import MessageBubble from "./MessageBubble";
 import { PricingCard } from "./PricingCard";
+import { InquiryFormModal } from "./InquiryFormModal";
+import { Button } from "./Button";
+import {
+  Message as ChatMessage,
+  MessageAvatar,
+  MessageContent,
+} from "@/components/ui/message";
 
 interface Message {
   role: "user" | "model";
@@ -33,9 +40,9 @@ const WELCOME_MESSAGE: Message = {
 };
 
 
-export function renderPropertyCard(text: string) {
-  // Regex mencari tag [PROPERTY_CARD: id] dan [OPEN_SLOT_CARD: id/ALL]
-  const tagRegex = /\[(PROPERTY_CARD|OPEN_SLOT_CARD):\s*([a-zA-Z0-9_]+)\]/g;
+export function renderPropertyCard(text: string, onOpenInquiry?: () => void) {
+  // Regex mencari tag [PROPERTY_CARD: id], [OPEN_SLOT_CARD: id/ALL] dan [ACTION: ACTION_CODE]
+  const tagRegex = /\[(PROPERTY_CARD|OPEN_SLOT_CARD|ACTION):\s*([a-zA-Z0-9_]+)\]/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   let match;
@@ -90,6 +97,18 @@ export function renderPropertyCard(text: string) {
           parts.push(<span key={`err-${key++}`}>[Paket tidak ditemukan]</span>);
         }
       }
+    } else if (tagType === "ACTION" && id === "INQUIRY_FORM" && onOpenInquiry) {
+      parts.push(
+        <div key={`action-${key++}`} className="mt-4 mb-2 cursor-pointer w-full">
+          <Button
+            onClick={onOpenInquiry}
+            variant="primary"
+            className="w-full shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            Isi Form Kontak
+          </Button>
+        </div>
+      );
     }
 
     lastIndex = tagRegex.lastIndex;
@@ -106,15 +125,18 @@ export function renderPropertyCard(text: string) {
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+  const [showGreeting, setShowGreeting] = useState(true);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Focus input when chat opens
+  // Focus input when chat opens UI and handle greeting visibility
   useEffect(() => {
     if (isOpen) {
+      setShowGreeting(false);
       setTimeout(() => inputRef.current?.focus(), 300);
     }
   }, [isOpen]);
@@ -164,6 +186,26 @@ export default function Chatbot() {
 
   return (
     <>
+      {/* === Floating Greeting === */}
+      {!isOpen && showGreeting && (
+        <div
+          className="fixed bottom-[70px] right-[70px] md:bottom-[80px] md:right-[90px] z-50 animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out cursor-pointer"
+          onClick={() => {
+            setShowGreeting(false);
+            setIsOpen(true);
+          }}
+        >
+          <ChatMessage align="end" className="items-end gap-3 drop-shadow-xl">
+
+            <MessageContent className="w-auto flex-none max-w-[280px]">
+              <div className="relative px-4 py-2 md:px-5 md:py-3.5 bg-white text-on-background border border-outline-variant/30 rounded-2xl rounded-br-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-sm leading-relaxed font-semibold">
+                Hallo kak selamat datang, ada yang bisa dibantu? 👋
+              </div>
+            </MessageContent>
+          </ChatMessage>
+        </div>
+      )}
+
       {/* === FAB Trigger Button === */}
       <button
         type="button"
@@ -228,7 +270,7 @@ export default function Chatbot() {
                 <MessageScrollerContent className="gap-4">
                   {messages.map((msg, i) => (
                     <MessageScrollerItem key={i} scrollAnchor={i === messages.length - 1 && !loading}>
-                      <MessageBubble message={msg} />
+                      <MessageBubble message={msg} onOpenInquiry={() => setIsInquiryOpen(true)} />
                     </MessageScrollerItem>
                   ))}
                   {loading && (
@@ -301,6 +343,13 @@ export default function Chatbot() {
           40% { transform: scale(1); opacity: 1; }
         }
       `}} />
+
+      <InquiryFormModal
+        isOpen={isInquiryOpen}
+        onClose={() => setIsInquiryOpen(false)}
+        title="Hubungi Tim Aidil"
+        defaultMessage="Halo Tim Aidil, saya tertarik..."
+      />
     </>
   );
 }
