@@ -169,7 +169,7 @@ export default function Chatbot() {
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? "Tutup chat" : "Buka chat asisten"}
-        className={`fixed bottom-6 right-6 z-50 cursor-pointer flex items-center justify-center w-14 h-14 rounded-full shadow-xl transition-all duration-300 ease-out ${isOpen
+        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 cursor-pointer flex items-center justify-center w-14 h-14 rounded-full shadow-xl transition-all duration-300 ease-out ${isOpen
           ? "bg-on-background text-white rotate-0"
           : "bg-primary text-white"
           }`}
