@@ -62,7 +62,7 @@ export function MeetFounder() {
 
         {/* Description */}
         <p className="text-sm md:text-base lg:text-lg text-on-surface-variant leading-relaxed">
-          Albert Christofer, commonly known as Aidil, built Aidil Property
+          Aidil Yowie, commonly known as Aidil, built Aidil Property
           Signature on a single conviction: premium properties don't need
           noise — they need the right stage. With a commitment to
           marketing integrity, high asset selection standards, and access to
