@@ -37,14 +37,14 @@ export function LoadingScreen() {
         <div
             className={`fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isFadingOut ? "opacity-0" : "opacity-100"}`}
         >
-            <div className="flex flex-col items-center justify-center animate-in fade-in zoom-in-90 duration-500">
+            <div className="flex flex-col items-center justify-center animate-in fade-in zoom-in-90 duration-500 gap-4">
                 {/* Logo */}
                 <div className="relative w-[300px] h-[150px]">
                     <Image
-                        src="/logo_2.png"
+                        src="/logo_building.png"
                         alt="Property Agency Logo"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         priority
                     />
                 </div>

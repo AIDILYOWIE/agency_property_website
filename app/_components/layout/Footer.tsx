@@ -46,12 +46,12 @@ export function Footer() {
           
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block relative h-10 md:h-12 w-[100px] md:w-[200px]">
+            <Link href="/" className="inline-block relative h-[80px] md:h-[100px] w-[100px] md:w-[150px]">
               <Image
-                src="/logo_2.png"
+                src="/logo_4.png"
                 alt="Aidil Property Logo"
                 fill
-                className="object-cover object-left"
+                className="object-fill object-left"
               />
             </Link>
             <p className="text-on-surface-variant text-base leading-relaxed pr-4">
