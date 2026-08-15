@@ -19,6 +19,11 @@ import MessageBubble from "./MessageBubble";
 import { PricingCard } from "./PricingCard";
 import { InquiryFormModal } from "./InquiryFormModal";
 import { Button } from "./Button";
+import {
+  Message as ChatMessage,
+  MessageAvatar,
+  MessageContent,
+} from "@/components/ui/message";
 
 interface Message {
   role: "user" | "model";
@@ -121,15 +126,17 @@ export function renderPropertyCard(text: string, onOpenInquiry?: () => void) {
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+  const [showGreeting, setShowGreeting] = useState(true);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Focus input when chat opens
+  // Focus input when chat opens UI and handle greeting visibility
   useEffect(() => {
     if (isOpen) {
+      setShowGreeting(false);
       setTimeout(() => inputRef.current?.focus(), 300);
     }
   }, [isOpen]);
@@ -179,6 +186,26 @@ export default function Chatbot() {
 
   return (
     <>
+      {/* === Floating Greeting === */}
+      {!isOpen && showGreeting && (
+        <div
+          className="fixed bottom-[70px] right-[70px] md:bottom-[80px] md:right-[90px] z-50 animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out cursor-pointer"
+          onClick={() => {
+            setShowGreeting(false);
+            setIsOpen(true);
+          }}
+        >
+          <ChatMessage align="end" className="items-end gap-3 drop-shadow-xl">
+
+            <MessageContent className="w-auto flex-none max-w-[280px]">
+              <div className="relative px-4 py-2 md:px-5 md:py-3.5 bg-white text-on-background border border-outline-variant/30 rounded-2xl rounded-br-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-sm leading-relaxed font-semibold">
+                Hallo kak selamat datang, ada yang bisa dibantu? 👋
+              </div>
+            </MessageContent>
+          </ChatMessage>
+        </div>
+      )}
+
       {/* === FAB Trigger Button === */}
       <button
         type="button"
