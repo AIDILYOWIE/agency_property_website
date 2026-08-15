@@ -11,7 +11,12 @@ interface Message {
   parts: { text: string }[];
 }
 
-export default function MessageBubble({ message }: { message: Message }) {
+interface MessageBubbleProps {
+  message: Message;
+  onOpenInquiry?: () => void;
+}
+
+export default function MessageBubble({ message, onOpenInquiry }: MessageBubbleProps) {
   const isUser = message.role === "user";
   const text = message.parts.map((p) => p.text).join("");
 
@@ -30,7 +35,7 @@ export default function MessageBubble({ message }: { message: Message }) {
             : "bg-surface-container-low text-on-background border border-outline-variant/30 rounded-bl-sm self-start"
             }`}
         >
-          {renderPropertyCard(text)}
+          {renderPropertyCard(text, onOpenInquiry)}
         </div>
       </MessageContent>
     </ChatMessage>
