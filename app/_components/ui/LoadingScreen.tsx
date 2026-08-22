@@ -39,12 +39,12 @@ export function LoadingScreen() {
         >
             <div className="flex flex-col items-center justify-center animate-in fade-in zoom-in-90 duration-500 gap-4">
                 {/* Logo */}
-                <div className="relative w-[300px] h-[150px]">
+                <div className="relative w-[300px] h-[90px]">
                     <Image
-                        src="/logo_building.png"
+                        src="/logo.png"
                         alt="Property Agency Logo"
                         fill
-                        className="object-contain"
+                        className="object-cover"
                         priority
                     />
                 </div>
