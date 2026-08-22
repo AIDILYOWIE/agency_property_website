@@ -37,16 +37,15 @@ export function Navbar() {
   }, [isOpen]);
 
   const Logo = () => (
-    <Link href="/" className=" relative h-12 md:h-12 w-[100px] md:w-[180px]">
+    <Link href="/" className="inline-block relative h-[80px] md:h-[50px] w-[100px] md:w-[150px]">
       <Image
-        src="/logo_building.png"
-        alt="Aidil Property Logo"
+        src="/logo.png"
+        alt="Chris Property Logo"
         fill
-        className="object-contain"
-        priority
+        className="object-cover object-left"
       />
     </Link>
-      );
+  );
 
   return (
     <>

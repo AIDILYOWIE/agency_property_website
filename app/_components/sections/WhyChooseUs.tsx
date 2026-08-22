@@ -58,7 +58,7 @@ interface WhyChooseUsProps {
 export function WhyChooseUs({
   id,
   label = "Our Advantages",
-  title = "Why Aidil Property Signature",
+  title = "Why Chris Property Signature",
   items = defaultFeatures,
 }: WhyChooseUsProps) {
   return (

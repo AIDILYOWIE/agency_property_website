@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  FaFacebook, 
-  FaInstagram, 
-  FaTwitter, 
-  FaLinkedin, 
-  FaYoutube, 
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube,
   FaWhatsapp,
   FaTiktok
 } from "react-icons/fa";
@@ -43,15 +43,15 @@ export function Footer() {
       <div className="px-page mx-auto">
         {/* Top Section: 4 Columns Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Column 1: Logo & Description */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block relative h-[80px] md:h-[100px] w-[100px] md:w-[150px]">
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="inline-block relative h-[80px] md:h-[50px] w-[100px] md:w-[150px]">
               <Image
-                src="/logo_4.png"
-                alt="Aidil Property Logo"
+                src="/logo.png"
+                alt="Chris Property Logo"
                 fill
-                className="object-fill object-left"
+                className="object-cover object-left"
               />
             </Link>
             <p className="text-on-surface-variant text-base leading-relaxed pr-4">
@@ -67,8 +67,8 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-on-surface-variant hover:text-primary transition-colors duration-200 text-base"
                   >
                     {link.name}
@@ -86,7 +86,7 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               {socialLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -107,8 +107,8 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               {legalLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-on-surface-variant hover:text-primary transition-colors duration-200 text-base"
                   >
                     {link.name}
@@ -122,26 +122,26 @@ export function Footer() {
 
         {/* Bottom Section: Copyright & Social Icons */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-8 border-t border-outline-variant/30">
-          
+
           {/* Copyright and Legal Links */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-on-surface-variant text-center md:text-left">
-            <p>© {currentYear} Aidil Property Signature. All rights reserved.</p>
+            <p>© {currentYear} Chris Property Signature. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
               <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Privacy Policy</Link>
               <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Terms & Conditions</Link>
               <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Cookie Settings</Link>
             </div>
           </div>
-          
+
           {/* Social Icons */}
           <div className="flex items-center gap-5 text-on-surface-variant">
-            <a href="https://www.tiktok.com/@aiiddll?_r=1&_t=ZS-98oe4MXrAgP" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
+            <a href="https://www.tiktok.com/@albertchristofer" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
               <FaTiktok size={22} />
             </a>
-            <a href="https://www.instagram.com/aidil.signature/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
+            <a href="https://www.instagram.com/albertchristofer/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
               <FaInstagram size={22} />
             </a>
-            <a href="https://wa.me/6285183117165" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="WhatsApp">
+            <a href="https://wa.me/6281807108478" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="WhatsApp">
               <FaWhatsapp size={22} />
             </a>
           </div>
