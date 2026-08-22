@@ -35,7 +35,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const WHATSAPP_MSG = `Hello Aidil Property Signature Team,
+  const WHATSAPP_MSG = `Hello Chris Property Signature Team,
 
 I am interested in a property listed on your website.
 

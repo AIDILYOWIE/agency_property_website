@@ -13,7 +13,7 @@ export function Faq({ faqs }: FaqProps) {
   // Mock data for testimonials
   const testimonials = [
     {
-      name: "Aidil Yowie",
+      name: "Albert Christofer",
       jobTitle: "CEO Of Faucon",
     },
     {

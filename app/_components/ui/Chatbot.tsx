@@ -34,7 +34,7 @@ const WELCOME_MESSAGE: Message = {
   role: "model",
   parts: [
     {
-      text: "Halo! Saya asisten virtual Aidil Property Signature. 👋\n\nSaya siap membantu Anda menemukan properti impian, menjawab pertanyaan seputar layanan kami, atau memandu Anda melalui proses properti. Apa yang bisa saya bantu hari ini?",
+      text: "Halo! Saya asisten virtual Chris Property Signature. 👋\n\nSaya siap membantu Anda menemukan properti impian, menjawab pertanyaan seputar layanan kami, atau memandu Anda melalui proses properti. Apa yang bisa saya bantu hari ini?",
     },
   ],
 };
@@ -246,7 +246,7 @@ export default function Chatbot() {
             <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-primary" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-white font-cinzel leading-tight">Aidil Assistant</p>
+            <p className="text-sm font-semibold text-white font-cinzel leading-tight">Chris Assistant</p>
             <p className="text-[11px] text-white/70 leading-tight mt-0.5 flex items-center gap-1">
               <Sparkles size={10} />
               Property Virtual Consultant
@@ -347,8 +347,8 @@ export default function Chatbot() {
       <InquiryFormModal
         isOpen={isInquiryOpen}
         onClose={() => setIsInquiryOpen(false)}
-        title="Hubungi Tim Aidil"
-        defaultMessage="Halo Tim Aidil, saya tertarik..."
+        title="Hubungi Tim Chris"
+        defaultMessage="Halo Tim Chris, saya tertarik..."
       />
     </>
   );

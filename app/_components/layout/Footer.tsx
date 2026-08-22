@@ -49,7 +49,7 @@ export function Footer() {
             <Link href="/" className="inline-block relative h-[80px] md:h-[100px] w-[100px] md:w-[150px]">
               <Image
                 src="/logo_4.png"
-                alt="Aidil Property Logo"
+                alt="Chris Property Logo"
                 fill
                 className="object-fill object-left"
               />
@@ -125,7 +125,7 @@ export function Footer() {
           
           {/* Copyright and Legal Links */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-on-surface-variant text-center md:text-left">
-            <p>© {currentYear} Aidil Property Signature. All rights reserved.</p>
+            <p>© {currentYear} Chris Property Signature. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
               <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Privacy Policy</Link>
               <Link href="#" className="hover:text-primary transition-colors duration-200 underline decoration-transparent hover:decoration-primary underline-offset-4">Terms & Conditions</Link>
@@ -135,13 +135,13 @@ export function Footer() {
           
           {/* Social Icons */}
           <div className="flex items-center gap-5 text-on-surface-variant">
-            <a href="https://www.tiktok.com/@aiiddll?_r=1&_t=ZS-98oe4MXrAgP" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
+            <a href="https://www.tiktok.com/@albertchristofer" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Facebook">
               <FaTiktok size={22} />
             </a>
-            <a href="https://www.instagram.com/aidil.signature/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
+            <a href="https://www.instagram.com/albertchristofer/" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="Instagram">
               <FaInstagram size={22} />
             </a>
-            <a href="https://wa.me/6285183117165" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="WhatsApp">
+            <a href="https://wa.me/6281807108478" className="hover:text-primary hover:-translate-y-1 transition-all duration-200" aria-label="WhatsApp">
               <FaWhatsapp size={22} />
             </a>
           </div>

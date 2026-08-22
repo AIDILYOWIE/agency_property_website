@@ -6,7 +6,7 @@ import { FiInfo } from "react-icons/fi";
 import { PricingCard } from "../ui/PricingCard";
 import { InquiryFormModal } from "../ui/InquiryFormModal";
 
-const PKG_1_SLOT_MSG = `Hello Aidil Property Signature Team,
+const PKG_1_SLOT_MSG = `Hello Chris Property Signature Team,
 
 I am interested in purchasing the *Open Slot (1 Slot - IDR 499,000)* package to promote my property.
 
@@ -17,7 +17,7 @@ Here is a brief overview of my property:
 
 Please guide me through the payment and slot activation process.`;
 
-const PKG_2_SLOT_MSG = `Hello Aidil Property Signature Team,
+const PKG_2_SLOT_MSG = `Hello Chris Property Signature Team,
 
 I am interested in the *Open Slot (2 Slots - IDR 799,000)* package to extend the reach of my property promotion.
 
@@ -28,7 +28,7 @@ Here is a brief overview of my property:
 
 Please guide me through the payment and slot activation process.`;
 
-const PKG_3_SLOT_MSG = `Hello Aidil Property Signature Team,
+const PKG_3_SLOT_MSG = `Hello Chris Property Signature Team,
 
 I would like to take the *Open Slot (3 Slots - IDR 999,000)* package which includes *FREE Property Visit & Content Creation*.
 

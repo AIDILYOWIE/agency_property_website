@@ -40,7 +40,7 @@ export function Navbar() {
     <Link href="/" className=" relative h-12 md:h-12 w-[100px] md:w-[180px]">
       <Image
         src="/logo_building.png"
-        alt="Aidil Property Logo"
+        alt="Chris Property Logo"
         fill
         className="object-contain"
         priority

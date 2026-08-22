@@ -13,7 +13,7 @@ import { CallToAction } from "@/app/_components/sections/CallToAction";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function Home() {
-  const WHATSAPP_MSG = `Hello Aidil Property Signature Team,
+  const WHATSAPP_MSG = `Hello Chris Property Signature Team,
 
 I visited your website and would like to discuss further.
 
@@ -74,7 +74,7 @@ Please let me know when your team is available to connect.`;
           },
           {
             label: "Instagram",
-            href: "https://instagram.com/aidilyowie",
+            href: "https://instagram.com/albertchristofer",
             icon: <FaInstagram size={20} />,
             variant: "outlineWhite",
           },
